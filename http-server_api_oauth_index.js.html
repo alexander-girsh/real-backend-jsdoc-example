@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>http-server/api/oauth/index.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="OutgoingMessage.html">OutgoingMessage</a></li><li><a href="Game.html">Game</a></li><li><a href="CrashGame.html">CrashGame</a><ul class='members'><li data-type='member' style='display: none;'><a href="CrashGame.html#.CrashGame">CrashGame</a></li><li data-type='member' style='display: none;'><a href="CrashGame.html#.CrashGame">CrashGame</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="CrashGame.html#publishUpdatedPlayer">publishUpdatedPlayer</a></li><li data-type='method' style='display: none;'><a href="CrashGame.html#handleManualOutDirectives">handleManualOutDirectives</a></li><li data-type='method' style='display: none;'><a href="CrashGame.html#autoOutPlayers">autoOutPlayers</a></li><li data-type='method' style='display: none;'><a href="CrashGame.html#outRemainingPlayers">outRemainingPlayers</a></li><li data-type='method' style='display: none;'><a href="CrashGame.html#outPlayers">outPlayers</a></li></ul></li><li><a href="CrashGameDBTransaction.html">CrashGameDBTransaction</a><ul class='methods'><li data-type='method' style='display: none;'><a href="CrashGameDBTransaction.html#.start">start</a></li><li data-type='method' style='display: none;'><a href="CrashGameDBTransaction.html#createSavePoint">createSavePoint</a></li><li data-type='method' style='display: none;'><a href="CrashGameDBTransaction.html#rollbackToSavePoint">rollbackToSavePoint</a></li></ul></li><li><a href="GameWin.html">GameWin</a><ul class='methods'><li data-type='method' style='display: none;'><a href="GameWin.html#.create">create</a></li><li data-type='method' style='display: none;'><a href="GameWin.html#.calcWonAmount">calcWonAmount</a></li></ul></li><li><a href="SteamItem.html">SteamItem</a><ul class='methods'><li data-type='method' style='display: none;'><a href="SteamItem.html#.fromObject">fromObject</a></li></ul></li><li><a href="module-Games-Game.html">Game</a></li><li><a href="module-Games-SteamItem.html">SteamItem</a></li><li><a href="module-Games-InventoryItem.html">InventoryItem</a></li><li><a href="module-Games-GameWin.html">GameWin</a></li><li><a href="module-Games-GameBet.html">GameBet</a></li><li><a href="module-Games-User.html">User</a></li><li><a href="module-Games-Player.html">Player</a></li></ul><h3>Modules</h3><ul><li><a href="module-access_config.html">access/config</a></li><li><a href="module-access.html">access</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-access.html#~encryptString">encryptString</a></li><li data-type='method' style='display: none;'><a href="module-access.html#.decryptString">decryptString</a></li><li data-type='method' style='display: none;'><a href="module-access.html#~issueJWTToken">issueJWTToken</a></li></ul></li><li><a href="module-broadcasting-server_config.html">broadcasting-server/config</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-broadcasting-server_config.html#.PORT">PORT</a></li></ul></li><li><a href="module-ws-server_ws-clients.html">ws-server/ws-clients</a></li><li><a href="module-database_config.html">database/config</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-database_config.html#.RECONNECTION_ATTEMPTS">RECONNECTION_ATTEMPTS</a></li><li data-type='member' style='display: none;'><a href="module-database_config.html#.RECONNECTION_DELAY">RECONNECTION_DELAY</a></li><li data-type='member' style='display: none;'><a href="module-database_config.html#.DB_CONNECTION_URL">DB_CONNECTION_URL</a></li><li data-type='member' style='display: none;'><a href="module-database_config.html#.DB_TRANSACTIONS_RETRIES_LIMIT">DB_TRANSACTIONS_RETRIES_LIMIT</a></li><li data-type='member' style='display: none;'><a href="module-database_config.html#.PG_POOL_QUERIES_VERBOSE_MODE">PG_POOL_QUERIES_VERBOSE_MODE</a></li></ul></li><li><a href="module-database_connection.html">database/connection</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-database_connection.html#~onClientConnected">onClientConnected</a></li><li data-type='method' style='display: none;'><a href="module-database_connection.html#~reconnect">reconnect</a></li><li data-type='method' style='display: none;'><a href="module-database_connection.html#~createNewClient">createNewClient</a></li><li data-type='method' style='display: none;'><a href="module-database_connection.html#~execRepeatableTransaction">execRepeatableTransaction</a></li></ul></li><li><a href="module-http-server_api_accounts.html">http-server/api/accounts</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~createLocal">createLocal</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~authenticateLocal">authenticateLocal</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~initEmailConfirmation">initEmailConfirmation</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~confirmEmailWithCode">confirmEmailWithCode</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~sendPasswordRecoveryCode">sendPasswordRecoveryCode</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~checkPasswordRecoveryCode">checkPasswordRecoveryCode</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~issueNewPassword">issueNewPassword</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~logout">logout</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~getAccountData">getAccountData</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~list">list</a></li></ul></li><li><a href="module-http-server_api_oAuth.html">http-server/api/oAuth</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~generateVKRedirect">generateVKRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~handleVKRedirect">handleVKRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~generateGoogleRedirect">generateGoogleRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~handleGoogleRedirect">handleGoogleRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~generateYandexRedirect">generateYandexRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~handleYandexRedirect">handleYandexRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~getOpenIdInstanceByReturnUrl">getOpenIdInstanceByReturnUrl</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~handleSteamRedirect">handleSteamRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~readUserData">readUserData</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~createUser">createUser</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~endAuthentication">endAuthentication</a></li></ul></li><li><a href="module-http-server_api_payments_freekassa.html">http-server/api/payments/freekassa</a></li><li><a href="module-http-server_api_payments_gamemoney.html">http-server/api/payments/gamemoney</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_api_payments_gamemoney.html#~handleDepositHook">handleDepositHook</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_payments_gamemoney.html#~handleDepositHook">handleDepositHook</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_payments_gamemoney.html#~generateDepositRedirectSignature">generateDepositRedirectSignature</a></li></ul></li><li><a href="module-http-server_api_payments.html">http-server/api/payments</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_api_payments.html#~depositRules">depositRules</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_payments.html#~generateDepositRedirect">generateDepositRedirect</a></li></ul></li><li><a href="module-http-server_config.html">http-server/config</a></li><li><a href="module-http-server.html">http-server</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-http-server.html#.API">API</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server.html#~startServe">startServe</a></li><li data-type='method' style='display: none;'><a href="module-http-server.html#~shutDown">shutDown</a></li></ul></li><li><a href="module-http-server_middleware_access.html">http-server/middleware/access</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~setAuthCookie">setAuthCookie</a></li><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~removeAuthCookie">removeAuthCookie</a></li><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~addAuthorizationDataToRequest">addAuthorizationDataToRequest</a></li><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~accessUser">accessUser</a></li><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~accessAdmin">accessAdmin</a></li></ul></li><li><a href="module-http-server_gamemoney-lib.html">http-server/gamemoney-lib</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~generateHmacSignature">generateHmacSignature</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~verifyRequestRsaSignature">verifyRequestRsaSignature</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~createDeposit">createDeposit</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~updateDepositStatus">updateDepositStatus</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~handleDepositHook">handleDepositHook</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~generateDepositRedirectUrl">generateDepositRedirectUrl</a></li></ul></li><li><a href="module-http-server_health-check.html">http-server/health-check</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#~bytesToMb">bytesToMb</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#~memoryUsageInMb">memoryUsageInMb</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#~updateState">updateState</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#~getState">getState</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#.httpMiddleware">httpMiddleware</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#.httpEndpoint">httpEndpoint</a></li></ul></li><li><a href="module-http-server_mailer.html">http-server/mailer</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_mailer.html#~sendMail">sendMail</a></li></ul></li><li><a href="module-http-server_plugins_withdrawals_approval.html">http-server/plugins/withdrawals/approval</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_plugins_withdrawals_approval.html#~checkForWithdrawalsBlockers">checkForWithdrawalsBlockers</a></li></ul></li><li><a href="module-http-server_lib.html">http-server/lib</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~freezeObjectDeep">freezeObjectDeep</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~bytesSizeOfObject">bytesSizeOfObject</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~asyncInterval">asyncInterval</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~delay">delay</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~bytesToMb">bytesToMb</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~memoryUsageInMb">memoryUsageInMb</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~compareDeep">compareDeep</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~generateRandomString">generateRandomString</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~minMax">minMax</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~shuffleArray">shuffleArray</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~toFixedPrecisionFloat">toFixedPrecisionFloat</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~to2DigitsPrecisionFloat">to2DigitsPrecisionFloat</a></li></ul></li><li><a href="module-logger.html">logger</a></li><li><a href="module-redis-connection_config.html">redis-connection/config</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-redis-connection_config.html#.REDIS_HOST">REDIS_HOST</a></li><li data-type='member' style='display: none;'><a href="module-redis-connection_config.html#.REDIS_PORT">REDIS_PORT</a></li></ul></li><li><a href="module-Games.html">Games</a></li></ul><h3>Global</h3><ul><li><a href="global.html#createLocalAccount">createLocalAccount</a></li><li><a href="global.html#authenticateLocalAccount">authenticateLocalAccount</a></li><li><a href="global.html#fetchAccountData">fetchAccountData</a></li><li><a href="global.html#createAxiosInstance">createAxiosInstance</a></li><li><a href="global.html#createAuthInfrastructure">createAuthInfrastructure</a></li><li><a href="global.html#createWebsocketConnection">createWebsocketConnection</a></li><li><a href="global.html#socketCookieParser">socketCookieParser</a></li><li><a href="global.html#authCookieParser">authCookieParser</a></li><li><a href="global.html#hasAccessUser">hasAccessUser</a></li><li><a href="global.html#hasAccessAdmin">hasAccessAdmin</a></li><li><a href="global.html#util">util</a></li><li><a href="global.html#isMainBroadcastingServer">isMainBroadcastingServer</a></li><li><a href="global.html#MIN_WON_INVENTORY_ITEM_SPAWN_PRICE_USD">MIN_WON_INVENTORY_ITEM_SPAWN_PRICE_USD</a></li><li><a href="global.html#BETTING_PERIOD_MS">BETTING_PERIOD_MS</a></li><li><a href="global.html#COMPLETED_PERIOD_MS">COMPLETED_PERIOD_MS</a></li><li><a href="global.html#CRASH_GAME_FRAMES_DELAY_MS">CRASH_GAME_FRAMES_DELAY_MS</a></li><li><a href="global.html#GAME_LOOP_DELAY_AFTER_ERROR_MS">GAME_LOOP_DELAY_AFTER_ERROR_MS</a></li><li><a href="global.html#%2522your-256-bit-secret%2522">"your-256-bit-secret"</a></li><li><a href="global.html#CURRENT_GAME">CURRENT_GAME</a></li><li><a href="global.html#generateFinalMultipliersGroup">generateFinalMultipliersGroup</a></li><li><a href="global.html#activateFinalMultipliersGroup">activateFinalMultipliersGroup</a></li><li><a href="global.html#generateDepositRedirect">generateDepositRedirect</a></li><li><a href="global.html#list">list</a></li><li><a href="global.html#Accounts">Accounts</a></li><li><a href="global.html#performInventoryItemWithdrawalStatusUpdateNotificationForUser">performInventoryItemWithdrawalStatusUpdateNotificationForUser</a></li><li><a href="global.html#itemsList">itemsList</a></li><li><a href="global.html#fileParser">fileParser</a></li><li><a href="global.html#CONTENT_TYPES%255Bundefined%255D">CONTENT_TYPES[undefined]</a></li><li><a href="global.html#STEAM_ITEM_ICON_URL_HASHES_CACHE%255Bundefined%255D">STEAM_ITEM_ICON_URL_HASHES_CACHE[undefined]</a></li><li><a href="global.html#freekassaIPVerificationMiddleware">freekassaIPVerificationMiddleware</a></li><li><a href="global.html#freekassaHookSignatureVerificationMiddleware">freekassaHookSignatureVerificationMiddleware</a></li><li><a href="global.html#gamemoneyIPVerificationMiddleware">gamemoneyIPVerificationMiddleware</a></li><li><a href="global.html#gamemoneyHookSignatureVerificationMiddleware">gamemoneyHookSignatureVerificationMiddleware</a></li><li><a href="global.html#skinsBackIPVerificationMiddleware">skinsBackIPVerificationMiddleware</a></li><li><a href="global.html#skinsBackHookSignatureVerificationMiddleware">skinsBackHookSignatureVerificationMiddleware</a></li><li><a href="global.html#unitpayIPVerificationMiddleware">unitpayIPVerificationMiddleware</a></li><li><a href="global.html#unitpayHookSignatureVerificationMiddleware">unitpayHookSignatureVerificationMiddleware</a></li><li><a href="global.html#affiliateExists">affiliateExists</a></li><li><a href="global.html#getAffiliate">getAffiliate</a></li><li><a href="global.html#createNewAffiliate">createNewAffiliate</a></li><li><a href="global.html#performRevshareAccrual">performRevshareAccrual</a></li><li><a href="global.html#createDefaultTariff">createDefaultTariff</a></li><li><a href="global.html#getValidMatchingTariff">getValidMatchingTariff</a></li><li><a href="global.html#MENTION_SUGGESTIONS">MENTION_SUGGESTIONS</a></li><li><a href="global.html#searchMentionedUsers">searchMentionedUsers</a></li><li><a href="global.html#filterProhibitedWords">filterProhibitedWords</a></li><li><a href="global.html#EMOJIS_LIST">EMOJIS_LIST</a></li><li><a href="global.html#generateDepositRedirectUrl">generateDepositRedirectUrl</a></li><li><a href="global.html#handleNewPromocodeActivation">handleNewPromocodeActivation</a></li><li><a href="global.html#handleNewCompletedDeposit">handleNewCompletedDeposit</a></li><li><a href="global.html#generateSignature">generateSignature</a></li><li><a href="global.html#verifyHookSignature">verifyHookSignature</a></li><li><a href="global.html#createOrReplaceDeposit">createOrReplaceDeposit</a></li><li><a href="global.html#Status">Status</a></li><li><a href="global.html#createConnection">createConnection</a></li><li><a href="global.html#getConnection">getConnection</a></li><li><a href="global.html#KNOWN_ACQUIRING_SYSTEMS">KNOWN_ACQUIRING_SYSTEMS</a></li><li><a href="global.html#PAYMENT_METHOD_KINDS">PAYMENT_METHOD_KINDS</a></li><li><a href="global.html#PAYMENT_METHOD_ICON_NAMES">PAYMENT_METHOD_ICON_NAMES</a></li><li><a href="global.html#PaymentMethod">PaymentMethod</a></li><li><a href="global.html#depositRules">depositRules</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">http-server/api/oauth/index.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Contains handlers for redirects from the oauth-apps
+ * ---
+ * Routes starting with "generate***" redirect user
+ * to oauth app url.
+ *
+ * Routes starting with "handle***" work with back-redirects
+ * from the oauth apps
+ *
+ * Redirects to get access to user account in the oauth-provider network
+ * ---
+ * The first kind are endpoints named "generate-&lt;oAuth-provider-name>-redirect"
+ * It redirects the user's browser to rights granting dialogue of our application
+ * hosted by the one of used oAuth providers using variables like
+ * .&lt;oAuth-provider-name>_APP_ID provided from server configuration (env).
+ *
+ * User authentication or the new account creating
+ * ---
+ * The second kind endpoints named "handle-&lt;oAuth-provider-name>-redirect"
+ * handles the redirects back from the oAuth-provider, if user gave the access
+ * rights to our application.
+ *
+ * The query of this redirects will also contain the "code" param according
+ * oAuth2 standard. The handlers will use this one-off code to exchange it to
+ * an access-token. We don't store the given access-token and use it just once
+ * in next step to get the unique account id of user on the oauth-provider-platform.
+ * On account creation we save this unique id to the specific field like "google_id"
+ * with uniqueness constraints.
+ *
+ * Because this id is unique, it allows us to authenticate user on our platform,
+ * or create a new account if it doesnt exist. In case of creating the new one we also
+ * request the user account data from the oauth-provider to fill the fields "username" and "avatar"
+ *
+ * Binding oAuth accounts to existed platform account
+ * ---
+ * If user satisfies the following conditions
+ * - has an account on our platform
+ * - is logged in
+ * - has an account in network of one of ours oAuth-providers
+ *   and this account still isn't binded to some account on our platform,
+ *
+ * User can bind this account in oauth-provider network with his existed
+ * account on our platform with which he is logged in. To start this procedure,
+ * user's browser should pass "bind=true" boolean param to the appropriate
+ * "generate-&lt;oauth-provider-name>-redirect" endpoint.
+ *
+ * According the oAuth2 specification, we use the "state" param to transmit the "bind" directive
+ * from "generate-***-redirect" to "handle-***-redirect" methods.
+ * If any "handle-***-redirect" method receives the redirect with "state=bind" param,
+ * it should start the binding procedure.
+ * It receives the unique account id from the oauth-provider and checks that this id
+ * is not used from some other account on our platform to identification.
+ * If this check is not passed, user will be redirected to "config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL" with
+ * query "?oauth_binding=&lt;oauth-provider-user-friendly-name>&amp;result=exists"
+ * else an unique id from provider will be saved and user
+ * will be redirected to "config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL" with query "?oauth_binding=true&amp;result=done"
+ * @module http-server/api/oAuth
+ * @see https://tools.ietf.org/html/rfc6749
+ */
+
+const Express = require( 'express')
+const axios = require( 'axios')
+const {DB} = require( '../../../database/connection.js')
+const {error} = require( '../../../logger/index.js')
+const {codes} = require( 'status-codes')
+const {config} = require( '../../config.js')
+const {setAuthCookie, getAuthCookieDomain} = require( '../../middleware/access.js')
+const {issueJWTToken, USER_PERMISSIONS} = require( '../../../access/index.js')
+const {parseAffiliateProgramCookies} = require('../../middleware/affiliates.js')
+const {bindUserToAffiliate} = require('../../plugins/affiliates/index.js')
+const SteamWebAPI = require( 'steam-web')
+const OpenId = require( 'openid')
+const Telegram = require('./telegram.js')
+
+
+const router = Express.Router()
+
+
+router.use('/telegram', Telegram)
+
+
+
+
+/**
+ * It generates link and redirects user's browser to oauth provider substituting oauth application credentials from config
+ * @function generateVKRedirect
+ * @see {@link module:http-server/config.VK_APP_ID}
+ * @path {GET} /api/oauth/generate-vk-redirect
+ * @header {String} host a domain to generate the redirect_uri
+ * @code {302} Redirect to oAuth provider
+ * @query bind {Boolean=} if wanna bind an oauth id to existed account
+ */
+const generateVKRedirect = (req, res) => {
+
+    const redirect_uri = `http${process.env.NODE_ENV === 'production' ? 's' : ''}://${req.DOMAIN}/api/oauth/handle-vk-redirect`
+
+    const url = 'https://oauth.vk.com/authorize?client_id='
+        + config.VK_APP_ID +
+        `&amp;display=page&amp;redirect_uri=${redirect_uri}&amp;` +
+        `scope=friends,email,offline,groups&amp;response_type=code&amp;v=5.80${ req.query.bind ? '&amp;state=bind' : ''  }`
+
+    res.cookie('redirect_uri', redirect_uri, {domain: getAuthCookieDomain(req)})
+
+    return res.redirect(url)
+}
+
+
+/**
+ * It handles the redirect from oAuth provider,
+ * exchanges provided "code" to the access token and authenticates user
+ * using received access token
+ * @function handleVKRedirect
+ * @code {302} Redirect to /user (profile &amp;&amp; settings page)
+ * @path {GET} /api/oauth/handle-vk-redirect
+ * @see {@link module:http-server/api/oAuth~generateVKRedirect}
+ * @query code {String} code to exchange it to the access token
+ * @query state {String} "bind" if we should bind account on oauth provider to the existed platform account
+ */
+const handleVKRedirect = async (req, res, next) => {
+    try {
+
+        const code = req.query.code
+
+        if (!req.query.code) return res.redirect(config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL)
+
+        /**
+         * @inner
+         * @type Boolean
+         * */
+        const shouldBind = req.query.state === 'bind'
+
+        /** user is not authorized, but we need auth to make the bind */
+        if (shouldBind &amp;&amp; !req.account_data.user_id) {
+            return res.redirect(config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL + '?oauth_binding=ВКонтакте&amp;result=forbidden')
+        }
+
+        const redirect_uri = req.cookies['redirect_uri']
+
+        const url = 'https://oauth.vk.com/access_token?client_id=' + config.VK_APP_ID
+            + '&amp;client_secret=' + config.VK_APP_SECRET
+            + `&amp;redirect_uri=${redirect_uri}&amp;code=`
+            + code + '&amp;v=5.80'
+
+        /**
+         * @inner
+         * @type {{
+         *     access_token: String,
+         *     user_id: String|Number
+         * }}
+         */
+        const access_token_request = await axios.get(url).then(res => res.data).catch(e => e)
+
+        if (!access_token_request || !access_token_request.access_token || !access_token_request.user_id || access_token_request instanceof Error) {
+            error({access_token_request})
+            /** smth went wrong, can not authorize user */
+            return res.redirect(config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL + '?oauth_binding=ВКонтакте&amp;result=fail')
+        }
+
+        /** searching for user, may be he exists */
+        let user = await readUserData('vk_id', access_token_request.user_id)
+
+        if (user) {
+
+            const {access_token} = access_token_request
+
+            await DB.query(`
+                UPDATE users 
+                SET vk_access_token = $1
+                WHERE user_id = $2
+                `, [
+                access_token,
+                user.user_id
+            ])
+        }
+
+
+        /** account already bound to some existed account, can not bind */
+        if (user &amp;&amp; shouldBind) return res.redirect(config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL + '?oauth_binding=ВКонтакте&amp;result=exists')
+
+        if (!user &amp;&amp; shouldBind) {
+
+            /** adding fetched oauth provider id to user's account data */
+            const binding_result = await DB.query('UPDATE users SET vk_id = $1 WHERE user_id = $2 AND vk_id IS NULL', [access_token_request.user_id, req.account_data.user_id])
+
+            if (binding_result.rowCount === 0) {
+                return res.redirect(config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL + '?oauth_binding=ВКонтакте&amp;result=error')
+            }
+
+            /**
+             * @ignore
+             * @inner
+             * @type {Object}
+             * @desc now it will get the user's account data by new oauth id
+             * to skip account creation (next if block)
+             */
+            user = await readUserData('vk_id', access_token_request.user_id)
+
+        }
+
+        /** no users with this vk_id found, need to create one */
+        if (!user) {
+
+            const credentials_request = await axios.get('https://api.vk.com/api.php?oauth=1&amp;method=users.get&amp;access_token=' + access_token_request.access_token + '&amp;v=5.80')
+                .then(res => res.data).catch(e => e)
+
+            /** smth went wrong */
+            if (!credentials_request || !credentials_request.response || !credentials_request.response[0]) return res.redirect('/2')
+
+            /**
+             * @ignore
+             * @const {Object} data fetched from vk.com servers
+             * @property id {String|Number}
+             * @property first_name {String}
+             * @property last_name {String}
+             * @property email {String|Null}
+             */
+            const fetched_data = credentials_request.response[0]
+
+            user = await createUser({
+                ...fetched_data,
+                vk_id: fetched_data.id,
+                username: `${fetched_data.first_name} ${fetched_data.last_name}`
+            }, req.affiliate_program_data)
+
+        }
+
+
+
+        /** saving user acc data to the response object to
+         * pass it to the next method - .endAuthentication()
+         * @type AuthTokenContent
+         * @inner
+         */
+        res.authentication_data = user
+
+        const app_domain_extraction_regexp =  /(?&lt;=(http|https):\/\/)(.*?)(?=\/)/
+
+        res.explicit_auth_cookie_domain = `.${app_domain_extraction_regexp.exec(req.cookies['redirect_uri'])[0]}`
+
+
+        /** calling .endAuthentication()
+         *  to generate and set auth cookie
+         * */
+        next()
+
+
+
+
+    } catch (e) {
+        error(`${req.originalUrl} err:`, e)
+        return res.json({status:codes.FAIL})
+    }
+}
+
+
+
+/**
+ * It generates link and redirects user's browser to oauth provider substituting oauth application credentials from config
+ * @see {@link module:http-server/config.GOOGLE_APP_ID}
+ * @path {GET} /api/oauth/generate-google-redirect
+ * @header {String} host a domain to generate the redirect_uri
+ * @code {302} Redirect to oAuth provider
+ * @query bind {Boolean=} if wanna bind an oauth id to existed account
+ */
+
+const generateGoogleRedirect = (req, res) => {
+
+    const redirect_uri = `http${process.env.NODE_ENV === 'production' ? 's' : ''}://${req.DOMAIN}/api/oauth/handle-google-redirect`
+
+    const url = `https://accounts.google.com/o/oauth2/auth?redirect_uri=${redirect_uri}&amp;` +
+        'response_type=code&amp;client_id=' + config.GOOGLE_APP_ID +
+        '&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%' +
+        '3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile' +
+        `&amp;access_type=offline${ req.query.bind ? '&amp;state=bind' : ''  }`
+
+    res.cookie('redirect_uri', redirect_uri, {domain: getAuthCookieDomain(req)})
+
+    return res.redirect(url)
+}
+
+/**
+ * It handles the redirect from oAuth provider,
+ * exchanges provided "code" to the access token and authenticates user
+ * using received access token
+ * @function handleGoogleRedirect
+ * @code {302} Redirect to /user (profile &amp;&amp; settings page)
+ * @path {GET} /api/oauth/handle-google-redirect
+ * @see {@link module:http-server/api/oAuth~generateGoogleRedirect}
+ * @query code {String} code to exchange it to the access token
+ * @query state {String} "bind" if we should bind account on oauth provider to the existed platform account
+ */
+
+const handleGoogleRedirect = async (req, res, next) => {
+
+    try {
+
+        /** no code provided */
+        if (!req.query.code) return res.redirect(config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL)
+
+        /**
+         * @inner
+         * @type Boolean */
+        const shouldBind = req.query.state === 'bind'
+
+        /** user is not authorized, but we need auth to make the bind */
+        if (shouldBind &amp;&amp; !req.account_data.user_id) {
+            return res.redirect(config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL + '?oauth_binding=Google&amp;result=forbidden')
+        }
+
+        const redirect_uri = req.cookies['redirect_uri']
+
+        const google_tokens_req_body = new URLSearchParams()
+        google_tokens_req_body .append('code', req.query.code)
+        google_tokens_req_body .append('client_id', config.GOOGLE_APP_ID)
+        google_tokens_req_body .append('client_secret', config.GOOGLE_APP_SECRET)
+        google_tokens_req_body .append('grant_type', 'authorization_code')
+        google_tokens_req_body .append('redirect_uri', redirect_uri)
+
+
+        /**
+         * @inner
+         * @type {Object}
+         * @property access_token {String}
+         * @property expires_in {Number} not in use
+         * @property refresh_token {String} not in user
+         * @property scope {String}
+         * @property token_type {String} always "Bearer"
+         * @property id_token {String} not in use
+         */
+        const google_tokens_request = await axios.post('https://accounts.google.com/o/oauth2/token',
+            google_tokens_req_body,
+            {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            }).then(res => res.data).catch(e => e)
+
+        /** tokens receiving failed */
+        if (!google_tokens_request.access_token || !google_tokens_request.id_token || google_tokens_request instanceof Error) {
+            console.error({google_tokens_request, google_tokens_req_body})
+            return res.redirect(config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL + `?oauth=google&amp;bind_mode=${shouldBind}&amp;result=fail`)
+        }
+
+        /**
+         *  @inner
+         *  @type {Object}
+         *  @property id {String} unique, in use to identify user
+         *  @property email {String}
+         *  @property verified_email {Boolean}
+         *  @property name {String} usable as username cause is .first_name concatenated with .last_name,
+         *  @property given_name {String} like .first_name,
+         *  @property family_name {String} like .last_name,
+         *  @property picture {String} letters in blue circle by default,
+         *  @property locale {String} ru|en|etc.
+         */
+        const fetched_user_data = await axios.get('https://www.googleapis.com/oauth2/v1/userinfo?alt=json', {
+            headers: {
+                Authorization: 'Bearer ' + google_tokens_request.access_token
+            }
+        }).then(res => res.data).catch(e => e)
+
+
+        /** error fetching data */
+        if (!fetched_user_data || !fetched_user_data.name || !fetched_user_data.id) {
+            error({fetched_user_data})
+            return res.redirect(config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL + `?oauth=google&amp;bind_mode=${shouldBind}&amp;result=fail`)
+        }
+
+        /**
+         * @inner
+         * @type {User|null}
+         * @desc result of search for this user in DB, may be null
+         */
+        let user =  await readUserData('google_id', fetched_user_data.id)
+
+
+        /** account already bound to some existed account, can not bind */
+        if (user &amp;&amp; shouldBind) return res.redirect(config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL + '?oauth_binding=Google&amp;result=exists')
+
+        if (!user &amp;&amp; shouldBind) {
+
+            /** adding fetched oauth provider id to user's account data */
+            const binding_result = await DB.query('UPDATE users SET google_id = $1 WHERE user_id = $2 AND google_id IS NULL', [fetched_user_data.id, req.account_data.user_id])
+
+            if (binding_result.rowCount === 0) {
+                return res.redirect(config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL + '?oauth_binding=Google&amp;result=error')
+            }
+
+            /** now it will get the user's account data by new oauth id
+             * to skip account creation (next if block)
+             * @inner
+             * @type {Object}
+             * @ignore
+             */
+            user = await readUserData('google_id', fetched_user_data.id)
+
+        }
+
+        /** new user, need to create an account */
+        if (!user) user = await createUser({
+            google_id: fetched_user_data.id,
+            /**
+             * @ignore
+             * @desc .default_avatar_id usage according the docs
+             * @link https://yandex.ru/dev/passport/doc/dg/reference/response-docpage/
+             */
+            avatar_link: fetched_user_data.picture,
+            email: fetched_user_data.email,
+            username: fetched_user_data.name,
+        }, req.affiliate_program_data)
+
+
+        /** saving user acc data to the response object to
+         * pass it to the next method - .endAuthentication()
+         * @inner
+         * @type {AuthTokenContent}
+         */
+        res.authentication_data = user
+
+        const app_domain_extraction_regexp =  /(?&lt;=(http|https):\/\/)(.*?)(?=\/)/
+
+        res.explicit_auth_cookie_domain = `.${app_domain_extraction_regexp.exec(req.cookies['redirect_uri'])[0]}`
+
+
+
+        /** calling .endAuthentication()
+         *  to generate and set auth cookie
+         * */
+        next()
+
+
+
+    } catch (e) {
+        error(`${req.originalUrl} err:`, e)
+        return res.json({status: codes.FAIL})
+    }
+
+}
+
+
+/**
+ * It generates link and redirects user's browser to oauth provider substituting oauth application credentials from config
+ * @see {@link module:http-server/config.YANDEX_APP_ID}
+ * @path {GET} /api/oauth/generate-yandex-redirect
+ * @header {String} host a domain to generate the redirect_uri
+ * @code {302} Redirect to oAuth provider
+ * @query bind {Boolean=} if wanna bind an oauth id to existed account
+ */
+const generateYandexRedirect = (req, res) => {
+
+    const redirect_uri = `http${process.env.NODE_ENV === 'production' ? 's' :  ''}://${req.DOMAIN}/api/oauth/handle-yandex-redirect`
+
+    const url = `https://oauth.yandex.ru/authorize?response_type=code&amp;client_id=${config.YANDEX_APP_ID}` +
+                `&amp;redirect_uri=${redirect_uri}${ req.query.bind ? '&amp;state=bind' : ''  }`
+
+    res.cookie('redirect_uri', redirect_uri, {domain: getAuthCookieDomain(req)})
+
+
+    return res.redirect(url)
+}
+
+/**
+ * It handles the redirect from oAuth provider,
+ * exchanges provided "code" to the access token and authenticates user
+ * using received access token
+ * @function handleYandexRedirect
+ * @code {302} Redirect to /user (profile &amp;&amp; settings page)
+ * @path {GET} /api/oauth/handle-yandex-redirect
+ * @see {@link module:http-server/api/oAuth~generateYandexRedirect}
+ * @query code {String} code to exchange it to the access token
+ * @query state {String} "bind" if we should bind account on oauth provider to the existed platform account
+ */
+const handleYandexRedirect = async (req, res, next) => {
+
+    try {
+
+        /** code from yandex */
+        const code = req.query.code
+
+        /** no code provided */
+        if (!req.query.code) return res.redirect(config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL)
+
+        /** @inner
+         * @type Boolean */
+        const shouldBind = req.query.state === 'bind'
+
+        /** user is not authorized, but we need auth to make the bind */
+        if (shouldBind &amp;&amp; !req.account_data.user_id) {
+            return res.redirect(config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL + '?oauth_binding=Яндекс&amp;result=forbidden')
+        }
+
+        /**
+         * Here we using the manual creating of the post request body,
+         * cause when we provide the js object as the axios.post() "data" arg,
+         * it will be encodes as json independently of provided "config.headers.Content-Type".
+         *
+         * We need to send a POST-req body in format "param1=val1&amp;param2=val2"
+         * instead of json ("{"param1": "val1", ...}"
+         * @inner
+         * @type {URLSearchParams}
+         * @link https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
+         */
+        const access_token_req_body = new URLSearchParams()
+        access_token_req_body.append('grant_type', 'authorization_code')
+        access_token_req_body.append('code', code)
+        access_token_req_body.append('client_id', config.YANDEX_APP_ID)
+        access_token_req_body.append('client_secret', config.YANDEX_APP_SECRET)
+
+
+        /**
+         * @inner
+         * @type {{
+         *      token_type: String,
+         *      access_token: String,
+         *      expires_in: Number,
+         *      refresh_token: String
+         * }}
+         *
+         */
+        const access_token_request = await axios.post('https://oauth.yandex.ru/token',
+            access_token_req_body,
+            {
+                headers: {
+                    'Accept': '*/*',
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Access-Control-Allow-Origin': '*',
+                    'User-Agent': '*'
+                }
+            }
+        ).then(res => res.data).catch(e => e)
+
+        /** smth went wrong, can no get token */
+        if (!access_token_request.access_token)  return res.redirect(config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL)
+
+
+        /**
+         * @inner
+         * @link https://yandex.ru/dev/passport/doc/dg/reference/response-docpage/
+         * @type {{
+         *         first_name: String,
+         *         last_name: String,
+         *         display_name: String,
+         *         emails: Array,
+         *         default_avatar_id: String,
+         *         default_email: String,
+         *         real_name: String,
+         *         is_avatar_empty: Boolean,
+         *         birthday: String,
+         *         client_id: String,
+         *         login: String,
+         *         sex: String,
+         *         id: String
+         *       }}
+         *
+         * @property sex {String} "female" or "male"
+         *
+         */
+        const fetched_user_data = await axios.get('https://login.yandex.ru/info?format=json' +
+            `&amp;oauth_token=${access_token_request.access_token}`).then(res => res.data).catch(e => e)
+
+        /** error fetching data */
+        if (!fetched_user_data || !fetched_user_data.login) return res.redirect(config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL)
+
+        /**
+         * result of search for this user in DB, may be null
+         * @type {Object|null}
+         * @inner
+         */
+        let user =  await readUserData('yandex_id', fetched_user_data.id)
+
+        /** account already bound to some existed account, can not bind */
+        if (user &amp;&amp; shouldBind) return res.redirect(config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL + '?oauth_binding=Яндекс&amp;result=exists')
+
+        if (!user &amp;&amp; shouldBind) {
+
+            /** adding fetched oauth provider id to user's account data */
+            const binding_result = await DB.query('UPDATE users SET yandex_id = $1 WHERE user_id = $2 AND yandex_id IS NULL', [fetched_user_data.id, req.account_data.user_id])
+
+            if (binding_result.rowCount === 0) {
+                return res.redirect(config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL + '?oauth_binding=Яндекс&amp;result=error')
+            }
+
+            /** now it will get the user's account data by new oauth id
+             * to skip account creation (next if block)
+             * @type {Object}
+             * @ignore
+             */
+            user = await readUserData('yandex_id', fetched_user_data.id)
+
+        }
+
+        /** new user, need to create an account */
+        if (!user) user = await createUser({
+            yandex_id: fetched_user_data.id,
+            /**
+             * .default_avatar_id usage according the docs
+             * @link https://yandex.ru/dev/passport/doc/dg/reference/response-docpage/
+             * @ignore
+             */
+            avatar_link: `https://avatars.yandex.net/get-yapic/${fetched_user_data.default_avatar_id}/islands-retina-50`,
+            email: fetched_user_data.default_email || fetched_user_data.emails ? fetched_user_data.emails[0] : null,
+            username: fetched_user_data.first_name + ' ' + fetched_user_data.last_name,
+        }, req.affiliate_program_data)
+
+
+        /** saving user acc data to the response object to
+         * pass it to the next method - .endAuthentication()
+         * @type AuthTokenContent
+         * @inner
+         */
+        res.authentication_data = user
+
+
+        /** calling .endAuthentication()
+         *  to generate and set auth cookie
+         * */
+        next()
+
+
+    } catch (e) {
+        error(`${req.originalUrl} err:`, e)
+        return res.json({status: codes.FAIL})
+    }
+}
+
+const generateSteamRedirect = async (req, res) => {
+
+    const open_id_return_url = `http${req.DOMAIN &amp;&amp; !req.DOMAIN.includes('localhost')  ? 's' : '' }://${req.DOMAIN}/api/oauth/handle-steam-redirect${req.query.bind === 'true' ? '-bind-mode' : ''}`
+
+    return res.redirect('https://steamcommunity.com/openid/login?' +
+            'openid.mode=checkid_setup' +
+            '&amp;openid.ns=http://specs.openid.net/auth/2.0' +
+            '&amp;openid.identity=http://specs.openid.net/auth/2.0/identifier_select' +
+            '&amp;openid.claimed_id=http://specs.openid.net/auth/2.0/identifier_select' +
+            `&amp;openid.return_to=${open_id_return_url}`
+    )
+}
+
+
+/** Utilities to implement the openid protocol via Steam as the provider */
+
+/**
+ * @desc It is in use when user tries to bind an openid provider account to an existed account in our service.
+ * It is necessary to have 2 instances of openid validators cause the OpenId spec. does not describe any 'state' field to
+ * pass the binding flag between the services.
+ * @type {OpenId.RelyingParty}
+ */
+
+const OPENID_INSTANCES = {}
+
+/**
+ *
+ * @param {String} return_url
+ * @returns {OpenId.RelyingParty}
+ */
+const getOpenIdInstanceByReturnUrl = (return_url) => {
+    if (!OPENID_INSTANCES[return_url.trim()]) {
+        OPENID_INSTANCES[return_url.trim()] = new OpenId.RelyingParty(
+            return_url.trim(),
+            null,
+            true,
+            true,
+            []
+        )
+    }
+
+    return OPENID_INSTANCES[return_url.trim()]
+}
+
+
+
+/**
+ * @type {steam}
+ */
+const steam_web_api = new SteamWebAPI({ apiKey: config.STEAM_API_KEY, format: 'json' })
+
+/**
+ * @type {RegExp}
+ */
+const steam_id_extraction_regexp = /^https?:\/\/steamcommunity\.com\/openid\/id\/(\d+)$/
+
+
+/**
+ * @desc This is the part of our implementation of OpenId protocol via Steam
+ * When steam redirects user to us we should validate the req params which contains the user data (steam id) and signature.
+ * After the validation we fetch the user data from steam and use it as it was received using the oauth protocol
+ * @param req {Express.request}
+ * @param res {Express.response}
+ * @param next {Express.next}
+ */
+const handleSteamRedirect = async (req, res, next) => {
+    try {
+
+        /** @inner
+         * @type Boolean */
+        const shouldBind = req._parsedUrl.pathname === '/handle-steam-redirect-bind-mode'
+
+        /** user is not authorized, but we need auth to make the bind */
+        if (shouldBind &amp;&amp; !req.account_data.user_id) {
+            return res.redirect(config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL + '?oauth_binding=Steam&amp;result=forbidden')
+        }
+
+        /** checking that the referer (.op_endpoint according the spec)
+         * param contains the steamcommunity.com domain
+         * */
+        const referer = req.query['openid.op_endpoint']
+
+        if (!referer || referer !== 'https://steamcommunity.com/openid/login') {
+            throw new Error(`Unknown referer`)
+        }
+        /** **/
+
+        /** Validation the request signature using 'openid' library
+         * and getting the link to user's steam account
+         * */
+        const steam_account_link = await new Promise(((resolve, reject) => {
+
+            const open_id_return_url = req.query['openid.return_to']
+
+
+            getOpenIdInstanceByReturnUrl(open_id_return_url).verifyAssertion(req, (err, result) => {
+
+
+                if (err) {
+                    return reject(err)
+                }
+
+                if (!result || !result.authenticated) {
+                    return reject ({err, result})
+                }
+
+                return resolve(result.claimedIdentifier)
+
+            })
+        }))
+
+        if (!steam_id_extraction_regexp.test(steam_account_link)) {
+            throw new Error(`Invalid steam account link`)
+        }
+
+        /** **/
+
+
+        /**
+         * extracted steam_id
+         * @ignore
+         * @type {string}
+         */
+        const steam_id = steam_id_extraction_regexp.exec(steam_account_link)[0]
+
+
+        /**
+         * User profile info returned from steam
+         * @type {{
+         *      steamid: String,
+         *      communityvisibilitystate: Number,
+         *      profilestate: Number,
+         *      personaname: String,
+         *      profileurl: String,
+         *      avatar: String,
+         *      avatarmedium: String,
+         *      avatarfull: String,
+         *      avatarhash: String,
+         *      personastate: Number,
+         *      primaryclanid: String,
+         *      timecreated: Number,
+         *      personastateflags: Number
+         * }}
+         */
+        const fetched_user_data = await new Promise((resolve, reject) => {
+            steam_web_api.getPlayerSummaries({steamids: [steam_id], callback: function (err, data) {
+                if (err) return reject(err)
+                return resolve(data.response.players[0])
+            }})
+        })
+
+
+        if (!fetched_user_data || !fetched_user_data.steamid || !fetched_user_data.personaname) {
+            return res.redirect(config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL)
+        }
+
+
+        /**
+         * result of search for this user in DB, may be null
+         * @type {Object|null}
+         * @inner
+         */
+        let user =  await readUserData('steam_id', fetched_user_data.steamid)
+
+
+
+        /** account already bound to some existed account, can not bind */
+        if (user &amp;&amp; shouldBind) return res.redirect(config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL + '?oauth_binding=Steam&amp;result=exists')
+
+
+        /** account with provided .steam_id not found, we're ready to bind this .steam_id to current (authorized) account */
+        if (!user &amp;&amp; shouldBind) {
+
+            /** adding fetched oauth provider id to user's account data */
+            const binding_result = await DB.query('UPDATE users SET steam_id = $1, avatar_link = $2 WHERE user_id = $3 AND steam_id IS NULL', [
+                fetched_user_data.steamid,
+                fetched_user_data.avatar,
+                req.account_data.user_id
+            ])
+
+            if (binding_result.rowCount === 0) {
+                return res.redirect(config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL + '?oauth_binding=Steam&amp;result=error')
+            }
+
+            /** now it will get the user's account data by new oauth id
+             * to skip account creation (next if block)
+             * @type {Object}
+             * @ignore
+             */
+            user = await readUserData('steam_id', fetched_user_data.steamid)
+
+        }
+
+
+
+        /** new user, need to create an account */
+        if (!user) user = await createUser({
+            steam_id: fetched_user_data.steamid,
+            /**
+             * .default_avatar_id usage according the docs
+             * @link https://yandex.ru/dev/passport/doc/dg/reference/response-docpage/
+             * @ignore
+             */
+            avatar_link: fetched_user_data.avatar,
+            email: null,
+            username: fetched_user_data.personaname,
+        }, req.affiliate_program_data)
+
+
+        /** saving user acc data to the response object to
+         * pass it to the next method - .endAuthentication()
+         * @type AuthTokenContent
+         * @inner
+         */
+        res.authentication_data = user
+
+        /** now he have the authenticated user and are ready to set
+         * the auth cookie. But user is redirected from the steamcommunity domain
+         * and we can not use req.referer to get the current domain of our app.
+         * But the field req.query['openid.return_to'] contains it =)
+         */
+        const app_domain_extraction_regexp =  /(?&lt;=(http|https):\/\/)(.*?)(?=\/)/
+
+        res.explicit_auth_cookie_domain = `.${app_domain_extraction_regexp.exec(req.query['openid.return_to'])[0]}`
+
+
+        /** calling .endAuthentication()
+         *  to generate and set auth cookie
+         * */
+        next()
+
+    } catch (e) {
+        error(`/api/oauth/handle-steam-redirect err:`, e)
+        return res.redirect(config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL)
+    }
+
+}
+
+/**
+ *
+ * @param oauth_provider_id_field_name {String} name of the field in table "users", like "google_id"
+ * @param user_id_in_oauth_app {String} unique id in this field to identify the current user
+ * @returns {AuthTokenContent|Null}
+ */
+const readUserData = async (oauth_provider_id_field_name, user_id_in_oauth_app) => {
+
+    try {
+
+        const user = await DB.query(`SELECT user_id, username, email, permissions, admin_permissions_scope, avatar_link FROM users WHERE (${oauth_provider_id_field_name} = $1)`,
+            [user_id_in_oauth_app])
+            .then(res => res.rows[0])
+
+        return user || null
+
+    } catch (e) {
+        error('api/oauth.readUserData err:', e)
+    }
+}
+
+/**
+ *
+ * @param data {Object}
+ * @param affiliate_program_data {{
+ *     affiliate_id: String,
+ *     affiliate_tariff_id: String
+ * }}
+ * @property username {String}
+ * @property email {String=}
+ * @property vk_id {String=}
+ * @property yandex_id {String=}
+ * @property google_id {String=}
+ * @property avatar_link {String=} avatar url fetched from oauth-provider network account data
+ * @returns {Promise&lt;{AuthTokenContent}|null>}
+ */
+const createUser = async (data, affiliate_program_data) => {
+    try {
+
+        /** will be recalled after username update if it already exists */
+        const tryToInsert = async () => {
+            return await DB.query('INSERT INTO users (created_at, username, email, google_id, vk_id, yandex_id, steam_id, permissions, avatar_link) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)',
+                [new Date(), unique_username, unique_email, data.google_id, data.vk_id,  data.yandex_id, data.steam_id, USER_PERMISSIONS, data.avatar_link])
+        }
+
+        /** numeric index to add to username if it exists */
+        let counter = 0
+
+        /** we use comma to parse mentions in chat messages, so the usernames with comma are prohibited */
+        let unique_username = data.username.replace(/,/g, '')
+
+        let unique_email = data.email
+
+        let inserted = false
+
+        while (!inserted) {
+            try {
+                await tryToInsert()
+                inserted = true
+            } catch (e) {
+                if (e.constraint === 'users_username_key') {
+                    counter++
+                    unique_username = `${data.username} (${counter})`
+                    /** incrementing additional index for username
+                     * for e.x. "Name Surname (1)", "Name Surname (2)"
+                     * next try, continue */
+                } else if (e.constraint === 'users_email_key') {
+                    /** in case when another account with this email
+                     *  is already registered, we'll just don't save
+                     *  the email received from the oauth provider
+                     *  @ignore
+                     * */
+                    unique_email = null
+                    /** continue */
+                } else {
+                    throw e
+                }
+            }
+        }
+
+
+        const user = await DB.query('SELECT user_id, username, permissions, admin_permissions_scope, avatar_link, email FROM users WHERE (username = $1)', [data.username])
+            .then(res => res.rows[0])
+
+        if (affiliate_program_data.affiliate_id) {
+            bindUserToAffiliate({
+                user_id: user.user_id,
+                ...affiliate_program_data
+            })
+        }
+
+        return user
+
+    } catch (e) {
+        error('api/oauth.createUser err:', e)
+        throw e
+    }
+}
+
+
+
+/**
+ * The end of user creating / recognizing pipeline,
+ * packing data from the res object to jwt, setting it
+ * as an auth cookie and redirect. During binding it is also
+ * needed because we store user's id's in oauth providers networks
+ * in auth token to have cheap access
+ *
+ * It uses data from res.authentication_data (type {@link AuthTokenContent})
+ * to pack it into the authentication token
+ * @function endAuthentication
+ * @path {GET} /api/oauth/handle-***-redirect
+ * @query state {String} if 'bind', we should redirect at end with some result status in query
+ */
+const endAuthentication = async (req, res) => {
+    try {
+
+        if (!res.authentication_data) return res.json({status: codes.FAIL})
+
+        const encrypted_jwt = await issueJWTToken(res.authentication_data)
+
+
+        setAuthCookie(req, res, encrypted_jwt, res.explicit_auth_cookie_domain ? res.explicit_auth_cookie_domain : null)
+
+        /**
+         * returning user to the main page
+         */
+        return res.redirect(config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL + (req.query.bind ? '?oauth_binding=true&amp;result=done' : '') )
+
+
+    } catch (e) {
+        error(`${req.originalUrl} err:`, e)
+        return res.json({status: codes.FAIL})
+    }
+}
+
+
+
+
+router.get('/generate-vk-redirect', generateVKRedirect)
+router.get('/generate-yandex-redirect', generateYandexRedirect)
+router.get('/generate-google-redirect', generateGoogleRedirect)
+router.get('/generate-steam-redirect', generateSteamRedirect)
+
+router.get('/handle-vk-redirect', parseAffiliateProgramCookies, handleVKRedirect, endAuthentication)
+router.get('/handle-yandex-redirect', parseAffiliateProgramCookies, handleYandexRedirect, endAuthentication)
+router.get('/handle-google-redirect', parseAffiliateProgramCookies, handleGoogleRedirect, endAuthentication)
+router.get('/handle-steam-redirect(-bind-mode)?', parseAffiliateProgramCookies, handleSteamRedirect, endAuthentication)
+
+
+
+// todo: remove unused fields from auth token
+
+
+module.exports = router
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.5</a> on Mon Feb 08 2021 15:54:23 GMT+0300 (Moscow Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

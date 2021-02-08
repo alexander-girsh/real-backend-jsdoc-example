@@ -29,7 +29,7 @@
     
     <input type="text" id="nav-search" placeholder="Search" />
     
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Payments.html">Payments</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Payments.html#depositRules">depositRules</a></li><li data-type='method' style='display: none;'><a href="module-Payments.html#generateDepositRedirect">generateDepositRedirect</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#KNOWN_ACQUIRING_SYSTEMS">KNOWN_ACQUIRING_SYSTEMS</a></li><li><a href="global.html#PAYMENT_METHOD_KINDS">PAYMENT_METHOD_KINDS</a></li><li><a href="global.html#PAYMENT_METHOD_ICON_NAMES">PAYMENT_METHOD_ICON_NAMES</a></li><li><a href="global.html#PaymentMethod">PaymentMethod</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Games.html">Games</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Games.html#playingHistory">playingHistory</a></li><li data-type='method' style='display: none;'><a href="module-Games.html#playingStats">playingStats</a></li></ul></li><li><a href="module-Inventory.html">Inventory</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Inventory.html#itemsList">itemsList</a></li></ul></li><li><a href="module-oAuth.html">oAuth</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-oAuth.html#generateVKRedirect">generateVKRedirect</a></li><li data-type='method' style='display: none;'><a href="module-oAuth.html#generateGoogleRedirect">generateGoogleRedirect</a></li><li data-type='method' style='display: none;'><a href="module-oAuth.html#generateYandexRedirect">generateYandexRedirect</a></li><li data-type='method' style='display: none;'><a href="module-oAuth.html#generateSteamRedirect">generateSteamRedirect</a></li></ul></li><li><a href="module-Payments.html">Payments</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Payments.html#depositRules">depositRules</a></li><li data-type='method' style='display: none;'><a href="module-Payments.html#generateDepositRedirect">generateDepositRedirect</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -95,7 +95,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="types.js.html">types.js</a>, <a href="types.js.html#line76">line 76</a>
+        <a href="payments.js.html">payments.js</a>, <a href="payments.js.html#line71">line 71</a>
     </li></ul></dd>
     
 
@@ -192,6 +192,31 @@
             <td class="description last">if internal error</td>
           </tr>
           </table>
+                            <h5>Response Code:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            
+            <td class="type">403</td>
+            
+            
+            <td class="description last">if user is not authorized and access denied</td>
+          </tr><tr>
+            
+            <td class="type">200</td>
+            
+            
+            <td class="description last">in all other cases</td>
+          </tr>
+          </table>
 </div>
 
 
@@ -238,7 +263,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="types.js.html">types.js</a>, <a href="types.js.html#line92">line 92</a>
+        <a href="payments.js.html">payments.js</a>, <a href="payments.js.html#line89">line 89</a>
     </li></ul></dd>
     
 
@@ -415,6 +440,31 @@ is required if .phone_number_input is listed into the PaymentMethod.requirements
             <td class="description last">if internal error</td>
           </tr>
           </table>
+                            <h5>Response Code:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            
+            <td class="type">403</td>
+            
+            
+            <td class="description last">if user is not authorized and access denied</td>
+          </tr><tr>
+            
+            <td class="type">200</td>
+            
+            
+            <td class="description last">in all other cases</td>
+          </tr>
+          </table>
 </div>
 
 
@@ -448,6 +498,1401 @@ is required if .phone_number_input is listed into the PaymentMethod.requirements
     
 
     
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        
+                
+<h4 class="name" id="~KNOWN_ACQUIRING_SYSTEMS">KNOWN_ACQUIRING_SYSTEMS</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="payments.js.html">payments.js</a>, <a href="payments.js.html#line6">line 6</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>FREE_KASSA</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>GAME_MONEY</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>SKINSBACK</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>FAKE_DEPOSITS</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>ENUM, Payments providers which who we work now</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="~PAYMENT_METHOD_KINDS">PAYMENT_METHOD_KINDS</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="payments.js.html">payments.js</a>, <a href="payments.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>BANK_CARDS_AND_EPS</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>SPECIFIC_BANKS</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>MOBILE_PHONE_ACCOUNTS</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>STEAM_ITEMS</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>CRYPTOCURRENCIES</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>ENUM, UI tabulation helper</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="~PAYMENT_METHOD_ICON_NAMES">PAYMENT_METHOD_ICON_NAMES</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="payments.js.html">payments.js</a>, <a href="payments.js.html#line30">line 30</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>TELE2_LOGO</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ETHEREUM_LOGO</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>BITCOIN_LOGO</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>WEBMONEY_WME</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>SKINSBACK_LOGO</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>QIWI_LOGO</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>MTS_LOGO</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>WEBMONEY_WMZ</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>SBERBANK_LOGO</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>SKINPAY_LOGO</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>BEELINE_LOGO</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>MEGAFON_LOGO</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ALFABANK_LOGO</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>CARD</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>YOOMONEY_LOGO</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>ENUM, UI icon selections helper</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="~PaymentMethod">PaymentMethod</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="payments.js.html">payments.js</a>, <a href="payments.js.html#line51">line 51</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>created_at</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Date</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>system info</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>payment_method_name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>name on our platform</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>payment_method_icon_name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">PAYMENT_METHOD_ICON_NAMES</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>name of icon for UI. It is needed because the payment_method_name is not the payment system identifier.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>payment_method_name_in_acquiring_system</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>system info</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>payment_method_kind</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">PAYMENT_METHOD_KINDS</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>UI tabulation helper</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>acquiring_system</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">KNOWN_ACQUIRING_SYSTEMS</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>system info</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>active</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>It will be unable to process the request. may be helpful if u wanna show the disabled methods in UI</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>requirements</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>amount_rur_input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>you should pass .amount_rur doing the request</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>phone_number_input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>you should pass .phone doing the request</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>steam_id_existence</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>user's steam account should be bound to the account on our platform before using this payment method</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>steam_trade_url_existence</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>user should add .steam_trade_url to their profile data before using this payment method</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>limits</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>min_deposit_amount_rur</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+|
+
+<span class="param-type">Null</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>will contain NULL if no lower limit exists</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>max_deposit_amount_rur</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+|
+
+<span class="param-type">Null</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>will contain NULL if no upper limit exists</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+    
 
     
 </article>
@@ -464,7 +1909,7 @@ is required if .phone_number_input is listed into the PaymentMethod.requirements
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Sat Jan 30 2021 00:13:31 GMT+0300 (Moscow Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.5</a> on Mon Feb 08 2021 16:39:53 GMT+0300 (Moscow Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

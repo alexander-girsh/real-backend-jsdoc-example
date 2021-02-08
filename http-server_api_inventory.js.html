@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>http-server/api/inventory.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="OutgoingMessage.html">OutgoingMessage</a></li><li><a href="Game.html">Game</a></li><li><a href="CrashGame.html">CrashGame</a><ul class='members'><li data-type='member' style='display: none;'><a href="CrashGame.html#.CrashGame">CrashGame</a></li><li data-type='member' style='display: none;'><a href="CrashGame.html#.CrashGame">CrashGame</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="CrashGame.html#publishUpdatedPlayer">publishUpdatedPlayer</a></li><li data-type='method' style='display: none;'><a href="CrashGame.html#handleManualOutDirectives">handleManualOutDirectives</a></li><li data-type='method' style='display: none;'><a href="CrashGame.html#autoOutPlayers">autoOutPlayers</a></li><li data-type='method' style='display: none;'><a href="CrashGame.html#outRemainingPlayers">outRemainingPlayers</a></li><li data-type='method' style='display: none;'><a href="CrashGame.html#outPlayers">outPlayers</a></li></ul></li><li><a href="CrashGameDBTransaction.html">CrashGameDBTransaction</a><ul class='methods'><li data-type='method' style='display: none;'><a href="CrashGameDBTransaction.html#.start">start</a></li><li data-type='method' style='display: none;'><a href="CrashGameDBTransaction.html#createSavePoint">createSavePoint</a></li><li data-type='method' style='display: none;'><a href="CrashGameDBTransaction.html#rollbackToSavePoint">rollbackToSavePoint</a></li></ul></li><li><a href="GameWin.html">GameWin</a><ul class='methods'><li data-type='method' style='display: none;'><a href="GameWin.html#.create">create</a></li><li data-type='method' style='display: none;'><a href="GameWin.html#.calcWonAmount">calcWonAmount</a></li></ul></li><li><a href="SteamItem.html">SteamItem</a><ul class='methods'><li data-type='method' style='display: none;'><a href="SteamItem.html#.fromObject">fromObject</a></li></ul></li><li><a href="module-Games-Game.html">Game</a></li><li><a href="module-Games-SteamItem.html">SteamItem</a></li><li><a href="module-Games-InventoryItem.html">InventoryItem</a></li><li><a href="module-Games-GameWin.html">GameWin</a></li><li><a href="module-Games-GameBet.html">GameBet</a></li><li><a href="module-Games-User.html">User</a></li><li><a href="module-Games-Player.html">Player</a></li></ul><h3>Modules</h3><ul><li><a href="module-access_config.html">access/config</a></li><li><a href="module-access.html">access</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-access.html#~encryptString">encryptString</a></li><li data-type='method' style='display: none;'><a href="module-access.html#.decryptString">decryptString</a></li><li data-type='method' style='display: none;'><a href="module-access.html#~issueJWTToken">issueJWTToken</a></li></ul></li><li><a href="module-broadcasting-server_config.html">broadcasting-server/config</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-broadcasting-server_config.html#.PORT">PORT</a></li></ul></li><li><a href="module-ws-server_ws-clients.html">ws-server/ws-clients</a></li><li><a href="module-database_config.html">database/config</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-database_config.html#.RECONNECTION_ATTEMPTS">RECONNECTION_ATTEMPTS</a></li><li data-type='member' style='display: none;'><a href="module-database_config.html#.RECONNECTION_DELAY">RECONNECTION_DELAY</a></li><li data-type='member' style='display: none;'><a href="module-database_config.html#.DB_CONNECTION_URL">DB_CONNECTION_URL</a></li><li data-type='member' style='display: none;'><a href="module-database_config.html#.DB_TRANSACTIONS_RETRIES_LIMIT">DB_TRANSACTIONS_RETRIES_LIMIT</a></li><li data-type='member' style='display: none;'><a href="module-database_config.html#.PG_POOL_QUERIES_VERBOSE_MODE">PG_POOL_QUERIES_VERBOSE_MODE</a></li></ul></li><li><a href="module-database_connection.html">database/connection</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-database_connection.html#~onClientConnected">onClientConnected</a></li><li data-type='method' style='display: none;'><a href="module-database_connection.html#~reconnect">reconnect</a></li><li data-type='method' style='display: none;'><a href="module-database_connection.html#~createNewClient">createNewClient</a></li><li data-type='method' style='display: none;'><a href="module-database_connection.html#~execRepeatableTransaction">execRepeatableTransaction</a></li></ul></li><li><a href="module-http-server_api_accounts.html">http-server/api/accounts</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~createLocal">createLocal</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~authenticateLocal">authenticateLocal</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~initEmailConfirmation">initEmailConfirmation</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~confirmEmailWithCode">confirmEmailWithCode</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~sendPasswordRecoveryCode">sendPasswordRecoveryCode</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~checkPasswordRecoveryCode">checkPasswordRecoveryCode</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~issueNewPassword">issueNewPassword</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~logout">logout</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~getAccountData">getAccountData</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~list">list</a></li></ul></li><li><a href="module-http-server_api_oAuth.html">http-server/api/oAuth</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~generateVKRedirect">generateVKRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~handleVKRedirect">handleVKRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~generateGoogleRedirect">generateGoogleRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~handleGoogleRedirect">handleGoogleRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~generateYandexRedirect">generateYandexRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~handleYandexRedirect">handleYandexRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~getOpenIdInstanceByReturnUrl">getOpenIdInstanceByReturnUrl</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~handleSteamRedirect">handleSteamRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~readUserData">readUserData</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~createUser">createUser</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~endAuthentication">endAuthentication</a></li></ul></li><li><a href="module-http-server_api_payments_freekassa.html">http-server/api/payments/freekassa</a></li><li><a href="module-http-server_api_payments_gamemoney.html">http-server/api/payments/gamemoney</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_api_payments_gamemoney.html#~handleDepositHook">handleDepositHook</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_payments_gamemoney.html#~handleDepositHook">handleDepositHook</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_payments_gamemoney.html#~generateDepositRedirectSignature">generateDepositRedirectSignature</a></li></ul></li><li><a href="module-http-server_api_payments.html">http-server/api/payments</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_api_payments.html#~depositRules">depositRules</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_payments.html#~generateDepositRedirect">generateDepositRedirect</a></li></ul></li><li><a href="module-http-server_config.html">http-server/config</a></li><li><a href="module-http-server.html">http-server</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-http-server.html#.API">API</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server.html#~startServe">startServe</a></li><li data-type='method' style='display: none;'><a href="module-http-server.html#~shutDown">shutDown</a></li></ul></li><li><a href="module-http-server_middleware_access.html">http-server/middleware/access</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~setAuthCookie">setAuthCookie</a></li><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~removeAuthCookie">removeAuthCookie</a></li><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~addAuthorizationDataToRequest">addAuthorizationDataToRequest</a></li><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~accessUser">accessUser</a></li><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~accessAdmin">accessAdmin</a></li></ul></li><li><a href="module-http-server_gamemoney-lib.html">http-server/gamemoney-lib</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~generateHmacSignature">generateHmacSignature</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~verifyRequestRsaSignature">verifyRequestRsaSignature</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~createDeposit">createDeposit</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~updateDepositStatus">updateDepositStatus</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~handleDepositHook">handleDepositHook</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~generateDepositRedirectUrl">generateDepositRedirectUrl</a></li></ul></li><li><a href="module-http-server_health-check.html">http-server/health-check</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#~bytesToMb">bytesToMb</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#~memoryUsageInMb">memoryUsageInMb</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#~updateState">updateState</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#~getState">getState</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#.httpMiddleware">httpMiddleware</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#.httpEndpoint">httpEndpoint</a></li></ul></li><li><a href="module-http-server_mailer.html">http-server/mailer</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_mailer.html#~sendMail">sendMail</a></li></ul></li><li><a href="module-http-server_plugins_withdrawals_approval.html">http-server/plugins/withdrawals/approval</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_plugins_withdrawals_approval.html#~checkForWithdrawalsBlockers">checkForWithdrawalsBlockers</a></li></ul></li><li><a href="module-http-server_lib.html">http-server/lib</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~freezeObjectDeep">freezeObjectDeep</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~bytesSizeOfObject">bytesSizeOfObject</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~asyncInterval">asyncInterval</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~delay">delay</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~bytesToMb">bytesToMb</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~memoryUsageInMb">memoryUsageInMb</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~compareDeep">compareDeep</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~generateRandomString">generateRandomString</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~minMax">minMax</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~shuffleArray">shuffleArray</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~toFixedPrecisionFloat">toFixedPrecisionFloat</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~to2DigitsPrecisionFloat">to2DigitsPrecisionFloat</a></li></ul></li><li><a href="module-logger.html">logger</a></li><li><a href="module-redis-connection_config.html">redis-connection/config</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-redis-connection_config.html#.REDIS_HOST">REDIS_HOST</a></li><li data-type='member' style='display: none;'><a href="module-redis-connection_config.html#.REDIS_PORT">REDIS_PORT</a></li></ul></li><li><a href="module-Games.html">Games</a></li></ul><h3>Global</h3><ul><li><a href="global.html#createLocalAccount">createLocalAccount</a></li><li><a href="global.html#authenticateLocalAccount">authenticateLocalAccount</a></li><li><a href="global.html#fetchAccountData">fetchAccountData</a></li><li><a href="global.html#createAxiosInstance">createAxiosInstance</a></li><li><a href="global.html#createAuthInfrastructure">createAuthInfrastructure</a></li><li><a href="global.html#createWebsocketConnection">createWebsocketConnection</a></li><li><a href="global.html#socketCookieParser">socketCookieParser</a></li><li><a href="global.html#authCookieParser">authCookieParser</a></li><li><a href="global.html#hasAccessUser">hasAccessUser</a></li><li><a href="global.html#hasAccessAdmin">hasAccessAdmin</a></li><li><a href="global.html#util">util</a></li><li><a href="global.html#isMainBroadcastingServer">isMainBroadcastingServer</a></li><li><a href="global.html#MIN_WON_INVENTORY_ITEM_SPAWN_PRICE_USD">MIN_WON_INVENTORY_ITEM_SPAWN_PRICE_USD</a></li><li><a href="global.html#BETTING_PERIOD_MS">BETTING_PERIOD_MS</a></li><li><a href="global.html#COMPLETED_PERIOD_MS">COMPLETED_PERIOD_MS</a></li><li><a href="global.html#CRASH_GAME_FRAMES_DELAY_MS">CRASH_GAME_FRAMES_DELAY_MS</a></li><li><a href="global.html#GAME_LOOP_DELAY_AFTER_ERROR_MS">GAME_LOOP_DELAY_AFTER_ERROR_MS</a></li><li><a href="global.html#%2522your-256-bit-secret%2522">"your-256-bit-secret"</a></li><li><a href="global.html#CURRENT_GAME">CURRENT_GAME</a></li><li><a href="global.html#generateFinalMultipliersGroup">generateFinalMultipliersGroup</a></li><li><a href="global.html#activateFinalMultipliersGroup">activateFinalMultipliersGroup</a></li><li><a href="global.html#generateDepositRedirect">generateDepositRedirect</a></li><li><a href="global.html#list">list</a></li><li><a href="global.html#Accounts">Accounts</a></li><li><a href="global.html#performInventoryItemWithdrawalStatusUpdateNotificationForUser">performInventoryItemWithdrawalStatusUpdateNotificationForUser</a></li><li><a href="global.html#itemsList">itemsList</a></li><li><a href="global.html#fileParser">fileParser</a></li><li><a href="global.html#CONTENT_TYPES%255Bundefined%255D">CONTENT_TYPES[undefined]</a></li><li><a href="global.html#STEAM_ITEM_ICON_URL_HASHES_CACHE%255Bundefined%255D">STEAM_ITEM_ICON_URL_HASHES_CACHE[undefined]</a></li><li><a href="global.html#freekassaIPVerificationMiddleware">freekassaIPVerificationMiddleware</a></li><li><a href="global.html#freekassaHookSignatureVerificationMiddleware">freekassaHookSignatureVerificationMiddleware</a></li><li><a href="global.html#gamemoneyIPVerificationMiddleware">gamemoneyIPVerificationMiddleware</a></li><li><a href="global.html#gamemoneyHookSignatureVerificationMiddleware">gamemoneyHookSignatureVerificationMiddleware</a></li><li><a href="global.html#skinsBackIPVerificationMiddleware">skinsBackIPVerificationMiddleware</a></li><li><a href="global.html#skinsBackHookSignatureVerificationMiddleware">skinsBackHookSignatureVerificationMiddleware</a></li><li><a href="global.html#unitpayIPVerificationMiddleware">unitpayIPVerificationMiddleware</a></li><li><a href="global.html#unitpayHookSignatureVerificationMiddleware">unitpayHookSignatureVerificationMiddleware</a></li><li><a href="global.html#affiliateExists">affiliateExists</a></li><li><a href="global.html#getAffiliate">getAffiliate</a></li><li><a href="global.html#createNewAffiliate">createNewAffiliate</a></li><li><a href="global.html#performRevshareAccrual">performRevshareAccrual</a></li><li><a href="global.html#createDefaultTariff">createDefaultTariff</a></li><li><a href="global.html#getValidMatchingTariff">getValidMatchingTariff</a></li><li><a href="global.html#MENTION_SUGGESTIONS">MENTION_SUGGESTIONS</a></li><li><a href="global.html#searchMentionedUsers">searchMentionedUsers</a></li><li><a href="global.html#filterProhibitedWords">filterProhibitedWords</a></li><li><a href="global.html#EMOJIS_LIST">EMOJIS_LIST</a></li><li><a href="global.html#generateDepositRedirectUrl">generateDepositRedirectUrl</a></li><li><a href="global.html#handleNewPromocodeActivation">handleNewPromocodeActivation</a></li><li><a href="global.html#handleNewCompletedDeposit">handleNewCompletedDeposit</a></li><li><a href="global.html#generateSignature">generateSignature</a></li><li><a href="global.html#verifyHookSignature">verifyHookSignature</a></li><li><a href="global.html#createOrReplaceDeposit">createOrReplaceDeposit</a></li><li><a href="global.html#Status">Status</a></li><li><a href="global.html#createConnection">createConnection</a></li><li><a href="global.html#getConnection">getConnection</a></li><li><a href="global.html#KNOWN_ACQUIRING_SYSTEMS">KNOWN_ACQUIRING_SYSTEMS</a></li><li><a href="global.html#PAYMENT_METHOD_KINDS">PAYMENT_METHOD_KINDS</a></li><li><a href="global.html#PAYMENT_METHOD_ICON_NAMES">PAYMENT_METHOD_ICON_NAMES</a></li><li><a href="global.html#PaymentMethod">PaymentMethod</a></li><li><a href="global.html#depositRules">depositRules</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">http-server/api/inventory.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const express = require( 'express')
+const {accessUser, accessAdmin} = require( '../middleware/access.js')
+const {codes} = require( 'status-codes')
+const {DB, execRepeatableTransaction} = require( '../../database/connection.js')
+const {error, info} = require( '../../logger/index.js')
+const {nats} = require( 'nats-connection/index.cjs')
+const {checkForWithdrawalsBlockers} = require('../plugins/withdrawals/approval.js')
+
+const router = express.Router()
+
+
+/** updating state based on nats events from steam-integration-service which proceeds the withdrawals */
+
+
+
+
+nats.subscribe('BACKEND.INVENTORY.ITEMS.WITHDRAWALS.UPDATE', async ({inventory_item, withdrawal_attempt}, reply) => {
+
+    /**
+     *
+     * messages example
+     * {
+  msg: {
+    inventory_item: {
+      inventory_item_id: '168717',
+      user_id: '1',
+      status: 'WITHDRAW_PROCESSING'
+    },
+    withdrawal_attempt: {
+      withdrawal_attempt_id: '36',
+      status: 'IN_PROGRESS',
+      purchase_status: 'CREATING_TRADE'
+    }
+  }
+}
+     {
+  msg: {
+    inventory_item: {
+      inventory_item_id: '168717',
+      user_id: '1',
+      status: 'AWAITING_WITHDRAW_CONFIRMATION'
+    },
+    withdrawal_attempt: {
+      withdrawal_attempt_id: '36',
+      status: 'IN_PROGRESS',
+      purchase_status: 'WAITING_ACCEPT',
+      steam_trade_id: '4355336606'
+    }
+  }
+}
+
+     */
+
+
+    try {
+
+        info({inventory_item, withdrawal_attempt})
+
+        performInventoryItemWithdrawStateUpdateBroadcastingForAdmins(inventory_item)
+
+
+        const user_notification_type = (() => {
+            if (withdrawal_attempt.status === 'IN_PROGRESS' &amp;&amp; withdrawal_attempt.purchase_status === 'WAITING_ACCEPT') {
+                return 'INVENTORY_ITEM_WITHDRAWAL_IS_WAITING_ACCEPT'
+            } else if (withdrawal_attempt.status === 'COMPLETED') {
+                return 'INVENTORY_ITEM_WITHDRAWAL_COMPLETED'
+            } else if (withdrawal_attempt.status === 'FAILED') {
+                return 'INVENTORY_ITEM_WITHDRAWAL_FAILED'
+            } else {
+                return null
+            }
+        })()
+
+        info({user_notification_type})
+
+        performInventoryItemWithdrawalStatusUpdateNotificationForUser({
+            notification_type: user_notification_type,
+            inventory_item_id: inventory_item.inventory_item_id,
+            withdrawal_attempt_id: withdrawal_attempt &amp;&amp; withdrawal_attempt.withdrawal_attempt_id ? withdrawal_attempt.withdrawal_attempt_id : null,
+            steam_trade_id: withdrawal_attempt &amp;&amp; withdrawal_attempt.steam_trade_id ? withdrawal_attempt.steam_trade_id : null,
+        })
+
+        return nats.publish(reply, {status: codes.OK})
+
+    } catch (e) {
+        error('inventory/PERSONAL.INVENTORY.ITEMS.UPDATE subscriber err:', e)
+        return {status: codes.FAIL}
+    }
+})
+
+
+
+
+
+
+/** ************** */
+
+
+/** client/server state sync procedures (broadcasting, notifications etc.) */
+const performInventoryItemWithdrawalStatusUpdateNotificationForUser = async ({notification_type, inventory_item_id, withdrawal_attempt_id = null, steam_trade_id = null}) => {
+    try {
+
+        console.log({notification_type, inventory_item_id, withdrawal_attempt_id})
+
+        let inventory_item
+
+        if (notification_type) {
+
+            const notification = await DB.query(`
+        WITH target_inventory_items AS (
+            SELECT si.name_ru, si.steam_app_name, ii.inventory_item_id, ii.market_hash_name, ii.status, ii.user_id
+                    FROM inventory_items ii
+                        LEFT JOIN steam_items si
+                            ON (ii.market_hash_name = si.market_hash_name)
+            WHERE (ii.inventory_item_id = $2)
+        ),
+        inserted_notifications AS (
+           INSERT INTO notifications (notification_type, user_id, inventory_item_id, inventory_item_withdrawal_attempt_id)
+                VALUES ($1, (SELECT user_id FROM inventory_items WHERE inventory_item_id = $2), $2, $3)
+                RETURNING *
+        )
+            SELECT i_n.*,
+                    (SELECT row_to_json(tii) FROM target_inventory_items tii) AS inventory_item,
+                    (SELECT row_to_json(iiwa) FROM inventory_item_withdrawal_attempts iiwa WHERE id = $3) AS inventory_item_withdrawal_attempt
+            FROM inserted_notifications i_n
+        `, [
+                notification_type,
+                inventory_item_id,
+                withdrawal_attempt_id
+            ]).then(r => r.rows[0])
+
+            nats.publish('PERSONAL.NOTIFICATIONS.NEW_NOTIFICATION', notification)
+
+            inventory_item = {
+                ...notification.inventory_item
+            }
+
+        } else {
+
+            inventory_item = await DB.query(`SELECT si.name_ru, si.steam_app_name, ii.inventory_item_id, ii.market_hash_name, ii.status, ii.user_id
+                    FROM inventory_items ii
+                        LEFT JOIN steam_items si
+                            ON (ii.market_hash_name = si.market_hash_name)
+            WHERE ii.inventory_item_id = $1`, [
+                inventory_item_id
+            ]).then(r => r.rows[0])
+
+        }
+
+        if (steam_trade_id) {
+            inventory_item.steam_trade_id = steam_trade_id
+        }
+
+        console.log({inventory_item})
+
+        nats.publish('PERSONAL.INVENTORY.ITEMS.UPDATE', {
+            ...inventory_item,
+            user_id: String(inventory_item.user_id),
+            inventory_item_id: String(inventory_item.inventory_item_id)
+        })
+
+        return {status: codes.OK}
+
+
+    } catch (e) {
+        error(`performInventoryItemWithdrawalStatusUpdateNotificatiofnForUser() err:`, e)
+        return {status: codes.FAIL}
+    }
+}
+
+const performInventoryItemWithdrawStateUpdateBroadcastingForAdmins = async ({inventory_item_id}) => {
+    try {
+
+
+        const updated_withdrawal = await DB.query(`
+            SELECT 
+                   (SELECT count(*)::INT FROM inventory_items WHERE status = 'WITHDRAWAL_REQUEST_CREATED')
+                   AS attention_requiring_withdrawals_count,
+                   ii.*,
+                   ARRAY(
+                       SELECT row_to_json(withdrawal_attempts) 
+                       FROM (
+                           SELECT * 
+                           FROM inventory_item_withdrawal_attempts 
+                           WHERE inventory_item_id = ii.inventory_item_id) withdrawal_attempts
+                    ) AS withdrawal_attempts,
+                   json_build_object(
+                            'username', u.username,
+                            'avatar_link', u.avatar_link,
+                            'balance', calcBalance(u.user_id),
+                            'inout', calcInOut(u.user_id),
+                            'bets_sum', calcBetsSum(u.user_id)
+                           )  AS "user"
+            FROM inventory_items ii
+                LEFT JOIN users u 
+                    ON (ii.user_id = u.user_id)
+                WHERE ii.inventory_item_id = $1
+        
+        `, [
+            inventory_item_id
+        ])
+            .then(r => r.rows[0])
+
+        const {attention_requiring_withdrawals_count} = updated_withdrawal
+
+        delete updated_withdrawal.attention_requiring_withdrawals_count
+
+        nats.publish('SCOPED.WITHDRAWALS.INVENTORY_ITEM_WITHDRAWAL_STATE_UPDATE', {
+            updated_withdrawal,
+            attention_requiring_withdrawals_count
+        })
+
+        return {status: codes.OK}
+
+    } catch (e) {
+        error('performInventoryItemWithdrawStateUpdateBroadcastingForAdmins() err:', e)
+        return {status: codes.FAIL}
+    }
+}
+
+
+
+
+/** users api */
+const itemsList = async (req, res) => {
+    try {
+
+        const {user_id} = req.account_data
+
+        const inventory = await DB.query(`SELECT ii.*, si.*, iiw.steam_trade_id, iiw.purchase_status
+            FROM inventory_items ii 
+                LEFT JOIN steam_items si 
+                    ON ii.market_hash_name = si.market_hash_name
+                        LEFT JOIN inventory_item_withdrawals iiw
+                            ON ii.inventory_item_id = iiw.inventory_item_id
+            WHERE user_id = $1 AND ii.status != 'SOLD'
+            ORDER BY ii.created_at DESC`, [user_id])
+            .then(r => r.rows)
+
+        return res.json({status: codes.OK, inventory})
+
+    } catch (e) {
+        error(`${req.originalUrl} err:`, e)
+        return res.json({status: codes.FAIL})
+    }
+}
+
+const createWithdrawalRequest = async (req, res) => {
+    try {
+
+        const {inventory_item_id, steam_app_name, market_hash_name} = req.body
+
+        if (!inventory_item_id || !steam_app_name || !market_hash_name) {
+            return res.json({status: codes.WRONG_ARGS})
+        }
+
+        const {user_id} = req.account_data
+
+
+        const {status, updated_inventory_item, reasons} = await execRepeatableTransaction(async (client) => {
+
+
+            const withdrawal_blockers_checking_result = await checkForWithdrawalsBlockers({user_id}, {
+                db_client_with_opened_transaction: client
+            })
+
+
+            if (!codes.statusEqual(withdrawal_blockers_checking_result.status, codes.OK)) {
+
+                if (codes.statusEqual(withdrawal_blockers_checking_result.status, codes.FAIL)) {
+                    error(`Impossible to get the withdrawals blockers checking results: ${JSON.stringify(withdrawal_blockers_checking_result)}`)
+                    return {status: codes.FAIL}
+                }
+
+                const {withdrawal_blockers} = withdrawal_blockers_checking_result
+
+                info(`Withdrawal request of user #${user_id} creating stopped due to the found withdrawal blockers`, withdrawal_blockers)
+
+                const biggest_turnover_blocker = withdrawal_blockers
+                    .received_promocode_bonuses
+                    .filter(rpb => rpb.bonus_is_still_blocking)
+                    .sort((a, b) => {
+                        return a.required_additional_turnover > b.required_additional_turnover ? -1 : -1
+                    })[0]
+
+                return {
+                    status: codes.FORBIDDEN,
+                    reasons: {
+                        required_additional_turnover:  biggest_turnover_blocker.required_additional_turnover
+                    }
+                }
+
+            }
+
+
+            const cheapest_price_searching_results = await nats.requestOne({
+                subj: 'REQUEST.INVENTORY.ITEMS.CHEAPEST_MARKET_PRICES',
+                msg: {
+                    steam_app_name,
+                    market_hash_name
+                },
+                timeout: 60000
+            }).catch(e => e)
+
+            console.log({cheapest_price_searching_results})
+
+            /** steam integration service is unavailable */
+            if (cheapest_price_searching_results instanceof Error ||
+                !codes.statusEqual(cheapest_price_searching_results.status, codes.OK)) {
+                return res.json({
+                    status: codes.TEMPORARY_UNAVAILABLE
+                })
+            }
+
+            const tm_cheapest_price_usd = cheapest_price_searching_results.tm_cheapest_price_usd !== null ? parseFloat(cheapest_price_searching_results.tm_cheapest_price_usd) : null
+            const sb_cheapest_price_usd = cheapest_price_searching_results.sb_cheapest_price_usd !== null ? parseFloat(cheapest_price_searching_results.sb_cheapest_price_usd) : null
+
+
+            if ( tm_cheapest_price_usd === null &amp;&amp; sb_cheapest_price_usd === null) {
+                return res.json({
+                    status: codes.IMPOSSIBLE
+                })
+            }
+
+            const {price} = await DB.query(`SELECT price FROM inventory_items WHERE inventory_item_id = $1`, [
+                inventory_item_id
+            ]).then(r => r.rows[0])
+
+            const max_allowed_buy_price_at_withdrawal = price * 1.1
+
+            console.log({tm_cheapest_price_usd, sb_cheapest_price_usd, max_allowed_buy_price_at_withdrawal, price})
+
+            if (
+                (tm_cheapest_price_usd === null ||
+                    tm_cheapest_price_usd > max_allowed_buy_price_at_withdrawal) &amp;&amp;
+                (sb_cheapest_price_usd === null ||
+                    sb_cheapest_price_usd > max_allowed_buy_price_at_withdrawal)
+            ) {
+                return res.json({status: codes.steam_trades.PRICE_UNAVAILABLE_ON_ALL_MARKETS})
+            }
+
+
+
+            const result = await client.query(`
+                UPDATE inventory_items
+                SET status = 'WITHDRAWAL_REQUEST_CREATED'
+                WHERE inventory_item_id = $1
+                    AND user_id = $2
+                        AND status = 'STORED'
+                            AND withdrawable = true
+                RETURNING status, market_hash_name, price
+            `, [
+                inventory_item_id,
+                user_id
+            ])
+
+            if (!result.rowCount) {
+                return {status: codes.INCORRECT_STATE}
+            }
+
+            return {
+                status: codes.OK,
+                updated_inventory_item: result.rows[0]
+            }
+
+        })
+
+
+
+
+        /** OK case */
+        if (codes.statusEqual(status, codes.OK)) {
+            /** notification for user */
+            performInventoryItemWithdrawalStatusUpdateNotificationForUser({
+                notification_type: 'INVENTORY_ITEM_WITHDRAWAL_REQUESTED',
+                inventory_item_id
+            })
+
+            /** notification for admins */
+            performInventoryItemWithdrawStateUpdateBroadcastingForAdmins({
+                inventory_item_id
+            })
+        }
+
+
+        return res.json({
+            status,
+            updated_inventory_item,
+            reasons
+        })
+
+        /** i think that the full list of possible blockers should not be sent to client */
+
+
+    } catch (e) {
+        error(`${req.originalUrl} err:`, e)
+        return res.json({status: codes.FAIL})
+    }
+}
+
+const abortWithdrawalRequest = async (req, res) => {
+    try  {
+
+        const {inventory_item_id} = req.body
+
+        if (!inventory_item_id) {
+            return res.json({status: codes.WRONG_ARGS})
+        }
+
+        const {user_id} = req.account_data
+
+        const {status, updated_inventory_item} = await execRepeatableTransaction(async (client) => {
+            const result = await client.query(`
+                UPDATE inventory_items
+                SET status = 'STORED'
+                WHERE inventory_item_id = $1
+                    AND user_id = $2
+                        AND status = 'WITHDRAWAL_REQUEST_CREATED'
+                RETURNING status
+            `, [
+                inventory_item_id,
+                user_id
+            ])
+
+            if (!result.rowCount) {
+                return {status: codes.INCORRECT_STATE}
+            }
+
+            return {status: codes.OK, updated_inventory_item: result.rows[0]}
+
+        })
+
+        if (codes.statusEqual(status, codes.OK)) {
+            /** notification for user */
+            performInventoryItemWithdrawalStatusUpdateNotificationForUser({
+                notification_type: 'INVENTORY_ITEM_WITHDRAWAL_ABORTED',
+                inventory_item_id
+            })
+
+            /** notification for admins */
+            performInventoryItemWithdrawStateUpdateBroadcastingForAdmins({
+                inventory_item_id
+            })
+        }
+
+        return res.json({
+            status,
+            updated_inventory_item
+        })
+
+    } catch (e) {
+        error(`${req.originalUrl} err:`, e)
+        return res.json({status: codes.FAIL})
+    }
+}
+
+const sellItems = async (req, res) => {
+    try {
+
+        const {inventory_item_ids} = req.body
+
+        const {user_id} = req.account_data
+
+        if (!inventory_item_ids ||
+            !inventory_item_ids.length ||
+            inventory_item_ids.some(id => isNaN(parseInt(String(id).trim())))) {
+            return res.json({status: codes.WRONG_ARGS})
+        }
+
+        const {status} = await execRepeatableTransaction(async (client) => {
+
+            const sold_inventory_items_count = await client.query(`
+                UPDATE inventory_items
+                SET status = 'SOLD'
+                WHERE
+                    user_id = $1 AND
+                    status = 'STORED' AND
+                    inventory_item_id = ANY($2::BIGINT[])
+            `, [
+                user_id,
+                inventory_item_ids
+            ]).then(r => r.rowCount)
+
+            if (sold_inventory_items_count !== inventory_item_ids.length) {
+                /** some items can not be sold */
+                return {status: codes.INCORRECT_STATE}
+            }
+
+            return {status: codes.OK}
+
+        })
+
+        if (!codes.statusEqual(status, codes.OK)) {
+            return res.json({status})
+        }
+
+
+        const updated_balance = await DB.query(`SELECT calcbalance($1) AS balance`, [
+            user_id
+        ]).then(r => r.rows[0].balance)
+
+        nats.publish('PERSONAL.ACCOUNT.BALANCE_UPDATE', {user_id, balance: updated_balance})
+
+        return res.json({status})
+
+
+    } catch (e) {
+        error(`${req.originalUrl} err:`, e)
+        return res.json({status: codes.FAIL})
+    }
+}
+
+router.get('/', accessUser, itemsList)
+router.post('/withdrawals/create-request', accessUser, createWithdrawalRequest)
+router.post('/withdrawals/abort-request', accessUser, abortWithdrawalRequest)
+router.post('/sell-items', accessUser, sellItems)
+
+
+
+
+
+
+
+/** admins api */
+
+const list = async (req, res) => {
+    try {
+
+        const {
+            limit = 15,
+            offset = 0,
+            sorting_property = 'created_at',
+            sorting_direction = 'DESC'
+        } = req.query
+
+        const status = req.query.status &amp;&amp; String(req.query.status).trim() ? String(req.query.status).trim() : null
+        const username = req.query.username &amp;&amp; String(req.query.username).trim() ? `%${String(req.query.username).trim()}%` : null
+
+        const withdrawals = await DB.query(`
+            SELECT 
+                   (count(*) OVER())::INTEGER AS total_found,
+                   ii.*,
+                   ARRAY(
+                       SELECT row_to_json(withdrawal_attempts) 
+                       FROM (
+                           SELECT * 
+                           FROM inventory_item_withdrawal_attempts 
+                           WHERE inventory_item_id = ii.inventory_item_id) withdrawal_attempts
+                    ) AS withdrawal_attempts,
+                   json_build_object(
+                            'username', u.username,
+                            'avatar_link', u.avatar_link,
+                            'balance', calcBalance(u.user_id),
+                            'inout', calcInOut(u.user_id),
+                            'bets_sum', calcBetsSum(u.user_id)
+                           )  AS "user"
+            FROM inventory_items ii
+                LEFT JOIN users u 
+                    ON (ii.user_id = u.user_id)
+                WHERE ii.status NOT IN ('STORED', 'SOLD')
+                    AND ($1::INVENTORY_ITEM_STATUS IS NULL OR ii.status = $1::INVENTORY_ITEM_STATUS)
+                        AND ($2::TEXT IS NULL OR LOWER(u.username COLLATE "ru_RU.utf8") LIKE LOWER($2::TEXT COLLATE "ru_RU.utf8") )
+            ORDER BY ${sorting_property} ${sorting_direction}
+            OFFSET $3
+            LIMIT $4
+        `, [
+            status,
+            username,
+            offset,
+            limit
+        ])
+            .then(r => r.rows)
+
+        return res.json({status: codes.OK, withdrawals})
+
+    } catch (e) {
+        error(`${req.originalUrl} err:`, e)
+        return res.json({status: codes.FAIL})
+    }
+}
+
+const approveWithdrawalRequest = async (req, res) => {
+    try {
+
+        const {inventory_item_id} = req.body
+
+        if (!inventory_item_id) {
+            return res.json({status: codes.WRONG_ARGS})
+        }
+
+        const db_status_updating_result = await DB.query(`
+            UPDATE inventory_items 
+            SET status = 'WITHDRAWAL_REQUEST_APPROVED'
+            WHERE inventory_item_id = $1
+                AND status = 'WITHDRAWAL_REQUEST_CREATED'
+            RETURNING user_id
+        `, [
+            inventory_item_id
+        ])
+
+        if (!db_status_updating_result.rowCount) {
+            return res.json({status: codes.INCORRECT_STATE})
+        }
+
+        const {user_id} = db_status_updating_result.rows[0]
+
+        const request_result = await nats.requestOne({
+            subj: 'REQUEST.INVENTORY.ITEMS.WITHDRAW',
+            msg: {
+                inventory_item_id,
+                user_id
+            },
+            retries: 1,
+            timeout: 60000
+        }).catch(e => e)
+
+        console.log({request_result})
+
+        if (request_result instanceof Error ||
+            !codes.statusEqual(request_result.status, codes.OK)) {
+
+            /** trying to revert the previous inventory_item status */
+
+
+            const db_status_reverting_result = await DB.query(`
+            UPDATE inventory_items 
+            SET status = 'WITHDRAWAL_REQUEST_APPROVED'
+            WHERE inventory_item_id = $1
+                AND status = 'WITHDRAWAL_REQUEST_CREATED'
+        `, [
+                inventory_item_id
+            ])
+
+            console.log({db_status_reverting_result})
+
+            return res.json({
+                status: request_result.status || codes.TEMPORARY_UNAVAILABLE,
+                request_result,
+                db_status_reverting_result
+            })
+
+        }
+
+        performInventoryItemWithdrawalStatusUpdateNotificationForUser({
+            inventory_item_id
+        })
+        performInventoryItemWithdrawStateUpdateBroadcastingForAdmins({
+            inventory_item_id
+        })
+
+        return res.json({
+            status: codes.OK
+        })
+
+
+    } catch (e) {
+        error(`${req.originalUrl} err:`, e)
+        return res.json({status: codes.FAIL})
+    }
+}
+
+const rejectWithdrawalRequest = async (req, res) => {
+    try {
+
+        const {inventory_item_id} = req.body
+
+        if (!inventory_item_id) {
+            return res.json({status: codes.WRONG_ARGS})
+        }
+
+        const {status} = await execRepeatableTransaction(async (client) => {
+
+            const result = await client.query(`
+                UPDATE inventory_items
+                SET status = 'STORED'
+                WHERE status = 'WITHDRAWAL_REQUEST_CREATED'
+                AND inventory_item_id = $1
+                RETURNING status, inventory_item_id, user_id
+            `, [
+                inventory_item_id
+            ])
+
+            if (!result.rowCount) {
+                return {status: codes.INCORRECT_STATE}
+            }
+
+            const updated_inventory_item = result.rows[0]
+
+            return {status: codes.OK, updated_inventory_item}
+
+        })
+
+        if (codes.statusEqual(status, codes.OK)) {
+            /** notification for user */
+            performInventoryItemWithdrawalStatusUpdateNotificationForUser({
+                notification_type: 'INVENTORY_ITEM_WITHDRAWAL_FAILED',
+                inventory_item_id
+            })
+
+            /** notification for admin */
+            performInventoryItemWithdrawStateUpdateBroadcastingForAdmins({
+                inventory_item_id
+            })
+
+        }
+
+        return res.json({status})
+
+    } catch (e) {
+        error(`${req.originalUrl} err:`, e)
+        return res.json({status: codes.FAIL})
+    }
+}
+
+
+const attentionRequiringWithdrawalsCount = async (req, res) => {
+    try {
+
+        const attention_requiring_withdrawals_count = await DB.query(`
+                SELECT count(*)::INT AS count FROM inventory_items WHERE status = 'WITHDRAWAL_REQUEST_CREATED'
+            `)
+            .then(r => r.rows[0].count)
+
+        return res.json({
+            status: codes.OK,
+            attention_requiring_withdrawals_count
+        })
+
+    } catch (e) {
+        error(`${req.originalUrl} err:`, e)
+        return res.json({status: codes.FAIL})
+    }
+
+}
+
+router.get('/withdrawals/list', accessAdmin({FINANCE: true}), list)
+router.get('/withdrawals/attention-requiring-count', accessAdmin(), attentionRequiringWithdrawalsCount)
+router.post('/withdrawals/approve-request', accessAdmin({FINANCE: true}), approveWithdrawalRequest)
+router.post('/withdrawals/reject-request', accessAdmin({FINANCE: true}), rejectWithdrawalRequest)
+
+
+module.exports = router
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.5</a> on Mon Feb 08 2021 15:54:23 GMT+0300 (Moscow Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

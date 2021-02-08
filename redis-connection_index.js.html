@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>redis-connection/index.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="OutgoingMessage.html">OutgoingMessage</a></li><li><a href="Game.html">Game</a></li><li><a href="CrashGame.html">CrashGame</a><ul class='members'><li data-type='member' style='display: none;'><a href="CrashGame.html#.CrashGame">CrashGame</a></li><li data-type='member' style='display: none;'><a href="CrashGame.html#.CrashGame">CrashGame</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="CrashGame.html#publishUpdatedPlayer">publishUpdatedPlayer</a></li><li data-type='method' style='display: none;'><a href="CrashGame.html#handleManualOutDirectives">handleManualOutDirectives</a></li><li data-type='method' style='display: none;'><a href="CrashGame.html#autoOutPlayers">autoOutPlayers</a></li><li data-type='method' style='display: none;'><a href="CrashGame.html#outRemainingPlayers">outRemainingPlayers</a></li><li data-type='method' style='display: none;'><a href="CrashGame.html#outPlayers">outPlayers</a></li></ul></li><li><a href="CrashGameDBTransaction.html">CrashGameDBTransaction</a><ul class='methods'><li data-type='method' style='display: none;'><a href="CrashGameDBTransaction.html#.start">start</a></li><li data-type='method' style='display: none;'><a href="CrashGameDBTransaction.html#createSavePoint">createSavePoint</a></li><li data-type='method' style='display: none;'><a href="CrashGameDBTransaction.html#rollbackToSavePoint">rollbackToSavePoint</a></li></ul></li><li><a href="GameWin.html">GameWin</a><ul class='methods'><li data-type='method' style='display: none;'><a href="GameWin.html#.create">create</a></li><li data-type='method' style='display: none;'><a href="GameWin.html#.calcWonAmount">calcWonAmount</a></li></ul></li><li><a href="SteamItem.html">SteamItem</a><ul class='methods'><li data-type='method' style='display: none;'><a href="SteamItem.html#.fromObject">fromObject</a></li></ul></li><li><a href="module-Games-Game.html">Game</a></li><li><a href="module-Games-SteamItem.html">SteamItem</a></li><li><a href="module-Games-InventoryItem.html">InventoryItem</a></li><li><a href="module-Games-GameWin.html">GameWin</a></li><li><a href="module-Games-GameBet.html">GameBet</a></li><li><a href="module-Games-User.html">User</a></li><li><a href="module-Games-Player.html">Player</a></li></ul><h3>Modules</h3><ul><li><a href="module-access_config.html">access/config</a></li><li><a href="module-access.html">access</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-access.html#~encryptString">encryptString</a></li><li data-type='method' style='display: none;'><a href="module-access.html#.decryptString">decryptString</a></li><li data-type='method' style='display: none;'><a href="module-access.html#~issueJWTToken">issueJWTToken</a></li></ul></li><li><a href="module-broadcasting-server_config.html">broadcasting-server/config</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-broadcasting-server_config.html#.PORT">PORT</a></li></ul></li><li><a href="module-ws-server_ws-clients.html">ws-server/ws-clients</a></li><li><a href="module-database_config.html">database/config</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-database_config.html#.RECONNECTION_ATTEMPTS">RECONNECTION_ATTEMPTS</a></li><li data-type='member' style='display: none;'><a href="module-database_config.html#.RECONNECTION_DELAY">RECONNECTION_DELAY</a></li><li data-type='member' style='display: none;'><a href="module-database_config.html#.DB_CONNECTION_URL">DB_CONNECTION_URL</a></li><li data-type='member' style='display: none;'><a href="module-database_config.html#.DB_TRANSACTIONS_RETRIES_LIMIT">DB_TRANSACTIONS_RETRIES_LIMIT</a></li><li data-type='member' style='display: none;'><a href="module-database_config.html#.PG_POOL_QUERIES_VERBOSE_MODE">PG_POOL_QUERIES_VERBOSE_MODE</a></li></ul></li><li><a href="module-database_connection.html">database/connection</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-database_connection.html#~onClientConnected">onClientConnected</a></li><li data-type='method' style='display: none;'><a href="module-database_connection.html#~reconnect">reconnect</a></li><li data-type='method' style='display: none;'><a href="module-database_connection.html#~createNewClient">createNewClient</a></li><li data-type='method' style='display: none;'><a href="module-database_connection.html#~execRepeatableTransaction">execRepeatableTransaction</a></li></ul></li><li><a href="module-http-server_api_accounts.html">http-server/api/accounts</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~createLocal">createLocal</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~authenticateLocal">authenticateLocal</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~initEmailConfirmation">initEmailConfirmation</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~confirmEmailWithCode">confirmEmailWithCode</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~sendPasswordRecoveryCode">sendPasswordRecoveryCode</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~checkPasswordRecoveryCode">checkPasswordRecoveryCode</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~issueNewPassword">issueNewPassword</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~logout">logout</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~getAccountData">getAccountData</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~list">list</a></li></ul></li><li><a href="module-http-server_api_oAuth.html">http-server/api/oAuth</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~generateVKRedirect">generateVKRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~handleVKRedirect">handleVKRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~generateGoogleRedirect">generateGoogleRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~handleGoogleRedirect">handleGoogleRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~generateYandexRedirect">generateYandexRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~handleYandexRedirect">handleYandexRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~getOpenIdInstanceByReturnUrl">getOpenIdInstanceByReturnUrl</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~handleSteamRedirect">handleSteamRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~readUserData">readUserData</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~createUser">createUser</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~endAuthentication">endAuthentication</a></li></ul></li><li><a href="module-http-server_api_payments_freekassa.html">http-server/api/payments/freekassa</a></li><li><a href="module-http-server_api_payments_gamemoney.html">http-server/api/payments/gamemoney</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_api_payments_gamemoney.html#~handleDepositHook">handleDepositHook</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_payments_gamemoney.html#~handleDepositHook">handleDepositHook</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_payments_gamemoney.html#~generateDepositRedirectSignature">generateDepositRedirectSignature</a></li></ul></li><li><a href="module-http-server_api_payments.html">http-server/api/payments</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_api_payments.html#~depositRules">depositRules</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_payments.html#~generateDepositRedirect">generateDepositRedirect</a></li></ul></li><li><a href="module-http-server_config.html">http-server/config</a></li><li><a href="module-http-server.html">http-server</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-http-server.html#.API">API</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server.html#~startServe">startServe</a></li><li data-type='method' style='display: none;'><a href="module-http-server.html#~shutDown">shutDown</a></li></ul></li><li><a href="module-http-server_middleware_access.html">http-server/middleware/access</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~setAuthCookie">setAuthCookie</a></li><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~removeAuthCookie">removeAuthCookie</a></li><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~addAuthorizationDataToRequest">addAuthorizationDataToRequest</a></li><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~accessUser">accessUser</a></li><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~accessAdmin">accessAdmin</a></li></ul></li><li><a href="module-http-server_gamemoney-lib.html">http-server/gamemoney-lib</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~generateHmacSignature">generateHmacSignature</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~verifyRequestRsaSignature">verifyRequestRsaSignature</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~createDeposit">createDeposit</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~updateDepositStatus">updateDepositStatus</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~handleDepositHook">handleDepositHook</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~generateDepositRedirectUrl">generateDepositRedirectUrl</a></li></ul></li><li><a href="module-http-server_health-check.html">http-server/health-check</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#~bytesToMb">bytesToMb</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#~memoryUsageInMb">memoryUsageInMb</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#~updateState">updateState</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#~getState">getState</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#.httpMiddleware">httpMiddleware</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#.httpEndpoint">httpEndpoint</a></li></ul></li><li><a href="module-http-server_mailer.html">http-server/mailer</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_mailer.html#~sendMail">sendMail</a></li></ul></li><li><a href="module-http-server_plugins_withdrawals_approval.html">http-server/plugins/withdrawals/approval</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_plugins_withdrawals_approval.html#~checkForWithdrawalsBlockers">checkForWithdrawalsBlockers</a></li></ul></li><li><a href="module-http-server_lib.html">http-server/lib</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~freezeObjectDeep">freezeObjectDeep</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~bytesSizeOfObject">bytesSizeOfObject</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~asyncInterval">asyncInterval</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~delay">delay</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~bytesToMb">bytesToMb</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~memoryUsageInMb">memoryUsageInMb</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~compareDeep">compareDeep</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~generateRandomString">generateRandomString</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~minMax">minMax</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~shuffleArray">shuffleArray</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~toFixedPrecisionFloat">toFixedPrecisionFloat</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~to2DigitsPrecisionFloat">to2DigitsPrecisionFloat</a></li></ul></li><li><a href="module-logger.html">logger</a></li><li><a href="module-redis-connection_config.html">redis-connection/config</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-redis-connection_config.html#.REDIS_HOST">REDIS_HOST</a></li><li data-type='member' style='display: none;'><a href="module-redis-connection_config.html#.REDIS_PORT">REDIS_PORT</a></li></ul></li><li><a href="module-Games.html">Games</a></li></ul><h3>Global</h3><ul><li><a href="global.html#createLocalAccount">createLocalAccount</a></li><li><a href="global.html#authenticateLocalAccount">authenticateLocalAccount</a></li><li><a href="global.html#fetchAccountData">fetchAccountData</a></li><li><a href="global.html#createAxiosInstance">createAxiosInstance</a></li><li><a href="global.html#createAuthInfrastructure">createAuthInfrastructure</a></li><li><a href="global.html#createWebsocketConnection">createWebsocketConnection</a></li><li><a href="global.html#socketCookieParser">socketCookieParser</a></li><li><a href="global.html#authCookieParser">authCookieParser</a></li><li><a href="global.html#hasAccessUser">hasAccessUser</a></li><li><a href="global.html#hasAccessAdmin">hasAccessAdmin</a></li><li><a href="global.html#util">util</a></li><li><a href="global.html#isMainBroadcastingServer">isMainBroadcastingServer</a></li><li><a href="global.html#MIN_WON_INVENTORY_ITEM_SPAWN_PRICE_USD">MIN_WON_INVENTORY_ITEM_SPAWN_PRICE_USD</a></li><li><a href="global.html#BETTING_PERIOD_MS">BETTING_PERIOD_MS</a></li><li><a href="global.html#COMPLETED_PERIOD_MS">COMPLETED_PERIOD_MS</a></li><li><a href="global.html#CRASH_GAME_FRAMES_DELAY_MS">CRASH_GAME_FRAMES_DELAY_MS</a></li><li><a href="global.html#GAME_LOOP_DELAY_AFTER_ERROR_MS">GAME_LOOP_DELAY_AFTER_ERROR_MS</a></li><li><a href="global.html#%2522your-256-bit-secret%2522">"your-256-bit-secret"</a></li><li><a href="global.html#CURRENT_GAME">CURRENT_GAME</a></li><li><a href="global.html#generateFinalMultipliersGroup">generateFinalMultipliersGroup</a></li><li><a href="global.html#activateFinalMultipliersGroup">activateFinalMultipliersGroup</a></li><li><a href="global.html#generateDepositRedirect">generateDepositRedirect</a></li><li><a href="global.html#list">list</a></li><li><a href="global.html#Accounts">Accounts</a></li><li><a href="global.html#performInventoryItemWithdrawalStatusUpdateNotificationForUser">performInventoryItemWithdrawalStatusUpdateNotificationForUser</a></li><li><a href="global.html#itemsList">itemsList</a></li><li><a href="global.html#fileParser">fileParser</a></li><li><a href="global.html#CONTENT_TYPES%255Bundefined%255D">CONTENT_TYPES[undefined]</a></li><li><a href="global.html#STEAM_ITEM_ICON_URL_HASHES_CACHE%255Bundefined%255D">STEAM_ITEM_ICON_URL_HASHES_CACHE[undefined]</a></li><li><a href="global.html#freekassaIPVerificationMiddleware">freekassaIPVerificationMiddleware</a></li><li><a href="global.html#freekassaHookSignatureVerificationMiddleware">freekassaHookSignatureVerificationMiddleware</a></li><li><a href="global.html#gamemoneyIPVerificationMiddleware">gamemoneyIPVerificationMiddleware</a></li><li><a href="global.html#gamemoneyHookSignatureVerificationMiddleware">gamemoneyHookSignatureVerificationMiddleware</a></li><li><a href="global.html#skinsBackIPVerificationMiddleware">skinsBackIPVerificationMiddleware</a></li><li><a href="global.html#skinsBackHookSignatureVerificationMiddleware">skinsBackHookSignatureVerificationMiddleware</a></li><li><a href="global.html#unitpayIPVerificationMiddleware">unitpayIPVerificationMiddleware</a></li><li><a href="global.html#unitpayHookSignatureVerificationMiddleware">unitpayHookSignatureVerificationMiddleware</a></li><li><a href="global.html#affiliateExists">affiliateExists</a></li><li><a href="global.html#getAffiliate">getAffiliate</a></li><li><a href="global.html#createNewAffiliate">createNewAffiliate</a></li><li><a href="global.html#performRevshareAccrual">performRevshareAccrual</a></li><li><a href="global.html#createDefaultTariff">createDefaultTariff</a></li><li><a href="global.html#getValidMatchingTariff">getValidMatchingTariff</a></li><li><a href="global.html#MENTION_SUGGESTIONS">MENTION_SUGGESTIONS</a></li><li><a href="global.html#searchMentionedUsers">searchMentionedUsers</a></li><li><a href="global.html#filterProhibitedWords">filterProhibitedWords</a></li><li><a href="global.html#EMOJIS_LIST">EMOJIS_LIST</a></li><li><a href="global.html#generateDepositRedirectUrl">generateDepositRedirectUrl</a></li><li><a href="global.html#handleNewPromocodeActivation">handleNewPromocodeActivation</a></li><li><a href="global.html#handleNewCompletedDeposit">handleNewCompletedDeposit</a></li><li><a href="global.html#generateSignature">generateSignature</a></li><li><a href="global.html#verifyHookSignature">verifyHookSignature</a></li><li><a href="global.html#createOrReplaceDeposit">createOrReplaceDeposit</a></li><li><a href="global.html#Status">Status</a></li><li><a href="global.html#createConnection">createConnection</a></li><li><a href="global.html#getConnection">getConnection</a></li><li><a href="global.html#KNOWN_ACQUIRING_SYSTEMS">KNOWN_ACQUIRING_SYSTEMS</a></li><li><a href="global.html#PAYMENT_METHOD_KINDS">PAYMENT_METHOD_KINDS</a></li><li><a href="global.html#PAYMENT_METHOD_ICON_NAMES">PAYMENT_METHOD_ICON_NAMES</a></li><li><a href="global.html#PaymentMethod">PaymentMethod</a></li><li><a href="global.html#depositRules">depositRules</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">redis-connection/index.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const asyncRedis = require( 'async-redis')
+const {config} = require( './config.js')
+const util = require( 'util')
+
+/**
+ * @param database {Number}
+ */
+function createConnection (database)  {
+    try {
+
+        const CONNECTION = asyncRedis.createClient({
+            host: config.REDIS_HOST,
+            port: config.REDIS_PORT,
+            password: config.REDIS_PASSWORD,
+            db: 0,
+
+            // native redis callback on connection hanging up
+            retry_strategy: function (options) {
+
+
+                if (options.error &amp;&amp; options.error.code === 'ECONNREFUSED') {
+                    console.error(`redis-connection: ${util.inspect(options.error)}`)
+                }
+                if (options.total_retry_time > 1000 * 60 * 60) {
+                    return new Error(`Retry time exhausted, state: ${util.inspect(options)}`)
+                }
+
+                if (options.attempt > 1000) {
+                    return undefined // using a built-in err
+                }
+
+                // reconnect after
+                return Math.min(options.attempt * 100, 3000)
+            }
+        })
+
+        CONNECTION.on('connect', () => {
+            console.log(`redis: connected to db ${database}`)
+        })
+
+        CONNECTION.on('end', async function () {
+            console.error('redis connection closed.')
+        })
+
+        CONNECTION.on('error', async function (error) {
+            console.error('redis connection error:', util.inspect(error))
+        })
+
+        return CONNECTION
+
+    } catch (e) {
+        if (!e.message) e.message = ''
+        e.message += `module redis-connection .createConnection() err:' ${util.inspect(e)}`
+        throw e
+    }
+}
+
+
+
+const CONNECTIONS = []
+
+/**
+ * @param database {Number}
+ * it returns an already existed connection to requested db on redis-server
+ * or creates a new one
+ * @returns {Promise&lt;Object>|Object} a connection object
+ */
+function getConnection (database) {
+    if (!CONNECTIONS[database]) {
+        CONNECTIONS[database] = createConnection(database)
+    }
+    return CONNECTIONS[database]
+}
+
+
+
+module.exports = {getConnection}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.5</a> on Mon Feb 08 2021 15:54:23 GMT+0300 (Moscow Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>botz-service/botz/bot.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="OutgoingMessage.html">OutgoingMessage</a></li><li><a href="Game.html">Game</a></li><li><a href="CrashGame.html">CrashGame</a><ul class='members'><li data-type='member' style='display: none;'><a href="CrashGame.html#.CrashGame">CrashGame</a></li><li data-type='member' style='display: none;'><a href="CrashGame.html#.CrashGame">CrashGame</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="CrashGame.html#publishUpdatedPlayer">publishUpdatedPlayer</a></li><li data-type='method' style='display: none;'><a href="CrashGame.html#handleManualOutDirectives">handleManualOutDirectives</a></li><li data-type='method' style='display: none;'><a href="CrashGame.html#autoOutPlayers">autoOutPlayers</a></li><li data-type='method' style='display: none;'><a href="CrashGame.html#outRemainingPlayers">outRemainingPlayers</a></li><li data-type='method' style='display: none;'><a href="CrashGame.html#outPlayers">outPlayers</a></li></ul></li><li><a href="CrashGameDBTransaction.html">CrashGameDBTransaction</a><ul class='methods'><li data-type='method' style='display: none;'><a href="CrashGameDBTransaction.html#.start">start</a></li><li data-type='method' style='display: none;'><a href="CrashGameDBTransaction.html#createSavePoint">createSavePoint</a></li><li data-type='method' style='display: none;'><a href="CrashGameDBTransaction.html#rollbackToSavePoint">rollbackToSavePoint</a></li></ul></li><li><a href="GameWin.html">GameWin</a><ul class='methods'><li data-type='method' style='display: none;'><a href="GameWin.html#.create">create</a></li><li data-type='method' style='display: none;'><a href="GameWin.html#.calcWonAmount">calcWonAmount</a></li></ul></li><li><a href="SteamItem.html">SteamItem</a><ul class='methods'><li data-type='method' style='display: none;'><a href="SteamItem.html#.fromObject">fromObject</a></li></ul></li><li><a href="module-Games-Game.html">Game</a></li><li><a href="module-Games-SteamItem.html">SteamItem</a></li><li><a href="module-Games-InventoryItem.html">InventoryItem</a></li><li><a href="module-Games-GameWin.html">GameWin</a></li><li><a href="module-Games-GameBet.html">GameBet</a></li><li><a href="module-Games-User.html">User</a></li><li><a href="module-Games-Player.html">Player</a></li></ul><h3>Modules</h3><ul><li><a href="module-access_config.html">access/config</a></li><li><a href="module-access.html">access</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-access.html#~encryptString">encryptString</a></li><li data-type='method' style='display: none;'><a href="module-access.html#.decryptString">decryptString</a></li><li data-type='method' style='display: none;'><a href="module-access.html#~issueJWTToken">issueJWTToken</a></li></ul></li><li><a href="module-broadcasting-server_config.html">broadcasting-server/config</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-broadcasting-server_config.html#.PORT">PORT</a></li></ul></li><li><a href="module-ws-server_ws-clients.html">ws-server/ws-clients</a></li><li><a href="module-database_config.html">database/config</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-database_config.html#.RECONNECTION_ATTEMPTS">RECONNECTION_ATTEMPTS</a></li><li data-type='member' style='display: none;'><a href="module-database_config.html#.RECONNECTION_DELAY">RECONNECTION_DELAY</a></li><li data-type='member' style='display: none;'><a href="module-database_config.html#.DB_CONNECTION_URL">DB_CONNECTION_URL</a></li><li data-type='member' style='display: none;'><a href="module-database_config.html#.DB_TRANSACTIONS_RETRIES_LIMIT">DB_TRANSACTIONS_RETRIES_LIMIT</a></li><li data-type='member' style='display: none;'><a href="module-database_config.html#.PG_POOL_QUERIES_VERBOSE_MODE">PG_POOL_QUERIES_VERBOSE_MODE</a></li></ul></li><li><a href="module-database_connection.html">database/connection</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-database_connection.html#~onClientConnected">onClientConnected</a></li><li data-type='method' style='display: none;'><a href="module-database_connection.html#~reconnect">reconnect</a></li><li data-type='method' style='display: none;'><a href="module-database_connection.html#~createNewClient">createNewClient</a></li><li data-type='method' style='display: none;'><a href="module-database_connection.html#~execRepeatableTransaction">execRepeatableTransaction</a></li></ul></li><li><a href="module-http-server_api_accounts.html">http-server/api/accounts</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~createLocal">createLocal</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~authenticateLocal">authenticateLocal</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~initEmailConfirmation">initEmailConfirmation</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~confirmEmailWithCode">confirmEmailWithCode</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~sendPasswordRecoveryCode">sendPasswordRecoveryCode</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~checkPasswordRecoveryCode">checkPasswordRecoveryCode</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~issueNewPassword">issueNewPassword</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~logout">logout</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~getAccountData">getAccountData</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~list">list</a></li></ul></li><li><a href="module-http-server_api_oAuth.html">http-server/api/oAuth</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~generateVKRedirect">generateVKRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~handleVKRedirect">handleVKRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~generateGoogleRedirect">generateGoogleRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~handleGoogleRedirect">handleGoogleRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~generateYandexRedirect">generateYandexRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~handleYandexRedirect">handleYandexRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~getOpenIdInstanceByReturnUrl">getOpenIdInstanceByReturnUrl</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~handleSteamRedirect">handleSteamRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~readUserData">readUserData</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~createUser">createUser</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~endAuthentication">endAuthentication</a></li></ul></li><li><a href="module-http-server_api_payments_freekassa.html">http-server/api/payments/freekassa</a></li><li><a href="module-http-server_api_payments_gamemoney.html">http-server/api/payments/gamemoney</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_api_payments_gamemoney.html#~handleDepositHook">handleDepositHook</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_payments_gamemoney.html#~handleDepositHook">handleDepositHook</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_payments_gamemoney.html#~generateDepositRedirectSignature">generateDepositRedirectSignature</a></li></ul></li><li><a href="module-http-server_api_payments.html">http-server/api/payments</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_api_payments.html#~depositRules">depositRules</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_payments.html#~generateDepositRedirect">generateDepositRedirect</a></li></ul></li><li><a href="module-http-server_config.html">http-server/config</a></li><li><a href="module-http-server.html">http-server</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-http-server.html#.API">API</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server.html#~startServe">startServe</a></li><li data-type='method' style='display: none;'><a href="module-http-server.html#~shutDown">shutDown</a></li></ul></li><li><a href="module-http-server_middleware_access.html">http-server/middleware/access</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~setAuthCookie">setAuthCookie</a></li><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~removeAuthCookie">removeAuthCookie</a></li><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~addAuthorizationDataToRequest">addAuthorizationDataToRequest</a></li><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~accessUser">accessUser</a></li><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~accessAdmin">accessAdmin</a></li></ul></li><li><a href="module-http-server_gamemoney-lib.html">http-server/gamemoney-lib</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~generateHmacSignature">generateHmacSignature</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~verifyRequestRsaSignature">verifyRequestRsaSignature</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~createDeposit">createDeposit</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~updateDepositStatus">updateDepositStatus</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~handleDepositHook">handleDepositHook</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~generateDepositRedirectUrl">generateDepositRedirectUrl</a></li></ul></li><li><a href="module-http-server_health-check.html">http-server/health-check</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#~bytesToMb">bytesToMb</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#~memoryUsageInMb">memoryUsageInMb</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#~updateState">updateState</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#~getState">getState</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#.httpMiddleware">httpMiddleware</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#.httpEndpoint">httpEndpoint</a></li></ul></li><li><a href="module-http-server_mailer.html">http-server/mailer</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_mailer.html#~sendMail">sendMail</a></li></ul></li><li><a href="module-http-server_plugins_withdrawals_approval.html">http-server/plugins/withdrawals/approval</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_plugins_withdrawals_approval.html#~checkForWithdrawalsBlockers">checkForWithdrawalsBlockers</a></li></ul></li><li><a href="module-http-server_lib.html">http-server/lib</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~freezeObjectDeep">freezeObjectDeep</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~bytesSizeOfObject">bytesSizeOfObject</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~asyncInterval">asyncInterval</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~delay">delay</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~bytesToMb">bytesToMb</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~memoryUsageInMb">memoryUsageInMb</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~compareDeep">compareDeep</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~generateRandomString">generateRandomString</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~minMax">minMax</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~shuffleArray">shuffleArray</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~toFixedPrecisionFloat">toFixedPrecisionFloat</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~to2DigitsPrecisionFloat">to2DigitsPrecisionFloat</a></li></ul></li><li><a href="module-logger.html">logger</a></li><li><a href="module-redis-connection_config.html">redis-connection/config</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-redis-connection_config.html#.REDIS_HOST">REDIS_HOST</a></li><li data-type='member' style='display: none;'><a href="module-redis-connection_config.html#.REDIS_PORT">REDIS_PORT</a></li></ul></li><li><a href="module-Games.html">Games</a></li></ul><h3>Global</h3><ul><li><a href="global.html#createLocalAccount">createLocalAccount</a></li><li><a href="global.html#authenticateLocalAccount">authenticateLocalAccount</a></li><li><a href="global.html#fetchAccountData">fetchAccountData</a></li><li><a href="global.html#createAxiosInstance">createAxiosInstance</a></li><li><a href="global.html#createAuthInfrastructure">createAuthInfrastructure</a></li><li><a href="global.html#createWebsocketConnection">createWebsocketConnection</a></li><li><a href="global.html#socketCookieParser">socketCookieParser</a></li><li><a href="global.html#authCookieParser">authCookieParser</a></li><li><a href="global.html#hasAccessUser">hasAccessUser</a></li><li><a href="global.html#hasAccessAdmin">hasAccessAdmin</a></li><li><a href="global.html#util">util</a></li><li><a href="global.html#isMainBroadcastingServer">isMainBroadcastingServer</a></li><li><a href="global.html#MIN_WON_INVENTORY_ITEM_SPAWN_PRICE_USD">MIN_WON_INVENTORY_ITEM_SPAWN_PRICE_USD</a></li><li><a href="global.html#BETTING_PERIOD_MS">BETTING_PERIOD_MS</a></li><li><a href="global.html#COMPLETED_PERIOD_MS">COMPLETED_PERIOD_MS</a></li><li><a href="global.html#CRASH_GAME_FRAMES_DELAY_MS">CRASH_GAME_FRAMES_DELAY_MS</a></li><li><a href="global.html#GAME_LOOP_DELAY_AFTER_ERROR_MS">GAME_LOOP_DELAY_AFTER_ERROR_MS</a></li><li><a href="global.html#%2522your-256-bit-secret%2522">"your-256-bit-secret"</a></li><li><a href="global.html#CURRENT_GAME">CURRENT_GAME</a></li><li><a href="global.html#generateFinalMultipliersGroup">generateFinalMultipliersGroup</a></li><li><a href="global.html#activateFinalMultipliersGroup">activateFinalMultipliersGroup</a></li><li><a href="global.html#generateDepositRedirect">generateDepositRedirect</a></li><li><a href="global.html#list">list</a></li><li><a href="global.html#Accounts">Accounts</a></li><li><a href="global.html#performInventoryItemWithdrawalStatusUpdateNotificationForUser">performInventoryItemWithdrawalStatusUpdateNotificationForUser</a></li><li><a href="global.html#itemsList">itemsList</a></li><li><a href="global.html#fileParser">fileParser</a></li><li><a href="global.html#CONTENT_TYPES%255Bundefined%255D">CONTENT_TYPES[undefined]</a></li><li><a href="global.html#STEAM_ITEM_ICON_URL_HASHES_CACHE%255Bundefined%255D">STEAM_ITEM_ICON_URL_HASHES_CACHE[undefined]</a></li><li><a href="global.html#freekassaIPVerificationMiddleware">freekassaIPVerificationMiddleware</a></li><li><a href="global.html#freekassaHookSignatureVerificationMiddleware">freekassaHookSignatureVerificationMiddleware</a></li><li><a href="global.html#gamemoneyIPVerificationMiddleware">gamemoneyIPVerificationMiddleware</a></li><li><a href="global.html#gamemoneyHookSignatureVerificationMiddleware">gamemoneyHookSignatureVerificationMiddleware</a></li><li><a href="global.html#skinsBackIPVerificationMiddleware">skinsBackIPVerificationMiddleware</a></li><li><a href="global.html#skinsBackHookSignatureVerificationMiddleware">skinsBackHookSignatureVerificationMiddleware</a></li><li><a href="global.html#unitpayIPVerificationMiddleware">unitpayIPVerificationMiddleware</a></li><li><a href="global.html#unitpayHookSignatureVerificationMiddleware">unitpayHookSignatureVerificationMiddleware</a></li><li><a href="global.html#affiliateExists">affiliateExists</a></li><li><a href="global.html#getAffiliate">getAffiliate</a></li><li><a href="global.html#createNewAffiliate">createNewAffiliate</a></li><li><a href="global.html#performRevshareAccrual">performRevshareAccrual</a></li><li><a href="global.html#createDefaultTariff">createDefaultTariff</a></li><li><a href="global.html#getValidMatchingTariff">getValidMatchingTariff</a></li><li><a href="global.html#MENTION_SUGGESTIONS">MENTION_SUGGESTIONS</a></li><li><a href="global.html#searchMentionedUsers">searchMentionedUsers</a></li><li><a href="global.html#filterProhibitedWords">filterProhibitedWords</a></li><li><a href="global.html#EMOJIS_LIST">EMOJIS_LIST</a></li><li><a href="global.html#generateDepositRedirectUrl">generateDepositRedirectUrl</a></li><li><a href="global.html#handleNewPromocodeActivation">handleNewPromocodeActivation</a></li><li><a href="global.html#handleNewCompletedDeposit">handleNewCompletedDeposit</a></li><li><a href="global.html#generateSignature">generateSignature</a></li><li><a href="global.html#verifyHookSignature">verifyHookSignature</a></li><li><a href="global.html#createOrReplaceDeposit">createOrReplaceDeposit</a></li><li><a href="global.html#Status">Status</a></li><li><a href="global.html#createConnection">createConnection</a></li><li><a href="global.html#getConnection">getConnection</a></li><li><a href="global.html#KNOWN_ACQUIRING_SYSTEMS">KNOWN_ACQUIRING_SYSTEMS</a></li><li><a href="global.html#PAYMENT_METHOD_KINDS">PAYMENT_METHOD_KINDS</a></li><li><a href="global.html#PAYMENT_METHOD_ICON_NAMES">PAYMENT_METHOD_ICON_NAMES</a></li><li><a href="global.html#PaymentMethod">PaymentMethod</a></li><li><a href="global.html#depositRules">depositRules</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">botz-service/botz/bot.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const {config} = require('../config.js')
+const {codes} = require('status-codes')
+const {error, info} = require('../../logger')
+const {createAuthInfrastructure} = require('../stuff')
+const {createLocalAccount, authenticateLocalAccount, fetchAccountData} = require('../actions/account.js')
+const {fetchInventoryItemsList, buyInventoryItems} = require('../actions/inventory-items.js')
+const {DB} = require('../../database/connection.js')
+const {delay} = require('../../lib.js')
+const {createWebsocketConnection} = require('../stuff/websockets.js')
+const {minMax} = require('../../lib.js')
+const {createFakeDeposit} = require('../actions/deposits.js')
+const {generateRandomMultiplier} = require('../stuff/crash-game-multiplier.js')
+const {makeCrashGameBet} = require('../actions/crash-game.js')
+
+
+
+class Bot {
+
+    username
+    password
+    avatar_link
+    email
+    user_id
+    axios_instance
+    cookie_jar
+    cookie
+
+    /**
+     * @type String
+     */
+    role
+
+    /**
+     *
+     * @type Boolean
+     */
+    is_playing_role = false
+
+    /**
+     * @type Boolean
+     */
+    should_stop_playing_role
+
+    /**
+     * @type {Promise.resolve}
+     */
+    stopping_promise_resolve
+
+
+    /**
+     * @type WebSocket
+     */
+    websocket_connection
+
+
+    /**
+     *
+     * @type {Number}
+     */
+    balance = 0
+
+    /**
+     * @type {InventoryItem[]}
+     */
+    inventory_items = []
+
+    preferred_items_steam_app_name
+
+    player_state = {
+        in_game: false,
+        game_id: false,
+        will_out_at: 0
+    }
+
+
+    /**
+     * @returns {Boolean}
+     */
+    get hasNothingToBet () {
+        return Boolean(this.balance &lt; config.MIN_BET_AMOUNT_USD &amp;&amp; !this.inventory_items.length)
+    }
+
+
+    constructor ({username, password, email, avatar_link, axios_instance, cookie_jar, cookie}) {
+
+        if (!username || !password || !axios_instance || !cookie_jar || !email || !avatar_link || !cookie) {
+            throw new Error(`.username, .email, .password, .axios_instance, .cookie_jar, .cookie are required`)
+        }
+        this.axios_instance = axios_instance
+        this.cookie_jar = cookie_jar
+        this.username = username
+        this.email = email
+        this.avatar_link = avatar_link
+        this.password = password
+        this.cookie = cookie
+
+
+        this.preferred_items_steam_app_name = Math.random() > (config.CS_GO_ITEMS_BETS_PERCENTAGE / 100) ? 'DOTA2' : 'CS_GO'
+    }
+
+
+    async destructBot () {
+        try {
+            await this.stopPlayingRole()
+
+            if (this.websocket_connection) {
+                this.websocket_connection.close()
+            }
+
+            return {status: codes.OK}
+        } catch (e) {
+            error(`destructBot() err:`, e)
+        }
+    }
+
+
+
+    static async create ({base_url, username, password, email, avatar_link}) {
+
+        try {
+
+            const {status, axios_instance, cookie_jar} = createAuthInfrastructure({base_url})
+
+            if (!codes.statusEqual(status, codes.OK)) {
+                return {status}
+            }
+
+            const account_creation_result = await createLocalAccount({
+                username,
+                email,
+                password,
+                axios_instance,
+            })
+
+
+            if (!codes.statusEqual(account_creation_result.status, codes.OK)) {
+                return account_creation_result
+            }
+
+            const {cookie} = account_creation_result
+
+            const bot = new Bot({
+                username,
+                password,
+                email,
+                avatar_link,
+                axios_instance,
+                cookie_jar,
+                cookie
+            })
+
+            await DB.query(`INSERT INTO botz (username, password) VALUES ($1, $2)`, [
+                username,
+                password
+            ])
+
+            await DB.query(`UPDATE users SET avatar_link = $1 WHERE username = $2`, [
+                avatar_link,
+                username
+            ])
+
+
+            await bot.ensureFakeDeposit()
+
+            await bot.ensureRequiredInventoryItemsCount()
+
+            await bot.renewBalance()
+
+            await bot.renewInventory()
+
+            if (config.BOTZ_VERBOSE_MODE) info(`bot ${username} created`)
+
+            return {
+                status: codes.OK,
+                bot
+            }
+
+
+        } catch (e) {
+            error(`create() err:`, e)
+            return {status: codes.FAIL, desc: {base_url, username, password, email, avatar_link}}
+        }
+    }
+
+    static async restore ({username, password, email, avatar_link, base_url}) {
+        try {
+
+            const {status, axios_instance, cookie_jar} = createAuthInfrastructure({base_url})
+
+            if (!codes.statusEqual(status, codes.OK)) {
+                return {status}
+            }
+
+            const account_creation_result = await authenticateLocalAccount({
+                username,
+                password,
+                axios_instance,
+            })
+
+
+            if (!codes.statusEqual(account_creation_result.status, codes.OK)) {
+                return account_creation_result
+            }
+
+            const {cookie} = account_creation_result
+
+            const bot = new Bot({
+                username,
+                password,
+                email,
+                avatar_link,
+                axios_instance,
+                cookie_jar,
+                cookie
+            })
+
+            await bot.renewBalance()
+
+            await bot.renewInventory()
+
+
+
+
+            if (config.BOTZ_VERBOSE_MODE) info(`bot ${username} restored from DB`)
+
+            return {
+                status: codes.OK,
+                bot
+            }
+
+
+        } catch (e) {
+            error(`create() err:`, e)
+            return {status: codes.FAIL, desc: {username, password}}
+        }
+    }
+
+    /**
+     * @param {String} new_role - 'PLAYER' or 'OBSERVER'
+     * @returns {Promise&lt;{status: Status, desc: {new_role: *}}|{status: Status}>}
+     */
+    async setRole ({new_role}) {
+        try {
+
+            if (config.BOTZ_VERBOSE_MODE) info(`Bot ${this.username} received new role ${new_role}`)
+
+            if (new_role !== 'PLAYER' &amp;&amp; new_role !== 'OBSERVER') {
+                return {status: codes.WRONG_ARGS, desc: {new_role}}
+            }
+
+            if (this.is_playing_role || this.role) await this.stopPlayingRole()
+
+            this.role = null
+
+            if (new_role === 'PLAYER') {
+                await this.renewBalance()
+                await this.renewInventory()
+
+                if (this.hasNothingToBet) {
+                    return {
+                        status: codes.INCORRECT_STATE
+                    }
+                }
+            }
+
+            this.role = new_role
+            this.playRole()
+
+
+            if (config.BOTZ_VERBOSE_MODE) info(`Bot ${this.username} received new role: ${new_role}`)
+            return {status: codes.OK}
+
+        } catch (e) {
+            error('setRole() err:', e)
+            return {status: codes.FAIL}
+        }
+    }
+
+    async stopPlayingRole () {
+
+        const timestamp  = Date.now()
+
+        try {
+
+            if (config.BOTZ_VERBOSE_MODE) info(`bot ${this.username} starts to stop playing role at ${timestamp}`)
+
+            this.should_stop_playing_role = true
+
+            if (this.is_playing_role) {
+                /** a lock for a graceful end of playing the previous role */
+                await new Promise(resolve => {
+                    this.stopping_promise_resolve = resolve
+                })
+            }
+
+            this.should_stop_playing_role = false
+
+            return {status: codes.OK}
+        } catch (e) {
+            error(`stopPlayingRole() err:`, e)
+            return {status: codes.FAIL}
+        } finally {
+            if (config.BOTZ_VERBOSE_MODE) info(`bot ${this.username} stopped playing role. It takes ${Date.now() - timestamp}ms`)
+        }
+    }
+
+    async playRole () {
+        try {
+
+            if (this.is_playing_role) {
+                return
+            }
+
+            this.is_playing_role = true
+            if (config.BOTZ_VERBOSE_MODE) info(`Bot ${this.username} starts to play an ${this.role} role`)
+
+            while (this.role &amp;&amp; this.should_stop_playing_role !== true) {
+
+                if (!this.role) {
+                    break
+                }
+
+                if (this.role === 'OBSERVER') {
+                    await this.observe()
+                } else if (this.role === 'PLAYER' &amp;&amp; Math.random() > 0.5) {
+                    const {status} = await this.playCrashGameRound()
+                    if (!codes.statusEqual(status, codes.OK)) {
+                        /** bot can not play its role */
+                        break
+                    }
+                } else {
+                    await delay(60000)
+                }
+
+            }
+
+            /** removing a lock */
+            if (this.stopping_promise_resolve) {
+                this.stopping_promise_resolve()
+            }
+
+            return {status: codes.OK}
+
+
+        } catch (e) {
+            error('playRole() err:', e)
+            return {status: codes.FAIL}
+        } finally {
+            this.is_playing_role = false
+            this.role = null
+        }
+    }
+
+    /**
+     * @returns {Promise&lt;{status: Status}>}
+     */
+    async observe () {
+        /** lol */
+        const websocket_connection_establishing_result = await this.ensureWebsocketConnection()
+
+        if (!codes.statusEqual(websocket_connection_establishing_result.status, codes.OK)) {
+            return {
+                status: websocket_connection_establishing_result.status,
+                desc: {
+                    websocket_connection_establishing_result
+                }
+            }
+        }
+
+        await delay(10000)
+        return {status: codes.OK}
+    }
+
+    async playCrashGameRound () {
+        try {
+
+
+            if (config.BOTZ_VERBOSE_MODE) info(`Bot ${this.username} starts to play crash game round`)
+
+            const fake_deposit_ensuring_result = await this.ensureFakeDeposit()
+
+            if (!codes.statusEqual(fake_deposit_ensuring_result.status, codes.OK)) {
+                return {
+                    status: fake_deposit_ensuring_result,
+                    desc: {
+                        fake_deposit_ensuring_result
+                    }
+                }
+            }
+
+            const websocket_connection_establishing_result = await this.ensureWebsocketConnection()
+
+            if (!codes.statusEqual(websocket_connection_establishing_result.status, codes.OK)) {
+                return {
+                    status: websocket_connection_establishing_result.status,
+                    desc: {
+                        websocket_connection_establishing_result
+                    }
+                }
+            }
+
+            const balance_renewing_result = await this.renewBalance()
+
+            if (!codes.statusEqual(balance_renewing_result.status, codes.OK)) {
+                return {
+                    status: websocket_connection_establishing_result.status,
+                    desc: {
+                        balance_renewing_result
+                    }
+                }
+            }
+
+
+            const required_inventory_items_count_ensuring_result = await this.ensureRequiredInventoryItemsCount()
+
+            if (!codes.statusEqual(required_inventory_items_count_ensuring_result.status, codes.OK)) {
+                return {
+                    status: required_inventory_items_count_ensuring_result.status,
+                    desc: {
+                        required_inventory_items_count_ensuring_result
+                    }
+                }
+            }
+
+            if (this.hasNothingToBet) {
+                if (config.BOTZ_VERBOSE_MODE) info(`Bot ${this.username} (PLAYER) has nothing to bet`)
+                return {status: codes.INCORRECT_STATE}
+            }
+
+            /** game process **/
+            const game_participation_result = await new Promise((resolve, reject) => {
+
+                let game_end_timeout
+
+                this.websocket_connection.onmessage = async ({data}) => {
+
+                    try {
+
+                        const {channel_name, event_name, payload} = JSON.parse(data)
+
+                        if (channel_name !== 'crash-game') {
+                            return
+                        }
+
+                        if (event_name === 'statusUpdate' &amp;&amp; payload.status === 'CREATED' &amp;&amp; !this.player_state.in_game) {
+
+                            if (config.BOTZ_VERBOSE_MODE) info(`Bot ${this.username} tries to join crash game round #${payload.game_id}`)
+
+                            this.player_state.game_id = payload.game_id
+                            this.player_state.in_game = true
+
+                            /** random multiplier */
+                            this.player_state.will_out_at = parseFloat( ((generateRandomMultiplier(1.9, 2) / 2) + 0.1).toFixed(2) )
+
+                            game_end_timeout = setTimeout(() => {
+                                reject(new Error(`Bot ${this.username} has not received the crash game end message for 5 mins. game_id is ${this.player_state.game_id}`))
+
+                            }, 5 * 60 * 1000)
+
+
+                            if (!this.inventory_items[0]) {
+                                reject(`Bot ${this.username} has no items to bet`)
+                                return
+                            }
+
+                            const inventory_item_ids = [this.inventory_items[0].inventory_item_id]
+
+                            while (Math.random() > 0.75) {
+
+                                const item_to_add = this.inventory_items[inventory_item_ids.length]
+
+                                if (!item_to_add) {
+                                    break
+                                }
+
+                                inventory_item_ids.push(item_to_add.inventory_item_id)
+                            }
+
+
+
+                            this.inventory_items = this.inventory_items.filter(i_i => !inventory_item_ids.includes(i_i.inventory_item_id))
+
+
+                            const making_bet_result = await new Promise((resolve) => {
+                                setTimeout(async () => {
+                                    resolve(await makeCrashGameBet({
+                                        axios_instance: this.axios_instance,
+                                        inventory_item_ids,
+                                        auto_out_at_multiplier: this.player_state.will_out_at
+                                    }))
+                                }, minMax(0,6000))
+                            })
+
+                            if (!codes.statusEqual(making_bet_result.status, codes.OK)) {
+
+                                const err = new Error(`Bot ${this.username} is unable to make the bet in crash game round #${payload.game_id}`)
+
+                                err.making_bet_result = making_bet_result
+                                err.game_id = payload.game_id
+                                err.username = this.username
+                                err.inventory_item_ids = inventory_item_ids
+                                err.auto_out_at =  this.player_state.will_out_at
+
+                                reject(err)
+                            }
+
+                            if (config.BOTZ_VERBOSE_MODE) info(`Bot ${this.username} joined round #${this.player_state.game_id} `)
+
+                        } else if (this.player_state.in_game &amp;&amp; event_name === 'statusUpdate') {
+
+                            if (payload.status === 'COMPLETED') {
+                                this.player_state.in_game = false
+                                resolve({status: codes.OK})
+                                if (config.BOTZ_VERBOSE_MODE) info(`Bot ${this.username} completed round #${this.player_state.game_id}`)
+                            }
+
+                        }
+
+                        // eslint-disable-next-line no-useless-catch
+                    } catch (e) {
+                        throw e
+                    } finally {
+                        if (game_end_timeout) {
+                            clearTimeout(game_end_timeout)
+                        }
+                    }
+
+                }
+
+            })
+
+            this.websocket_connection.onmessage = () => {}
+
+            if (!codes.statusEqual(game_participation_result.status, codes.OK)) {
+
+                return {
+                    status: codes.FAIL,
+                    desc: {
+                        game_participation_result
+                    }
+                }
+            }
+
+
+            if (config.BOTZ_VERBOSE_MODE) info(`Bot ${this.username} participated in game ${this.player_state.game_id}`)
+
+            return {
+                status: codes.OK
+            }
+
+
+        } catch (e) {
+            error('playCrashGameRound() err:', e)
+            return {status: codes.FAIL}
+        }
+    }
+
+    async ensureWebsocketConnection () {
+        try {
+
+
+            if (!this.websocket_connection ||
+                this.websocket_connection.readyState !== this.websocket_connection.OPEN) {
+
+                if (this.websocket_connection) {
+                    this.websocket_connection.close()
+                }
+
+                const {websocket_connection, status} = await createWebsocketConnection({
+                    ws_url: config.WS_API_URL,
+                    cookie: this.cookie
+                })
+
+
+                if (!codes.statusEqual(status, codes.OK)) {
+                    return {status}
+                }
+
+                this.websocket_connection = websocket_connection
+
+            }
+
+            return {
+                status: codes.OK,
+                websocket_connection: this.websocket_connection
+            }
+
+        } catch (e) {
+            error('ensureWebsocketConnection() err:', e)
+            return {status: codes.FAIL}
+        }
+    }
+    async ensureFakeDeposit () {
+        try {
+
+            const deposit_exists = await DB.query(`
+                SELECT 1 as deposit_exists FROM deposits d 
+                    LEFT JOIN users u ON (d.user_id = u.user_id)
+                WHERE u.username = $1 AND d.status = 'COMPLETED'
+                `,[
+                this.username
+            ]).then(r => r.rows[0] ? Boolean(r.rows[0].deposit_exists) : false)
+
+            if (deposit_exists) {
+                return {status: codes.OK}
+            }
+
+
+            const new_deposit_amount_usd = minMax(
+                config.MIN_DEPOSIT_AMOUNT_USD,
+                config.MAX_DEPOSIT_AMOUNT_USD
+            )
+
+            const deposit_creation_result = await createFakeDeposit({
+                username: this.username,
+                net_amount_usd: new_deposit_amount_usd
+            })
+
+            if (!codes.statusEqual(deposit_creation_result.status, codes.OK)) {
+                error(`Error creating new fake deposit:`, deposit_creation_result)
+                return deposit_creation_result
+
+            }
+
+            if (config.BOTZ_VERBOSE_MODE) info(`Deposit with amount of $${new_deposit_amount_usd} added for bot ${this.username}`)
+
+
+            await this.renewBalance()
+
+            return {status: deposit_creation_result.status}
+
+
+        } catch (e) {
+            error('ensureFakeDeposit() err:', e)
+            return {status: codes.FAIL}
+        }
+    }
+
+    async ensureRequiredInventoryItemsCount () {
+        try {
+
+            const inventory_renewing_result = await this.renewInventory()
+
+
+            if (!codes.statusEqual(inventory_renewing_result.status, codes.OK)) {
+                return {
+                    status: codes.FAIL,
+                    desc: {
+                        inventory_renewing_result
+                    }
+                }
+            }
+
+            if (!this.inventory_items.length) {
+
+                if (this.balance &lt;= 0) {
+                    return {
+                        status: codes.INCORRECT_STATE,
+                        desc: {
+                            incorrect_balance: this.balance
+                        }
+                    }
+                }
+
+                const new_inventory_items_buying_result =
+                    await buyInventoryItems({
+                        axios_instance: this.axios_instance,
+                        max_total_price: this.balance,
+                        steam_app_name: this.preferred_items_steam_app_name
+                    })
+
+                if (!codes.statusEqual(new_inventory_items_buying_result.status, codes.OK)) {
+                    return {
+                        status: codes.FAIL,
+                        desc: {
+                            new_inventory_items_buying_result
+                        }
+                    }
+                }
+
+                if (config.BOTZ_VERBOSE_MODE) info(`Bot ${this.username} bought ${new_inventory_items_buying_result.bought_items.length} inventory items`)
+
+                new_inventory_items_buying_result.bought_items.forEach(item => {
+                    this.inventory_items.push(item)
+                })
+
+                this.balance = new_inventory_items_buying_result.updated_balance
+
+            }
+
+            if (config.BOTZ_VERBOSE_MODE) info(`Bot ${this.username} has ${this.inventory_items.length} inventory items`)
+
+            return {
+                status: codes.OK
+            }
+
+
+        } catch (e) {
+            error('ensureRequiredInventoryItemsCount() err:', e)
+            return {status: codes.FAIL}
+        }
+    }
+
+    async renewInventory () {
+        try {
+            const inventory_items_list_fetching_result = await fetchInventoryItemsList({
+                axios_instance: this.axios_instance
+            })
+
+            if (!codes.statusEqual(inventory_items_list_fetching_result.status, codes.OK)) {
+                return {
+                    status: codes.FAIL,
+                    desc: {inventory_items_list_fetching_result}
+                }
+            }
+
+            this.inventory_items = inventory_items_list_fetching_result.inventory
+
+            return {
+                status: codes.OK
+            }
+        } catch (e) {
+            error('renewInventory() err:', e)
+            return {status: codes.FAIL}
+        }
+    }
+
+    async renewBalance () {
+        try {
+            const account_data_fetching_result = await fetchAccountData({
+                axios_instance: this.axios_instance
+            })
+
+            if (!codes.statusEqual(account_data_fetching_result.status, codes.OK)) {
+                return {
+                    status: codes.FAIL,
+                    desc: {
+                        account_data_fetching_result
+                    }
+                }
+            }
+
+            this.balance = account_data_fetching_result.account_data.balance
+
+            return {
+                status: codes.OK
+            }
+
+        } catch (e) {
+            error('renewBalance() err:', e)
+            return {status: codes.FAIL}
+        }
+    }
+
+
+}
+
+module.exports = {Bot}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.5</a> on Mon Feb 08 2021 15:54:23 GMT+0300 (Moscow Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

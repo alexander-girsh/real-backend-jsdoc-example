@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Home - Documentation</title>
+    <title>inventory.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -34,31 +34,66 @@
 
 <div id="main">
     
+    <h1 class="page-title">inventory.js</h1>
+    
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module Inventory
+ */
 
+/**
+ * @desc ENUM, existed steam app names, for e.g "DOTA2"
+ * @typedef {String} SteamAppName
+ * @property {String} DOTA2
+ * @property {String} CS_GO
+ */
 
-    <section class="package">
-        <h3> </h3>		
+/**
+ * @desc ENUM, known values for InventoryItem.status, for e.g "STORED"
+ * @typedef {String} InventoryItemStatus
+ * @property {String} STORED - an item which may be placed as a bet, sold or withdrawn
+ * @property {String} WITHDRAWAL_REQUEST_CREATED - item with a created withdraw request. request may be rejected from admin or removed by user. item will become "STORED".
+ * @property {String} WITHDRAWAL_REQUEST_APPROVED - an item whose withdrawal request has been approved by the admin. the user can no longer cancel the request.
+ * @property {String} WITHDRAW_PROCESSING - the item whose withdrawal request is currently being processed on the backend
+ * @property {String} AWAITING_WITHDRAW_CONFIRMATION - the state when the backend has already processed the withdrawal, but the user must accept the exchange on the steam site
+ * @property {String} WITHDRAWN - item was withdrawn completely
+ * @property {String} SOLD - item was placed as a bet in the game or sold using the items-selling api
+ */
+
+/**
+ * @typedef InventoryItem
+ * @property {String} market_hash_name - an unique identifier of the steam item
+ * @property {SteamAppName} steam_app_name
+ * @property {Number} price - in usd
+ * @property {BigInt} inventory_item_id - an unique id of the InventoryItem
+ * @property {InventoryItemStatus} status - current status, for e.g "STORED" or "WITHDRAWN"
+ */
+
+/**
+ * @module Inventory
+ * @desc Returns the full list of items in the user's inventory
+ * @function itemsList
+ * @path {GET} /api/inventory/
+ * @response {codes.OK} status - if success
+ * @response {InventoryItem[]} inventory - if success
+ * @response {codes.FORBIDDEN} status - if not authorized
+ * @response {codes.FAIL} status - if internal error
+ * @code {403} if user is not authorized and access denied
+ * @code {200} in all other cases
+ * @chain {@link module:http-server/middleware/access~addAuthorizationDataToRequest}
+ * @chain {@link module:http-server/middleware/access~accessUser}
+ * @chain this endpoint
+ */
+</code></pre>
+        </article>
     </section>
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
 
 
 

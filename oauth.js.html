@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Home - Documentation</title>
+    <title>oauth.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -34,31 +34,68 @@
 
 <div id="main">
     
+    <h1 class="page-title">oauth.js</h1>
+    
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module oAuth
+ */
 
 
-    <section class="package">
-        <h3> </h3>		
+/**
+ * @desc It generates link and redirects user's browser to oauth provider substituting oauth application credentials from config
+ * @function generateVKRedirect
+ * @see {@link module:http-server/config.VK_APP_ID}
+ * @path {GET} /api/oauth/generate-vk-redirect
+ * @header {String} host a domain to generate the redirect_uri
+ * @code {302} Redirect to oAuth provider
+ * @query bind {Boolean=} if wanna bind an oauth id to existed account
+ */
+
+
+/**
+ * @function generateGoogleRedirect
+ * @desc It generates link and redirects user's browser to oauth provider substituting oauth application credentials from config
+ * @see {@link module:http-server/config.GOOGLE_APP_ID}
+ * @path {GET} /api/oauth/generate-google-redirect
+ * @header {String} host a domain to generate the redirect_uri
+ * @code {302} Redirect to oAuth provider
+ * @query bind {Boolean=} if wanna bind an oauth id to existed account
+ */
+
+
+/**
+ *  @function generateYandexRedirect
+ * @desc It generates link and redirects user's browser to oauth provider substituting oauth application credentials from config
+ * @see {@link module:http-server/config.YANDEX_APP_ID}
+ * @path {GET} /api/oauth/generate-yandex-redirect
+ * @header {String} host a domain to generate the redirect_uri
+ * @code {302} Redirect to oAuth provider
+ * @query bind {Boolean=} if wanna bind an oauth id to existed account
+ */
+
+
+/**
+ * @function generateSteamRedirect
+ * @desc It generates link and redirects user's browser to oauth provider substituting oauth application credentials from config
+ * @see {@link module:http-server/config.STEAM_APP_ID}
+ * @path {GET} /api/oauth/generate-steam-redirect
+ * @header {String} host a domain to generate the redirect_uri
+ * @code {302} Redirect to oAuth provider
+ * @query bind {Boolean=} if wanna bind an oauth id to existed account
+ */
+
+
+</code></pre>
+        </article>
     </section>
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
 
 
 

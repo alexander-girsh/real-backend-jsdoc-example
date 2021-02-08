@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>http-server/config.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="OutgoingMessage.html">OutgoingMessage</a></li><li><a href="Game.html">Game</a></li><li><a href="CrashGame.html">CrashGame</a><ul class='members'><li data-type='member' style='display: none;'><a href="CrashGame.html#.CrashGame">CrashGame</a></li><li data-type='member' style='display: none;'><a href="CrashGame.html#.CrashGame">CrashGame</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="CrashGame.html#publishUpdatedPlayer">publishUpdatedPlayer</a></li><li data-type='method' style='display: none;'><a href="CrashGame.html#handleManualOutDirectives">handleManualOutDirectives</a></li><li data-type='method' style='display: none;'><a href="CrashGame.html#autoOutPlayers">autoOutPlayers</a></li><li data-type='method' style='display: none;'><a href="CrashGame.html#outRemainingPlayers">outRemainingPlayers</a></li><li data-type='method' style='display: none;'><a href="CrashGame.html#outPlayers">outPlayers</a></li></ul></li><li><a href="CrashGameDBTransaction.html">CrashGameDBTransaction</a><ul class='methods'><li data-type='method' style='display: none;'><a href="CrashGameDBTransaction.html#.start">start</a></li><li data-type='method' style='display: none;'><a href="CrashGameDBTransaction.html#createSavePoint">createSavePoint</a></li><li data-type='method' style='display: none;'><a href="CrashGameDBTransaction.html#rollbackToSavePoint">rollbackToSavePoint</a></li></ul></li><li><a href="GameWin.html">GameWin</a><ul class='methods'><li data-type='method' style='display: none;'><a href="GameWin.html#.create">create</a></li><li data-type='method' style='display: none;'><a href="GameWin.html#.calcWonAmount">calcWonAmount</a></li></ul></li><li><a href="SteamItem.html">SteamItem</a><ul class='methods'><li data-type='method' style='display: none;'><a href="SteamItem.html#.fromObject">fromObject</a></li></ul></li><li><a href="module-Games-Game.html">Game</a></li><li><a href="module-Games-SteamItem.html">SteamItem</a></li><li><a href="module-Games-InventoryItem.html">InventoryItem</a></li><li><a href="module-Games-GameWin.html">GameWin</a></li><li><a href="module-Games-GameBet.html">GameBet</a></li><li><a href="module-Games-User.html">User</a></li><li><a href="module-Games-Player.html">Player</a></li></ul><h3>Modules</h3><ul><li><a href="module-access_config.html">access/config</a></li><li><a href="module-access.html">access</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-access.html#~encryptString">encryptString</a></li><li data-type='method' style='display: none;'><a href="module-access.html#.decryptString">decryptString</a></li><li data-type='method' style='display: none;'><a href="module-access.html#~issueJWTToken">issueJWTToken</a></li></ul></li><li><a href="module-broadcasting-server_config.html">broadcasting-server/config</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-broadcasting-server_config.html#.PORT">PORT</a></li></ul></li><li><a href="module-ws-server_ws-clients.html">ws-server/ws-clients</a></li><li><a href="module-database_config.html">database/config</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-database_config.html#.RECONNECTION_ATTEMPTS">RECONNECTION_ATTEMPTS</a></li><li data-type='member' style='display: none;'><a href="module-database_config.html#.RECONNECTION_DELAY">RECONNECTION_DELAY</a></li><li data-type='member' style='display: none;'><a href="module-database_config.html#.DB_CONNECTION_URL">DB_CONNECTION_URL</a></li><li data-type='member' style='display: none;'><a href="module-database_config.html#.DB_TRANSACTIONS_RETRIES_LIMIT">DB_TRANSACTIONS_RETRIES_LIMIT</a></li><li data-type='member' style='display: none;'><a href="module-database_config.html#.PG_POOL_QUERIES_VERBOSE_MODE">PG_POOL_QUERIES_VERBOSE_MODE</a></li></ul></li><li><a href="module-database_connection.html">database/connection</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-database_connection.html#~onClientConnected">onClientConnected</a></li><li data-type='method' style='display: none;'><a href="module-database_connection.html#~reconnect">reconnect</a></li><li data-type='method' style='display: none;'><a href="module-database_connection.html#~createNewClient">createNewClient</a></li><li data-type='method' style='display: none;'><a href="module-database_connection.html#~execRepeatableTransaction">execRepeatableTransaction</a></li></ul></li><li><a href="module-http-server_api_accounts.html">http-server/api/accounts</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~createLocal">createLocal</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~authenticateLocal">authenticateLocal</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~initEmailConfirmation">initEmailConfirmation</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~confirmEmailWithCode">confirmEmailWithCode</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~sendPasswordRecoveryCode">sendPasswordRecoveryCode</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~checkPasswordRecoveryCode">checkPasswordRecoveryCode</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~issueNewPassword">issueNewPassword</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~logout">logout</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~getAccountData">getAccountData</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_accounts.html#~list">list</a></li></ul></li><li><a href="module-http-server_api_oAuth.html">http-server/api/oAuth</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~generateVKRedirect">generateVKRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~handleVKRedirect">handleVKRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~generateGoogleRedirect">generateGoogleRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~handleGoogleRedirect">handleGoogleRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~generateYandexRedirect">generateYandexRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~handleYandexRedirect">handleYandexRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~getOpenIdInstanceByReturnUrl">getOpenIdInstanceByReturnUrl</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~handleSteamRedirect">handleSteamRedirect</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~readUserData">readUserData</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~createUser">createUser</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_oAuth.html#~endAuthentication">endAuthentication</a></li></ul></li><li><a href="module-http-server_api_payments_freekassa.html">http-server/api/payments/freekassa</a></li><li><a href="module-http-server_api_payments_gamemoney.html">http-server/api/payments/gamemoney</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_api_payments_gamemoney.html#~handleDepositHook">handleDepositHook</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_payments_gamemoney.html#~handleDepositHook">handleDepositHook</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_payments_gamemoney.html#~generateDepositRedirectSignature">generateDepositRedirectSignature</a></li></ul></li><li><a href="module-http-server_api_payments.html">http-server/api/payments</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_api_payments.html#~depositRules">depositRules</a></li><li data-type='method' style='display: none;'><a href="module-http-server_api_payments.html#~generateDepositRedirect">generateDepositRedirect</a></li></ul></li><li><a href="module-http-server_config.html">http-server/config</a></li><li><a href="module-http-server.html">http-server</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-http-server.html#.API">API</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server.html#~startServe">startServe</a></li><li data-type='method' style='display: none;'><a href="module-http-server.html#~shutDown">shutDown</a></li></ul></li><li><a href="module-http-server_middleware_access.html">http-server/middleware/access</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~setAuthCookie">setAuthCookie</a></li><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~removeAuthCookie">removeAuthCookie</a></li><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~addAuthorizationDataToRequest">addAuthorizationDataToRequest</a></li><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~accessUser">accessUser</a></li><li data-type='method' style='display: none;'><a href="module-http-server_middleware_access.html#~accessAdmin">accessAdmin</a></li></ul></li><li><a href="module-http-server_gamemoney-lib.html">http-server/gamemoney-lib</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~generateHmacSignature">generateHmacSignature</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~verifyRequestRsaSignature">verifyRequestRsaSignature</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~createDeposit">createDeposit</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~updateDepositStatus">updateDepositStatus</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~handleDepositHook">handleDepositHook</a></li><li data-type='method' style='display: none;'><a href="module-http-server_gamemoney-lib.html#~generateDepositRedirectUrl">generateDepositRedirectUrl</a></li></ul></li><li><a href="module-http-server_health-check.html">http-server/health-check</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#~bytesToMb">bytesToMb</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#~memoryUsageInMb">memoryUsageInMb</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#~updateState">updateState</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#~getState">getState</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#.httpMiddleware">httpMiddleware</a></li><li data-type='method' style='display: none;'><a href="module-http-server_health-check.html#.httpEndpoint">httpEndpoint</a></li></ul></li><li><a href="module-http-server_mailer.html">http-server/mailer</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_mailer.html#~sendMail">sendMail</a></li></ul></li><li><a href="module-http-server_plugins_withdrawals_approval.html">http-server/plugins/withdrawals/approval</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_plugins_withdrawals_approval.html#~checkForWithdrawalsBlockers">checkForWithdrawalsBlockers</a></li></ul></li><li><a href="module-http-server_lib.html">http-server/lib</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~freezeObjectDeep">freezeObjectDeep</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~bytesSizeOfObject">bytesSizeOfObject</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~asyncInterval">asyncInterval</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~delay">delay</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~bytesToMb">bytesToMb</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~memoryUsageInMb">memoryUsageInMb</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~compareDeep">compareDeep</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~generateRandomString">generateRandomString</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~minMax">minMax</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~shuffleArray">shuffleArray</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~toFixedPrecisionFloat">toFixedPrecisionFloat</a></li><li data-type='method' style='display: none;'><a href="module-http-server_lib.html#~to2DigitsPrecisionFloat">to2DigitsPrecisionFloat</a></li></ul></li><li><a href="module-logger.html">logger</a></li><li><a href="module-redis-connection_config.html">redis-connection/config</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-redis-connection_config.html#.REDIS_HOST">REDIS_HOST</a></li><li data-type='member' style='display: none;'><a href="module-redis-connection_config.html#.REDIS_PORT">REDIS_PORT</a></li></ul></li><li><a href="module-Games.html">Games</a></li></ul><h3>Global</h3><ul><li><a href="global.html#createLocalAccount">createLocalAccount</a></li><li><a href="global.html#authenticateLocalAccount">authenticateLocalAccount</a></li><li><a href="global.html#fetchAccountData">fetchAccountData</a></li><li><a href="global.html#createAxiosInstance">createAxiosInstance</a></li><li><a href="global.html#createAuthInfrastructure">createAuthInfrastructure</a></li><li><a href="global.html#createWebsocketConnection">createWebsocketConnection</a></li><li><a href="global.html#socketCookieParser">socketCookieParser</a></li><li><a href="global.html#authCookieParser">authCookieParser</a></li><li><a href="global.html#hasAccessUser">hasAccessUser</a></li><li><a href="global.html#hasAccessAdmin">hasAccessAdmin</a></li><li><a href="global.html#util">util</a></li><li><a href="global.html#isMainBroadcastingServer">isMainBroadcastingServer</a></li><li><a href="global.html#MIN_WON_INVENTORY_ITEM_SPAWN_PRICE_USD">MIN_WON_INVENTORY_ITEM_SPAWN_PRICE_USD</a></li><li><a href="global.html#BETTING_PERIOD_MS">BETTING_PERIOD_MS</a></li><li><a href="global.html#COMPLETED_PERIOD_MS">COMPLETED_PERIOD_MS</a></li><li><a href="global.html#CRASH_GAME_FRAMES_DELAY_MS">CRASH_GAME_FRAMES_DELAY_MS</a></li><li><a href="global.html#GAME_LOOP_DELAY_AFTER_ERROR_MS">GAME_LOOP_DELAY_AFTER_ERROR_MS</a></li><li><a href="global.html#%2522your-256-bit-secret%2522">"your-256-bit-secret"</a></li><li><a href="global.html#CURRENT_GAME">CURRENT_GAME</a></li><li><a href="global.html#generateFinalMultipliersGroup">generateFinalMultipliersGroup</a></li><li><a href="global.html#activateFinalMultipliersGroup">activateFinalMultipliersGroup</a></li><li><a href="global.html#generateDepositRedirect">generateDepositRedirect</a></li><li><a href="global.html#list">list</a></li><li><a href="global.html#Accounts">Accounts</a></li><li><a href="global.html#performInventoryItemWithdrawalStatusUpdateNotificationForUser">performInventoryItemWithdrawalStatusUpdateNotificationForUser</a></li><li><a href="global.html#itemsList">itemsList</a></li><li><a href="global.html#fileParser">fileParser</a></li><li><a href="global.html#CONTENT_TYPES%255Bundefined%255D">CONTENT_TYPES[undefined]</a></li><li><a href="global.html#STEAM_ITEM_ICON_URL_HASHES_CACHE%255Bundefined%255D">STEAM_ITEM_ICON_URL_HASHES_CACHE[undefined]</a></li><li><a href="global.html#freekassaIPVerificationMiddleware">freekassaIPVerificationMiddleware</a></li><li><a href="global.html#freekassaHookSignatureVerificationMiddleware">freekassaHookSignatureVerificationMiddleware</a></li><li><a href="global.html#gamemoneyIPVerificationMiddleware">gamemoneyIPVerificationMiddleware</a></li><li><a href="global.html#gamemoneyHookSignatureVerificationMiddleware">gamemoneyHookSignatureVerificationMiddleware</a></li><li><a href="global.html#skinsBackIPVerificationMiddleware">skinsBackIPVerificationMiddleware</a></li><li><a href="global.html#skinsBackHookSignatureVerificationMiddleware">skinsBackHookSignatureVerificationMiddleware</a></li><li><a href="global.html#unitpayIPVerificationMiddleware">unitpayIPVerificationMiddleware</a></li><li><a href="global.html#unitpayHookSignatureVerificationMiddleware">unitpayHookSignatureVerificationMiddleware</a></li><li><a href="global.html#affiliateExists">affiliateExists</a></li><li><a href="global.html#getAffiliate">getAffiliate</a></li><li><a href="global.html#createNewAffiliate">createNewAffiliate</a></li><li><a href="global.html#performRevshareAccrual">performRevshareAccrual</a></li><li><a href="global.html#createDefaultTariff">createDefaultTariff</a></li><li><a href="global.html#getValidMatchingTariff">getValidMatchingTariff</a></li><li><a href="global.html#MENTION_SUGGESTIONS">MENTION_SUGGESTIONS</a></li><li><a href="global.html#searchMentionedUsers">searchMentionedUsers</a></li><li><a href="global.html#filterProhibitedWords">filterProhibitedWords</a></li><li><a href="global.html#EMOJIS_LIST">EMOJIS_LIST</a></li><li><a href="global.html#generateDepositRedirectUrl">generateDepositRedirectUrl</a></li><li><a href="global.html#handleNewPromocodeActivation">handleNewPromocodeActivation</a></li><li><a href="global.html#handleNewCompletedDeposit">handleNewCompletedDeposit</a></li><li><a href="global.html#generateSignature">generateSignature</a></li><li><a href="global.html#verifyHookSignature">verifyHookSignature</a></li><li><a href="global.html#createOrReplaceDeposit">createOrReplaceDeposit</a></li><li><a href="global.html#Status">Status</a></li><li><a href="global.html#createConnection">createConnection</a></li><li><a href="global.html#getConnection">getConnection</a></li><li><a href="global.html#KNOWN_ACQUIRING_SYSTEMS">KNOWN_ACQUIRING_SYSTEMS</a></li><li><a href="global.html#PAYMENT_METHOD_KINDS">PAYMENT_METHOD_KINDS</a></li><li><a href="global.html#PAYMENT_METHOD_ICON_NAMES">PAYMENT_METHOD_ICON_NAMES</a></li><li><a href="global.html#PaymentMethod">PaymentMethod</a></li><li><a href="global.html#depositRules">depositRules</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">http-server/config.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** @module http-server/config */
+const {freezeObjectDeep, checkConfigToFindUndefinedValue} = require('../lib.js')
+
+
+const config = {}
+
+/**
+ * @member APPLICATION_DOMAIN
+ * @type {String}
+ * @example localhost, best-site.com etc.
+ */
+config.APPLICATION_DOMAIN = process.env.APPLICATION_DOMAIN &amp;&amp; process.env.APPLICATION_DOMAIN.trim()
+
+/** auth &amp;&amp; jwt issuing and cookies block */
+
+
+
+/**
+ * @member DEFAULT_OAUTH_SUCCESS_RECIRECT_URL
+ * @type {string}
+ */
+config.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL = process.env.DEFAULT_OAUTH_SUCCESS_REDIRECT_URL
+
+
+
+/**
+ * @desc It contains the list of known .admin_permission_scope entries. Each entry means some scope which allows the access to bound api endpoints.
+ * @member REGISTERED_ADMIN_PERMISSIONS_SCOPES
+ * @type {String[]}
+ */
+config.REGISTERED_ADMIN_PERMISSIONS_SCOPES = [
+    'ACCOUNTS',
+    'DEV_DOCS',
+    'FINANCE',
+    'GAMES',
+    'GAMES_CONFIGURATION',
+    'SUPPORT',
+    'PROMOCODES',
+    'AFFILIATES'
+]
+
+
+/**
+ * @desc enables SameSite = 'Strict', secure and httpOnly flags for cookie including the auth cookie
+ * @member COOKIE_SECURE_MODE
+ * @type {Boolean}
+ */
+config.COOKIE_SECURE_MODE = (() => {
+
+    if (!process.env.COOKIE_SECURE_MODE) {
+        return undefined
+    }
+
+    if (process.env.COOKIE_SECURE_MODE.trim() === 'true') {
+        return true
+    }
+
+    if (process.env.COOKIE_SECURE_MODE.trim() === 'false') {
+        return false
+    }
+
+    return undefined
+
+})()
+
+/**
+ * @member AUTH_COOKIE_OPTIONS
+ * @see {@link module:http-server/middleware/access~setAuthCookie}
+ * @type {{maxAge: number, signed: boolean, httpOnly: boolean}}
+ * @type Object
+ * @property maxAge {Number} milliseconds before cookie expiration, for e.g 3600 * 24 * 14000 means two weeks
+ * @property signed {Boolean} directive to sigh cookie using {@link module:http-server/config~COOKIES_SECRET} key
+ * @property httpOnly {Boolean} directive to disallow client-side JS to CRUD this cookie
+ */
+config.AUTH_COOKIE_OPTIONS = config.COOKIE_SECURE_MODE ?
+    // secure mode
+    {
+        maxAge: 3600 * 24 * 14 * 1000,
+        httpOnly: true,
+        secure: true,
+        signed: true,
+        SameSite: 'Strict',
+        sameSite: 'Strict'
+    }
+    :
+    // not secure mode
+    {
+        maxAge: 3600 * 24 * 14 * 1000,
+        httpOnly: false,
+        secure: false,
+        signed: true,
+        SameSite: 'Lax',
+        sameSite: 'Lax'
+    }
+/** ********************************** **/
+
+
+/**
+ * @desc It contains the ips requests from which can pass the .accessAdmin() middleware (if required and granted permissions also match).
+ * It also can be specified in env as '*' (String). It disables the ip validation to admins requests.
+ * @member ACCESS_ADMIN_IPS_WHITELIST
+ * @type {String[]}
+ */
+config.ACCESS_ADMIN_IPS_WHITELIST = process.env.ACCESS_ADMIN_IPS_WHITELIST ? process.env.ACCESS_ADMIN_IPS_WHITELIST.trim().split(',') : undefined
+
+
+/**
+ * @member ALLOWED_STATES_HTTP_CODES
+ * @desc The states which can be announced using {@link module:http-server/health-check~updateState}
+ * and the http-server response codes which accord to each of them.
+ * @type Object
+ * @property STARTING {Number} The state between instance (node process) start and reaching readiness to serve requests
+ * @property SHUTTING_DOWN {Number} The state between receiving SIGTERM signal from orchestration and complete shutting down
+ * Cause the service is stateful, handling new requests may be risky
+ * @property ON {Number} The server is ready to handle all types of requests
+ * @see {@link module:http-server/health-check}
+ */
+config.ALLOWED_STATES_HTTP_CODES = {
+    'STARTING': 503,
+    'UP': 200,
+    'SHUTTING_DOWN': 503
+}
+
+/**
+ * @desc to set with 'true' all shutting-down logic should be implemented
+ * @var FOLLOW_NIX_SIGNALS
+ * @type {boolean}
+ * @see {@link module:http-server/health-check}
+ */
+config.FOLLOW_NIX_SIGNALS = false
+
+
+/** oauth apps credentials */
+/**
+ * @member VK_APP_ID
+ * @type {string}
+ */
+config.VK_APP_ID = process.env.VK_APP_ID
+/**
+ * @member VK_APP_SECRET
+ * @type {string}
+ */
+config.VK_APP_SECRET = process.env.VK_APP_SECRET
+/**
+ * @member FACEBOOK_APP_SECRET
+ * @type {string}
+ */
+config.GOOGLE_APP_ID = process.env.GOOGLE_APP_ID
+/**
+ * @member GOOGLE_APP_SECRET
+ * @type {string}
+ */
+config.GOOGLE_APP_SECRET=process.env.GOOGLE_APP_SECRET
+/**
+ * @member YANDEX_APP_ID
+ * @type {string}
+ */
+config.YANDEX_APP_ID = process.env.YANDEX_APP_ID
+/**
+ * @member YANDEX_APP_SECRET
+ * @type {string}
+ */
+config.YANDEX_APP_SECRET = process.env.YANDEX_APP_SECRET
+/**
+ * @member STEAM_API_KEY
+ * @type {string}
+ */
+config.STEAM_API_KEY = process.env.STEAM_API_KEY
+
+/** ******** **/
+
+
+/** telegram integration section */
+
+/**
+ * @member TELEGRAM_BOT_TOKEN
+ * @type {String}
+ */
+config.TELEGRAM_BOT_TOKEN= process.env.TELEGRAM_BOT_TOKEN &amp;&amp; process.env.TELEGRAM_BOT_TOKEN.trim()
+
+/**
+ * @member TELEGRAM_BOT_USERNAME
+ * @type {String}
+ */
+config.TELEGRAM_BOT_USERNAME = process.env.TELEGRAM_BOT_USERNAME &amp;&amp; process.env.TELEGRAM_BOT_USERNAME.trim()
+
+/** *************************** */
+
+
+
+
+/** mailer module config, email server connection data */
+
+
+/**
+ * @member MAILER_HOST
+ * @type {string}
+ */
+config.MAILER_HOST = 'smtp.yandex.com'
+
+/**
+ * @member MAILER_PORT
+ * @type {string}
+ */
+config.MAILER_PORT = '465'
+
+/**
+ * @member MAILER_AUTH_USER
+ * @type {string}
+ */
+config.MAILER_AUTH_USER = process.env.MAILER_AUTH_USER
+
+/**
+ * @member MAILER_AUTH_PASS
+ * @type {string}
+ */
+config.MAILER_AUTH_PASS = process.env.MAILER_AUTH_PASS
+
+/**
+ * @member MAILER_SENDER_EMAIL_ADDRESS
+ * @type {string}
+ */
+config.MAILER_SENDER_EMAIL_ADDRESS = process.env.MAILER_SENDER_EMAIL_ADDRESS
+
+/** ************************************************* **/
+
+
+
+
+/** payments &amp;&amp; acquirers configuration */
+
+/**
+ * RUR value
+ * @member MIN_DEPOSIT_AMOUNT
+ * @type {number}
+ */
+config.MIN_DEPOSIT_AMOUNT = 25
+
+/**
+ * RUR value
+ * @member MAX_DEPOSIT_AMOUNT
+ * @type {number}
+ */
+config.MAX_DEPOSIT_AMOUNT = 10_000_000
+
+/**
+ * @description If we want to sell the USD's for a higher price relative then the official exchange rate,
+ * we can use this transformation coefficient.
+ *
+ * For e.g, if the official exchange rate is 70 RUR for 1 USD, and our transformation coefficient is 1.1,
+ * we'll sell the USD's for 75.1 * 1.1 = 77 RUR
+ *
+ * @member USD_EXCHANGE_RATE_TRANSFORM_COEFFICIENT
+ * @type {number}
+ */
+config.USD_EXCHANGE_RATE_TRANSFORM_COEFFICIENT = 1
+
+
+
+
+
+
+/** GAMEMONEY acquirer section */
+
+/** acquirer gamemoney.com secret variables */
+/**
+ * Our shop id in gamemoney.com ecosystem
+ * @member GAMEMONEY_PROJECT_ID
+ * @type {string}
+ */
+config.GAMEMONEY_PROJECT_ID = process.env.GAMEMONEY_PROJECT_ID
+
+/**
+ * Our secret key to sign our requests.
+ * WARNING! This key can not be stored in /env/.* files,
+ * you need to provide it to env it manually on instance start
+ * @member GAMEMONEY_HMAC_KEY
+ * @type {string}
+ */
+config.GAMEMONEY_HMAC_KEY = process.env.GAMEMONEY_HMAC_KEY
+
+/**
+ * It contains the IP's from which we allow to do acquirer side http-server-hooks.
+ * Hooks with any other IP's will be dropped with 424 status of response.
+ * @member GAMEMONEY_HOOKS_IPS_WHITELIST
+ * @type {String[]|String}
+ */
+config.GAMEMONEY_HOOKS_IPS_WHITELIST = process.env.GAMEMONEY_HOOKS_IPS_WHITELIST ? process.env.GAMEMONEY_HOOKS_IPS_WHITELIST.trim().split(',') : undefined
+
+
+/**
+ * Needed to the deposit validation
+ * @member GAMEMONEY_DEPOSIT_STATUSES_DICTIONARY
+ * @type {{New: string, Chargeback: string, Chargeback_cancel: string, Paid: string, Processing: string}}
+ */
+config.GAMEMONEY_DEPOSIT_STATUSES_DICTIONARY = {
+    New: 'IN_PROGRESS',
+    Processing: 'IN_PROGRESS',
+    Paid: 'COMPLETED',
+    Chargeback: 'RETURNED',
+    Refused: 'RETURNED',
+    Chargeback_cancel: 'COMPLETED',
+}
+
+/** ****** **/
+
+
+/** SKINSBACK acquirer section */
+
+/**
+ * @member SKINSBACK_HOOKS_IPS_WHITELIST
+ * @type {String[]|String}
+ */
+config.SKINSBACK_HOOKS_IPS_WHITELIST = process.env.SKINSBACK_HOOKS_IPS_WHITELIST ? process.env.SKINSBACK_HOOKS_IPS_WHITELIST.trim().split(',') : undefined
+
+/**
+ * @member SKINSBACK_PROJECT_ID
+ * @type {Number}
+ */
+config.SKINSBACK_PROJECT_ID = process.env.SKINSBACK_PROJECT_ID ? parseInt(process.env.SKINSBACK_PROJECT_ID.trim()) : undefined
+
+/**
+ * @member SKINSBACK_SECRET_KEY
+ * @type {String}
+ */
+config.SKINSBACK_SECRET_KEY = process.env.SKINSBACK_SECRET_KEY ? process.env.SKINSBACK_SECRET_KEY.trim() : undefined
+
+
+/**
+ * Needed to parse the deposit hooks
+ * @member SKINSBACK_DEPOSIT_STATUSES_DICTIONARY
+ * @type {{pending: String, success: String, fail: String}}
+ */
+config.SKINSBACK_DEPOSIT_STATUSES_DICTIONARY = {
+    pending: 'IN_PROGRESS',
+    success: 'COMPLETED',
+    fail: 'RETURNED'
+}
+/** ************************************************* **/
+
+
+/** UNITPAY acquirer section */
+
+
+/**
+ * @member UNITPAY_SECRET_KEY
+ * @type {String}
+ */
+config.UNITPAY_SECRET_KEY = process.env.UNITPAY_SECRET_KEY &amp;&amp; process.env.UNITPAY_SECRET_KEY.trim()
+
+
+/**
+ * @member UNITPAY_PUBLIC_KEY
+ * @type {String}
+ */
+config.UNITPAY_PUBLIC_KEY = process.env.UNITPAY_PUBLIC_KEY &amp;&amp; process.env.UNITPAY_PUBLIC_KEY.trim()
+
+
+/**
+ * @member UNITPAY_HOOKS_IPS_WHITELIST
+ * @type {String[]}
+ */
+config.UNITPAY_HOOKS_IPS_WHITELIST = process.env.UNITPAY_HOOKS_IPS_WHITELIST &amp;&amp; process.env.UNITPAY_HOOKS_IPS_WHITELIST.trim().split(',')
+
+/** ***************************/
+
+
+/** FREEKASSA acquirer section */
+
+/**
+ * @member FREEKASSA_MERCHANT_ID
+ * @type {Number}
+ */
+config.FREEKASSA_MERCHANT_ID = process.env.FREEKASSA_MERCHANT_ID &amp;&amp; parseInt(process.env.FREEKASSA_MERCHANT_ID)
+
+
+/**
+ * @member FREEKASSA_FIRST_SECRET_WORD
+ * @type {String}
+ */
+config.FREEKASSA_FIRST_SECRET_WORD = process.env.FREEKASSA_FIRST_SECRET_WORD &amp;&amp; process.env.FREEKASSA_FIRST_SECRET_WORD.trim()
+
+
+/**
+ * @member FREEKASSA_SECOND_SECRET_WORD
+ * @type {String}
+ */
+config.FREEKASSA_SECOND_SECRET_WORD = process.env.FREEKASSA_SECOND_SECRET_WORD &amp;&amp; process.env.FREEKASSA_SECOND_SECRET_WORD.trim()
+
+
+/**
+ * @member FREEKASSA_HOOKS_IPS_WHITELIST
+ * @type {String[]}
+ */
+config.FREEKASSA_HOOKS_IPS_WHITELIST = process.env.FREEKASSA_HOOKS_IPS_WHITELIST &amp;&amp; process.env.FREEKASSA_HOOKS_IPS_WHITELIST.trim().split(',')
+
+
+/** ************************* **/
+
+
+/** sportmaster.ru shop section */
+
+/**
+ * The constant preset to help us calc the potential amount of discount.
+ * Also it is the real available discount percentage when we dont need to stop the automatic discount claim execution pipeline
+ * we can offer to user
+ * @member AVERAGE_SPORTMASTER_DISCOUNT_PERCENTAGE
+ * @type {Number}
+ */
+config.AVERAGE_SPORTMASTER_DISCOUNT_PERCENTAGE = 30
+
+
+
+/**
+ * The percent of amount of discount which we take off as our service fee
+ * @member SPORTMASTER_DISCOUNT_PRICE_PERCENTAGE
+ * @type {Number}
+ */
+config.SPORTMASTER_DISCOUNT_PRICE_PERCENTAGE = 10
+
+
+/**
+ * We're preparing the identities to give one asap
+ * when some user starts the 'sportmaster.ru' shop discount claim creation
+ * That's the number of milliseconds which the permanent loop will wait
+ * between two identities creating
+ *
+ * @member PREPARING_NEW_IDENTITIES_DELAY_INTERVAL_MS
+ * @type {Number}
+ */
+config.PREPARING_NEW_IDENTITIES_DELAY_INTERVAL_MS = 10000
+
+
+/**
+ * @desc After this delay time we delete an identity (Object) from the cache
+ * to prevent the memory leak
+ * @member IDENTITIES_MANAGER_CACHE_INVALIDATION_DELAY_MS
+ * @type {Number}
+ */
+config.IDENTITIES_MANAGER_CACHE_INVALIDATION_DELAY_MS = 500 * 1000 // milliseconds
+
+
+/**
+ * The count of prepared 'n' ready-to-be-given identities
+ * when the loop of preparing will pause its work
+ * while the number of unused identities again will not
+ * decrease lower than this limit
+ * @member PREPARED_UNUSED_IDENTITIES_LIMIT
+ * @type {Number}
+ */
+config.PREPARED_UNUSED_IDENTITIES_LIMIT = 100
+
+
+/**
+ * It stores the interval between searching SportmasterAccount's in DB with away back actualized .bonuses_amount
+ * @member SPORTMASTER_ACCOUNTS_SEARCH_TO_ACTUALIZE_BALANCE_INTERVAL
+ * @type {Number}
+ */
+config.SPORTMASTER_ACCOUNTS_SEARCH_TO_ACTUALIZE_BALANCE_INTERVAL = 10 * 1000 // 10 seconds
+
+
+/**
+ * It stores the milliseconds after which we need to re-check the .bonuses_amount of current SportmasterAccount's
+ * @member SPORTMASTER_ACCOUNTS_FORCED_BALANCE_CHECK_INTERVAL_MS
+ * @type {Number}
+ */
+config.SPORTMASTER_ACCOUNTS_FORCED_BALANCE_CHECK_INTERVAL_MS = 900 * 1000 // for e.g 900 * 1000 ms = 15 minutes
+
+
+/**
+ * It stores the interval between two sportmaster.ru api requests during the balance actualization
+ * @member SPORTMASTER_ACCOUNTS_LIST_BALANCE_CHECK_DELAY
+ * @type {Number}
+ */
+config.SPORTMASTER_ACCOUNTS_API_BALANCE_CHECK_INTERVAL = 5000
+
+
+config.COMMON_USER_AGENTS = [
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.106 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:73.0) Gecko/20100101 Firefox/73.0',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Safari/605.1.15',
+    'Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0',
+    'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:72.0) Gecko/20100101 Firefox/72.0',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36',
+    'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.100 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.18362',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:72.0) Gecko/20100101 Firefox/72.0',
+    'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36 OPR/66.0.3515.72',
+    'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:73.0) Gecko/20100101 Firefox/73.0',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+    'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36',
+    'Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.122 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:73.0) Gecko/20100101 Firefox/73.0',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Safari/605.1.15',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/18.17763',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+    'Mozilla/5.0 (X11; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0',
+    'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.18363',
+    'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 YaBrowser/20.2.0.1043 Yowser/2.5 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.106 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36 OPR/66.0.3515.44',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:73.0) Gecko/20100101 Firefox/73.0',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.106 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0 Waterfox/56.2.14',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.106 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36 Edg/79.0.309.71',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36 OPR/66.0.3515.103',
+    'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36',
+    'Mozilla/5.0 (X11; Linux x86_64; rv:73.0) Gecko/20100101 Firefox/73.0',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:72.0) Gecko/20100101 Firefox/72.0',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.1.2 Safari/605.1.15',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 YaBrowser/19.12.4.25 Yowser/2.5 Safari/537.36',
+    'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.100 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0',
+    'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36 OPR/66.0.3515.72',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.1.1 Safari/605.1.15',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Safari/605.1.15',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+    'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.106 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.100 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0',
+    'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36',
+    'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.1.2 Safari/605.1.15',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1.2 Safari/605.1.15',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36',
+    'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/79.0.3945.79 Chrome/79.0.3945.79 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Safari/605.1.15',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0'
+]
+
+/** ************************** **/
+
+
+
+/** Common DiscountClaims section */
+
+
+/**
+ * It contains all statuses we use describing the DiscountClaim state
+ * @member ALLOWED_DISCOUNT_CLAIM_STATUSES
+ * @type {DiscountClaim.status[]}
+ */
+config.ALLOWED_DISCOUNT_CLAIM_STATUSES = [
+    'CREATING', 'CALCULATING', 'CALCULATED', 'INCALCULABLE', 'CREATED', 'IN_PROGRESS', 'COMPLETED', 'REJECTED'
+]
+
+/**
+ * Read the value and u may understand that
+ * @member DEFAULT_MESSAGE_ON_INCALCULABLE_STATUS
+ * @type {string}
+ */
+config.DEFAULT_MESSAGE_ON_INCALCULABLE_STATUS = 'Все товары в вашей корзине проходят по акции "Лучшая цена". Мы не можем предоставить на них скидку. Пожалуйста, вернитесь и измените набор товаров.'
+
+
+/** *************************** */
+
+
+
+/** chat section */
+
+/**
+ * @member CHAT_WORD_FILTER_PROHIBITED_WORD_PARTS_RU
+ * @type {String[]}
+ */
+config.CHAT_WORD_FILTER_PROHIBITED_WORD_PARTS_RU = [
+    'хуё',
+    'хуе',
+    'хуя',
+    'хуй',
+    'пизд',
+    'пезд',
+    'пязд',
+    'бляд',
+    'еби',
+    'еба',
+    'ёба'
+]
+
+/** ************ */
+
+
+/** S3 interaction variables */
+
+/**
+ * @member AWS_S3_ACCESS_KEY_ID
+ * @type String
+ */
+config.AWS_S3_ACCESS_KEY_ID = process.env.AWS_S3_ACCESS_KEY_ID
+
+/**
+ * @member AWS_S3_SECRET_ACCESS_KEY
+ * @type String
+ */
+config.AWS_S3_SECRET_ACCESS_KEY = process.env.AWS_S3_SECRET_ACCESS_KEY
+
+/**
+ * @member AWS_S3_BUCKET_NAME
+ * @type String
+ */
+config.AWS_S3_BUCKET_NAME = process.env.AWS_S3_BUCKET_NAME
+
+/**
+ * @member AWS_S3_USE_STATIC_SUBDOMAIN
+ * @type {boolean}
+ */
+config.AWS_S3_USE_STATIC_SUBDOMAIN = Boolean(process.env.NODE_ENV === 'production' &amp;&amp; Boolean(config.AWS_S3_BUCKET_NAME))
+/** ************************ */
+
+
+/** affiliate program configuration section */
+
+/**
+ * @member DEFAULT_AFFILIATE_TARIFF_KIND
+ * @type {String}
+ */
+config.DEFAULT_AFFILIATE_TARIFF_KIND = 'REVSHARE'
+
+/**
+ * @member DEFAULT_REVSHARE_PERCENTAGE
+ * @type {String}
+ */
+config.DEFAULT_REVSHARE_PERCENTAGE = 70
+
+/**
+ * @member DEFAULT_REVSHARE_INOUT_ACCOUNTING
+ * @type {String}
+ */
+config.DEFAULT_REVSHARE_INOUT_ACCOUNTING = 'BY_AFFILIATE_ACCOUNT'
+
+/**
+ * @member DEFAULT_REVSHARE_PACE_OF_ACCRUING
+ * @type {String}
+ */
+config.DEFAULT_REVSHARE_PACE_OF_ACCRUING = 5
+
+
+/**
+ * @member DEFAULT_REVSHARE_PACE_OF_ACCRUING
+ * @type {{
+ *     R: String
+ * }}
+ */
+config.AFFILIATE_TARIFF_KINDS_DICTIONARY = {
+    R: 'REVSHARE'
+}
+
+
+
+
+/** *************************************** */
+
+
+/** project's  economic constants */
+
+/**
+ * @description min price of steam item, displayed on the market tab
+ * @member MIN_BET_AMOUNT_USD
+ * @type {Number}
+ */
+config.MIN_BET_AMOUNT_USD = 0.3
+
+/** ***************************** */
+
+
+checkConfigToFindUndefinedValue(config)
+
+
+/** freezing config to prevent accidental changes */
+freezeObjectDeep(config)
+
+module.exports = {config}
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.5</a> on Mon Feb 08 2021 15:54:23 GMT+0300 (Moscow Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>
