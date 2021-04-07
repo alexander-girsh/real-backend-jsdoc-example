@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>middleware/access - Documentation</title>
+    <title>api/bonuses/branded-steam-name-mechanics - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -34,7 +34,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">middleware/access</h1>
+    <h1 class="page-title">api/bonuses/branded-steam-name-mechanics</h1>
     
 
     
@@ -47,8 +47,6 @@
 <header>
     
         
-            
-        
     
 </header>
 
@@ -57,104 +55,6 @@
         <div class="container-overview">
         
             
-                <div class="description usertext"><h5>Exports</h5>
-<hr>
-<p>A set of methods to work with auth cookies and also a set middlewares to authorizing and permissions
-checking</p>
-<h5>Procedure</h5>
-<hr>
-<p>When user credentials are correct on oauth / local signing in,
-we read the frequently used user data from the DB (for e.x. username, avatar link, permissions)
-and pack it into the jwt (access token). User can not change the packed data, but can read the token using
-web services like https://jwt.io, and we don't need to read smth from DB to get user data handling his requests.
-Tokens stored in signed cookies and so we only need to read the req cookie and decrypt the token.</p>
-<p>We should store the &quot;compromised&quot; web-tokens in the in-memory-cache with cold storage (redis seems perfect)
-to not accept the tokens that were revoked.</p>
-<p>To make data into the jwt unavailable to be read by user, we add the extra-level of encryption and encrypt
-the issued token using node native &quot;crypto&quot; module and the secret keys from env. It adds no significant CPU/MEM
-overhead handling the api requests.</p></div>
-            
-
-            
-                
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://jwt.io">https://jwt.io</a></li>
-        
-            <li><a href="https://tools.ietf.org/html/rfc7519">https://tools.ietf.org/html/rfc7519</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             
         
@@ -183,7 +83,7 @@ overhead handling the api requests.</p></div>
 
     
 
-    <h4 class="name" id="accessUser"><span class="type-signature">(route) </span>accessUser<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="getStages"><span class="type-signature">(route) </span>getStages<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
 
@@ -230,20 +130,15 @@ overhead handling the api requests.</p></div>
 
 
 <div class="description usertext">
-    <h5>Handlers Chain:</h5>
-                            <table class="params">
-                            <thead><tr class="last"><th>Order</th></tr></thead>
-                            <tr><td class="type">module:middleware/access~addAuthorizationDataToRequest</td></tr><tr><td class="type">this middleware</td></tr><tr><td class="type">some api method for authorized requests only</td></tr>
-                            </table>
-                            <h5>Route:</h5>
+    <h5>Route:</h5>
                             <table class="params">
                             <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
                             <tr>
-                            <td class="type">ANY</td>
-                            <td class="name last">/api/*</td>
+                            <td class="type">GET</td>
+                            <td class="name last">/api/bonuses/branded-steam-nickname-mechanics/stages</td>
                             </tr>
                             </table>
-                            
+                            <p>Returns the list of mechanic bonus stages and the brand name</p>
                             <h5>Response:</h5>
           <table class="params">
             <thead>
@@ -257,10 +152,35 @@ overhead handling the api requests.</p></div>
             </thead>
             <tr>
             <td class="name">status</td>
-            <td class="type">FORBIDDEN</td>
+            <td class="type">codes.OK</td>
             
             
-            <td class="description last">if not authenticated</td>
+            <td class="description last">if success</td>
+          </tr><tr>
+            <td class="name">branded_steam_nickname_mechanics_bonus_stages</td>
+            <td class="type">Array.&lt;BrandedSteamNicknameBonusStage&gt;</td>
+            
+            
+            <td class="description last">see <a href="global.html#BrandedSteamNicknameBonusStage">BrandedSteamNicknameBonusStage</a></td>
+          </tr><tr>
+            <td class="name">branded_steam_nickname_mechanics_brand_name</td>
+            <td class="type">String</td>
+            
+            
+            <td class="description last">our brand name
+user should add to his steam nickname to participate in the mechanics. Case-insensitive.</td>
+          </tr><tr>
+            <td class="name">undefined</td>
+            <td class="type">codes.FORBIDDEN</td>
+            
+            
+            <td class="description last">if access denied</td>
+          </tr><tr>
+            <td class="name">status</td>
+            <td class="type">codes.FAIL</td>
+            
+            
+            <td class="description last">if internal error</td>
           </tr>
           </table>
                             <h5>Response Code:</h5>
@@ -279,7 +199,13 @@ overhead handling the api requests.</p></div>
             <td class="type">403</td>
             
             
-            <td class="description last">if user is not authenticated and access denied</td>
+            <td class="description last">if user is not authorized and access denied</td>
+          </tr><tr>
+            
+            <td class="type">200</td>
+            
+            
+            <td class="description last">in all other cases</td>
           </tr>
           </table>
 </div>
@@ -290,21 +216,6 @@ overhead handling the api requests.</p></div>
 
 
 
-
-
-    <h5>Example</h5>
-    
-        <p class="code-caption">Usage example</p>
-    
-    <pre class="prettyprint"><code>// creating the api endpoint guarded with user-level access using default express router syntax
- router.get('/api/some-protected-method', accessUser, (req, res) => {
-
- // ...protected endpoint code...
- // here we can use the user credentials,
- // for e.g, req.account_data.user_id,
- // because request is definitely authorized
-
- }</code></pre>
 
 
 
@@ -331,7 +242,7 @@ overhead handling the api requests.</p></div>
 
     
 
-    <h4 class="name" id="accessAdmin"><span class="type-signature">(route) </span>accessAdmin<span class="signature">()</span><span class="type-signature"> &rarr; {function}</span></h4>
+    <h4 class="name" id="getCurrentStage"><span class="type-signature">(route) </span>getCurrentStage<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
 
@@ -378,23 +289,15 @@ overhead handling the api requests.</p></div>
 
 
 <div class="description usertext">
-    <h5>Handlers Chain:</h5>
-                            <table class="params">
-                            <thead><tr class="last"><th>Order</th></tr></thead>
-                            <tr><td class="type">module:middleware/access~addAuthorizationDataToRequest</td></tr><tr><td class="type">this middleware</td></tr><tr><td class="type">some api method for admins with provided scope only</td></tr>
-                            </table>
-                            <h5>Route:</h5>
+    <h5>Route:</h5>
                             <table class="params">
                             <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
                             <tr>
-                            <td class="type">ANY</td>
-                            <td class="name last">/api/*</td>
+                            <td class="type">GET</td>
+                            <td class="name last">/api/bonuses/branded-steam-nickname-mechanics/current-stage</td>
                             </tr>
                             </table>
-                            <p>This is not a middleware, this is a simple middlewares constructor
-returning the access-control middleware that requires the provided
-permissions_scope to allow assess.
-Usage is to to built the result (middleware) of this constructor call into the middlewares chain</p>
+                            <p>Returns the list of mechanic bonus stages</p>
                             <h5>Response:</h5>
           <table class="params">
             <thead>
@@ -407,11 +310,49 @@ Usage is to to built the result (middleware) of this constructor call into the m
               </tr>
             </thead>
             <tr>
+            <td class="name">current_stage</td>
+            <td class="type">BrandedSteamNicknameBonusStage,Null</td>
+            
+            
+            <td class="description last">see <a href="global.html#BrandedSteamNicknameBonusStage">BrandedSteamNicknameBonusStage</a>.
+May be Null if user achieved no stage yet.</td>
+          </tr><tr>
+            <td class="name">steam_nickname_contains_brand_name</td>
+            <td class="type">Boolean</td>
+            
+            
+            <td class="description last">describes, what do we know about user's steam nickname
+(data from db, renews every 24h)</td>
+          </tr><tr>
             <td class="name">status</td>
-            <td class="type">FORBIDDEN</td>
+            <td class="type">codes.OK</td>
             
             
-            <td class="description last">if access not allowed</td>
+            <td class="description last">if success</td>
+          </tr><tr>
+            <td class="name">undefined</td>
+            <td class="type">codes.INCORRECT_STATE</td>
+            
+            
+            <td class="description last">if user has no .steam_id</td>
+          </tr><tr>
+            <td class="name">undefined</td>
+            <td class="type">codes.FORBIDDEN</td>
+            
+            
+            <td class="description last">if access denied</td>
+          </tr><tr>
+            <td class="name">status</td>
+            <td class="type">codes.FAIL</td>
+            
+            
+            <td class="description last">if internal error</td>
+          </tr><tr>
+            <td class="name">desc</td>
+            <td class="type">String</td>
+            
+            
+            <td class="description last">if non-ok status</td>
           </tr>
           </table>
                             <h5>Response Code:</h5>
@@ -430,7 +371,13 @@ Usage is to to built the result (middleware) of this constructor call into the m
             <td class="type">403</td>
             
             
-            <td class="description last">if access not allowed</td>
+            <td class="description last">if user is not authorized and access denied</td>
+          </tr><tr>
+            
+            <td class="type">200</td>
+            
+            
+            <td class="description last">in all other cases</td>
           </tr>
           </table>
 </div>
@@ -443,19 +390,6 @@ Usage is to to built the result (middleware) of this constructor call into the m
 
 
 
-    <h5>Example</h5>
-    
-        <p class="code-caption">Declaring some endpoint that reqires the admin-level permissions</p>
-    
-    <pre class="prettyprint"><code>router.post('/api/some-admin-endpoint', accessAdmin({ACCOUNTS: true}), (req, res) => {
- // ...protected endpoint code...
- // only admin with .admin_permissions_scope.BLOCKING_ACCOUNTS == true
- // can get access to this endpoint
-})
-
-// also you can combine permissions scope as you need, for e.g
-   accessAdmin({ACCOUNTS: true, SOME_ANOTHER_PERMISSION: true})
-// it will return a middleware that will deny all requests authorized without this scopes combination</code></pre>
 
 
 
@@ -474,28 +408,180 @@ Usage is to to built the result (middleware) of this constructor call into the m
 
 
 
-<h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>a middleware which will check all provided permissions before access permitting</p>
+            
+
+    
+
+    <h4 class="name" id="forceReCheck"><span class="type-signature">(route) </span>forceReCheck<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">POST</td>
+                            <td class="name last">/api/bonuses/branded-steam-nickname-mechanics/force-re-check</td>
+                            </tr>
+                            </table>
+                            <p>Forces us to check the real nickname in steam using steam web api.
+If user's steam nickname will contain the brand name, we'll save the resulting info into the DB and
+enqueue the re-checking for every 24h.
+User should make this request to take a part into the bonus mechanics when he added the brand name
+to his steam nickname.</p>
+                            <h5>Response:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">current_stage</td>
+            <td class="type">BrandedSteamNicknameBonusStage,Null</td>
+            
+            
+            <td class="description last">see <a href="global.html#BrandedSteamNicknameBonusStage">BrandedSteamNicknameBonusStage</a>.
+May be Null if user achieved no stage yet.</td>
+          </tr><tr>
+            <td class="name">steam_nickname_contains_brand_name</td>
+            <td class="type">Boolean</td>
+            
+            
+            <td class="description last">describes, what do we know about user's steam nickname
+(data from db, renews every 24h)</td>
+          </tr><tr>
+            <td class="name">status</td>
+            <td class="type">codes.OK</td>
+            
+            
+            <td class="description last">if success</td>
+          </tr><tr>
+            <td class="name">undefined</td>
+            <td class="type">codes.INCORRECT_STATE</td>
+            
+            
+            <td class="description last">if user has no .steam_id</td>
+          </tr><tr>
+            <td class="name">undefined</td>
+            <td class="type">codes.FORBIDDEN</td>
+            
+            
+            <td class="description last">if access denied</td>
+          </tr><tr>
+            <td class="name">status</td>
+            <td class="type">codes.FAIL</td>
+            
+            
+            <td class="description last">if internal error</td>
+          </tr><tr>
+            <td class="name">desc</td>
+            <td class="type">String</td>
+            
+            
+            <td class="description last">if non-ok status</td>
+          </tr>
+          </table>
+                            <h5>Response Code:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            
+            <td class="type">403</td>
+            
+            
+            <td class="description last">if user is not authorized and access denied</td>
+          </tr><tr>
+            
+            <td class="type">200</td>
+            
+            
+            <td class="description last">in all other cases</td>
+          </tr>
+          </table>
 </div>
 
 
 
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">function</span>
 
 
-    </dd>
-</dl>
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
