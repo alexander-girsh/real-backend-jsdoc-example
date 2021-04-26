@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>api/accounts/social-network-integrations/vk - Documentation</title>
+    <title>api/games/crash/final-multipliers - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -34,7 +34,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">api/accounts/social-network-integrations/vk</h1>
+    <h1 class="page-title">api/games/crash/final-multipliers</h1>
     
 
     
@@ -47,6 +47,8 @@
 <header>
     
         
+            
+        
     
 </header>
 
@@ -55,6 +57,109 @@
         <div class="container-overview">
         
             
+                <div class="description usertext"><p>THE CONCEPT OF APPEARANCE AND USAGE OF CRASH GAME FINAL MULTIPLIERS</p>
+<ol>
+<li>
+<p>We generate a <a href="global.html#CrashGameFinalMultipliersGroup">CrashGameFinalMultipliersGroup</a>. It may contain from 1M to 10M final multipliers.
+This process is moved to the separate microservice. This module contains only the API.</p>
+</li>
+<li>
+<p>When we create the new CrashGame round, we randomly select one of final multiplier from the activated group.
+The frequency of occurrence of values (x1.01, x5.00, x1000.69 etc.) of final multipliers
+in the group encodes the math expectation of the house.</p>
+</li>
+</ol>
+<p>You can no operate with a separate <a href="global.html#CrashGameFinalMultiplier">CrashGameFinalMultiplier</a>,
+only with a <a href="global.html#CrashGameFinalMultipliersGroup">CrashGameFinalMultipliersGroup</a> which is the bulk of <a href="global.html#CrashGameFinalMultiplier">CrashGameFinalMultiplier</a>'s,
+generated and recorded together.</p>
+<p>So, on the groups level you have not many options</p>
+<ul>
+<li>
+<p>generate new group. the real complex params will be read directly from Google Sheets
+and you can only pass the page number of the predefined document.
+Generated group will get 'CREATED' status.</p>
+</li>
+<li>
+<p>activate the group. Crash game will start use this group right now. Previous group which was ACTIVATED
+will become INACTIVATED (stashed).</p>
+</li>
+<li>
+<p>run the tests to check the real result of the work of the mathematical expectation which is encoded in.</p>
+</li>
+</ul></div>
+            
+
+            
+                
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             
         
@@ -83,7 +188,7 @@
 
     
 
-    <h4 class="name" id="getCommunity"><span class="type-signature">(route) </span>getCommunity<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="getFinalMultiplierGroupsList"><span class="type-signature">(route) </span>getFinalMultiplierGroupsList<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
 
@@ -133,17 +238,55 @@
     <h5>Handlers Chain:</h5>
                             <table class="params">
                             <thead><tr class="last"><th>Order</th></tr></thead>
-                            <tr><td class="type">module:middleware/access~addAuthorizationDataToRequest</td></tr><tr><td class="type"><a href="module-middleware_access.html#accessUser">module:middleware/access~accessUser</a></td></tr><tr><td class="type">this endpoint</td></tr>
+                            <tr><td class="type">module:middleware/access~addAuthorizationDataToRequest</td></tr><tr><td class="type"><a href="module-middleware_access.html#accessAdmin">module:middleware/access~accessAdmin</a> - required permission scopes:
+GAMES, FINANCE, GAMES_CONFIGURATION</td></tr><tr><td class="type">this endpoint</td></tr>
                             </table>
                             <h5>Route:</h5>
                             <table class="params">
                             <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
                             <tr>
                             <td class="type">GET</td>
-                            <td class="name last">/api/accounts/social-network-integrations/vk/community</td>
+                            <td class="name last">/api/games/crash/final-multipliers/groups-list</td>
                             </tr>
                             </table>
-                            <p>It returns a data about our main vk community</p>
+                            <p>It returns list of groups</p>
+                            <h5>Query Parameters:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Attributes</th>
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">offset</td>
+            <td class="type">Number</td>
+            <td class="attributes">optional</td>
+            
+            <td class="description last">default is 0</td>
+          </tr><tr>
+            <td class="name">limit</td>
+            <td class="type">Number</td>
+            <td class="attributes">optional</td>
+            
+            <td class="description last">default is 15</td>
+          </tr><tr>
+            <td class="name">sorting_property</td>
+            <td class="type">String</td>
+            <td class="attributes">optional</td>
+            
+            <td class="description last">default is 'created_at'</td>
+          </tr><tr>
+            <td class="name">sorting_direction</td>
+            <td class="type">String</td>
+            <td class="attributes">optional</td>
+            
+            <td class="description last">'DESC' or 'ASC', default is 'DESC'</td>
+          </tr>
+          </table>
                             <h5>Response:</h5>
           <table class="params">
             <thead>
@@ -157,53 +300,29 @@
             </thead>
             <tr>
             <td class="name">status</td>
-            <td class="type">codes.OK</td>
+            <td class="type">OK</td>
             
             
             <td class="description last">if success</td>
           </tr><tr>
-            <td class="name">vk_community_link</td>
-            <td class="type">String</td>
+            <td class="name">final_multiplier_groups_list</td>
+            <td class="type">Array.&lt;CrashGameFinalMultipliersGroup&gt;</td>
             
             
-            <td class="description last">if success, the absolute link u should give to user</td>
+            <td class="description last">if success,
+see <a href="global.html#CrashGameFinalMultipliersGroup">CrashGameFinalMultipliersGroup</a></td>
           </tr><tr>
             <td class="name">status</td>
-            <td class="type">codes.FORBIDDEN</td>
+            <td class="type">FORBIDDEN</td>
             
             
-            <td class="description last">if authorization error</td>
+            <td class="description last">if auth cookie doesnt contain the required permissions scope(s)</td>
           </tr><tr>
             <td class="name">status</td>
-            <td class="type">codes.FAIL</td>
+            <td class="type">FAIL</td>
             
             
             <td class="description last">if internal error</td>
-          </tr>
-          </table>
-                            <h5>Response Code:</h5>
-          <table class="params">
-            <thead>
-              <tr>
-                
-                <th>Type</th>
-                
-                
-                <th class="last">Description</th>
-              </tr>
-            </thead>
-            <tr>
-            
-            <td class="type">403</td>
-            
-            
-            <td class="description last">if user is not authorized and access denied</td>
-          </tr><tr>
-            
-            <td class="type">200</td>
-            
-            
-            <td class="description last">in all other cases</td>
           </tr>
           </table>
 </div>
@@ -240,7 +359,7 @@
 
     
 
-    <h4 class="name" id="checkCommunityMembership"><span class="type-signature">(route) </span>checkCommunityMembership<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="generateFinalMultipliersGroup"><span class="type-signature">(route) </span>generateFinalMultipliersGroup<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
 
@@ -290,20 +409,37 @@
     <h5>Handlers Chain:</h5>
                             <table class="params">
                             <thead><tr class="last"><th>Order</th></tr></thead>
-                            <tr><td class="type">module:middleware/access~addAuthorizationDataToRequest</td></tr><tr><td class="type"><a href="module-middleware_access.html#accessUser">module:middleware/access~accessUser</a></td></tr><tr><td class="type">this endpoint</td></tr>
+                            <tr><td class="type">module:middleware/access~addAuthorizationDataToRequest</td></tr><tr><td class="type"><a href="module-middleware_access.html#accessAdmin">module:middleware/access~accessAdmin</a> - required permission scopes:
+GAMES, FINANCE, GAMES_CONFIGURATION</td></tr><tr><td class="type">this endpoint</td></tr>
                             </table>
                             <h5>Route:</h5>
                             <table class="params">
                             <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
                             <tr>
                             <td class="type">POST</td>
-                            <td class="name last">/api/accounts/social-network-integrations/vk/check-community-membership</td>
+                            <td class="name last">/api/games/crash/final-multipliers/generate-group</td>
                             </tr>
                             </table>
-                            <p>It returns and renews (as a side-effect) the state
-of AccountData.social_network_integrations.vk_community.is_member (see <a href="global.html#AccountData">AccountData</a>)
-If AccountData.social_network_integrations.vk_community.is_member will be updated after checking,
-event &quot;personal:account/accountDataUpdate&quot; will be fired</p>
+                            <p>It generates a new group making a call to another service (cgfm-service)</p>
+                            <h5>Body Parameters:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">google_sheets_sheet_number</td>
+            <td class="type">Number</td>
+            
+            
+            <td class="description last">just display a prompt to user and validate it as an int</td>
+          </tr>
+          </table>
                             <h5>Response:</h5>
           <table class="params">
             <thead>
@@ -317,66 +453,138 @@ event &quot;personal:account/accountDataUpdate&quot; will be fired</p>
             </thead>
             <tr>
             <td class="name">status</td>
-            <td class="type">codes.OK</td>
+            <td class="type">OK</td>
             
             
             <td class="description last">if success</td>
           </tr><tr>
-            <td class="name">checking_result</td>
-            <td class="type">Object</td>
+            <td class="name">status</td>
+            <td class="type">WRONG_ARGS</td>
             
             
-            <td class="description last">if success</td>
+            <td class="description last">if .google_sheets_sheet_number is not provided</td>
           </tr><tr>
-            <td class="name">checking_result.is_member</td>
-            <td class="type">Boolean</td>
+            <td class="name">e_values_list</td>
+            <td class="type">IDontRemember</td>
             
             
-            <td class="description last">if success, the flag which describes is user a member of tg community or not</td>
-          </tr><tr>
-            <td class="name">undefined</td>
-            <td class="type">codes.INCORRECT_STATE</td>
-            
-            
-            <td class="description last">if user has no AccountData.vk_id</td>
-          </tr><tr>
-            <td class="name">undefined</td>
-            <td class="type">codes.TEMPORARY_UNAVAILABLE</td>
-            
-            
-            <td class="description last">if our tg bot is not UP</td>
+            <td class="description last">if success,
+just display it to user</td>
           </tr><tr>
             <td class="name">status</td>
-            <td class="type">codes.FORBIDDEN</td>
+            <td class="type">FORBIDDEN</td>
             
             
-            <td class="description last">if authorization error</td>
+            <td class="description last">if auth cookie doesnt contain the required permissions scope(s)</td>
           </tr><tr>
             <td class="name">status</td>
-            <td class="type">codes.NOT_FOUND</td>
-            
-            
-            <td class="description last">if vk_chat_id, stored in server-side config, is incorrect.
-Most likely this is the internal error.</td>
-          </tr><tr>
-            <td class="name">status</td>
-            <td class="type">codes.FAIL</td>
+            <td class="type">FAIL</td>
             
             
             <td class="description last">if internal error</td>
-          </tr><tr>
-            <td class="name">desc</td>
-            <td class="type">String</td>
-            
-            
-            <td class="description last">occasionally =)</td>
           </tr>
           </table>
-                            <h5>Response Code:</h5>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="activateFinalMultipliersGroup"><span class="type-signature">(route) </span>activateFinalMultipliersGroup<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <h5>Handlers Chain:</h5>
+                            <table class="params">
+                            <thead><tr class="last"><th>Order</th></tr></thead>
+                            <tr><td class="type">module:middleware/access~addAuthorizationDataToRequest</td></tr><tr><td class="type"><a href="module-middleware_access.html#accessAdmin">module:middleware/access~accessAdmin</a> - required permission scopes:
+GAMES, FINANCE, GAMES_CONFIGURATION</td></tr><tr><td class="type">this endpoint</td></tr>
+                            </table>
+                            <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">POST</td>
+                            <td class="name last">/api/games/crash/final-multipliers/activate-group</td>
+                            </tr>
+                            </table>
+                            <p>It activates the group making a call to another service (cgfm-service)</p>
+                            <h5>Body Parameters:</h5>
           <table class="params">
             <thead>
               <tr>
-                
+                <th>Name</th>
                 <th>Type</th>
                 
                 
@@ -384,17 +592,208 @@ Most likely this is the internal error.</td>
               </tr>
             </thead>
             <tr>
+            <td class="name">created_at</td>
+            <td class="type">Date,String</td>
             
-            <td class="type">403</td>
+            
+            <td class="description last">.created_at is the main identifier of the <a href="global.html#CrashGameFinalMultipliersGroup">CrashGameFinalMultipliersGroup</a></td>
+          </tr>
+          </table>
+                            <h5>Response:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">status</td>
+            <td class="type">OK</td>
             
             
-            <td class="description last">if user is not authorized and access denied</td>
+            <td class="description last">if success</td>
           </tr><tr>
+            <td class="name">status</td>
+            <td class="type">WRONG_ARGS</td>
             
-            <td class="type">200</td>
+            
+            <td class="description last">if .created_at not provided</td>
+          </tr><tr>
+            <td class="name">status</td>
+            <td class="type">FORBIDDEN</td>
             
             
-            <td class="description last">in all other cases</td>
+            <td class="description last">if auth cookie doesnt contain the required permissions scope(s)</td>
+          </tr><tr>
+            <td class="name">status</td>
+            <td class="type">FAIL</td>
+            
+            
+            <td class="description last">if internal error</td>
+          </tr>
+          </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="doTestRunForFinalMultipliersGroup"><span class="type-signature">(route) </span>doTestRunForFinalMultipliersGroup<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <h5>Handlers Chain:</h5>
+                            <table class="params">
+                            <thead><tr class="last"><th>Order</th></tr></thead>
+                            <tr><td class="type">module:middleware/access~addAuthorizationDataToRequest</td></tr><tr><td class="type"><a href="module-middleware_access.html#accessAdmin">module:middleware/access~accessAdmin</a> - required permission scopes:
+GAMES, FINANCE, GAMES_CONFIGURATION</td></tr><tr><td class="type">this endpoint</td></tr>
+                            </table>
+                            <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">POST</td>
+                            <td class="name last">/api/games/crash/final-multipliers/do-test-run-for-group</td>
+                            </tr>
+                            </table>
+                            <p>It does some calculation over the group making a call to another service (cgfm-service).
+This calculation may take some time, from 1m to ...,
+so you will get the results via the broadcasting message later.</p>
+                            <h5>Body Parameters:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">created_at</td>
+            <td class="type">Date,String</td>
+            
+            
+            <td class="description last">.created_at is the main identifier of the <a href="global.html#CrashGameFinalMultipliersGroup">CrashGameFinalMultipliersGroup</a></td>
+          </tr><tr>
+            <td class="name">so_many_fucking_params</td>
+            <td class="type">IDontRemember</td>
+            
+            
+            <td class="description last">just copy my old code and be ready for WRONG_ARGS status =)</td>
+          </tr>
+          </table>
+                            <h5>Response:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">status</td>
+            <td class="type">OK</td>
+            
+            
+            <td class="description last">if success</td>
+          </tr><tr>
+            <td class="name">status</td>
+            <td class="type">WRONG_ARGS</td>
+            
+            
+            <td class="description last">read old client code and pray</td>
+          </tr><tr>
+            <td class="name">status</td>
+            <td class="type">FORBIDDEN</td>
+            
+            
+            <td class="description last">if auth cookie doesnt contain the required permissions scope(s)</td>
+          </tr><tr>
+            <td class="name">status</td>
+            <td class="type">FAIL</td>
+            
+            
+            <td class="description last">if internal error</td>
           </tr>
           </table>
 </div>
